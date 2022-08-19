@@ -1,0 +1,244 @@
+GRA0489 INTRODUÇÃO A REDES DE COMPUTADORES
+
+########	Unidade1
+
+********	Inspire-se
+Tipos de redes
+	PAN - pessoal - bluetooth
+	LAN - local
+	CAN - campus
+	MAN - Metropolitan WMAN
+	RAN - Regianl - alta velocidade
+	WAN - wide WWAN
+	
+Topologias de redes
+	Barramento BUS
+	Estrela STAR
+	Anel RING
+	Malha MESH
+	
+Meios de transmissão
+	Cabo par trançado
+	Cabo coaxial
+	Cabo fibra optica
+	HUB
+	HUB - SWITCH
+	Switch
+	Roteador
+	
+********	Vídeo Aula
+Prof Carlos Verissimo MD
+História
+SEC XVIII - Revolução industrial
+		sistemas mecânicos
+SEC XIX - Mecanização da industria a vapor
+		era da informação
+			telefonia
+			radio e tv
+			informática
+			satelites
+			
+	Substituição de um único computador para processamento de dados por uma rede de computadores
+	
+	Rede é um conjunto de dispositivos autonomos interconectados por uma única tecnologia
+		Objetivo é permitir a comunicação e compartilhamento de recursos
+		
+	Tecologias de transmissão
+		Links de difusão
+			1 canal compartilhado com o parque
+		Rede ponto a ponto
+			pares individuais e rotas
+	Escala
+		1m - rede pessoal
+		1km - rede local
+		10km - rede metropolitana
+		1000km - rede geograficamente distribuida
+		+ - internet
+		
+	LAN - Distinção
+		tamanho
+		tecnologia de transmissão
+		topologia
+		
+	Meios de transmissão
+		arquitetura de camadas
+			aplicação
+			transporte
+			rede
+			enlace
+			fisica - fluxo bruto de bits de uma máquina para outra
+				meios guiados (par trançado, coaxial e fibra optica)
+				meios não guiados (microondas, radio, luz, satelite)
+				meios magneticos (fita ou mídias magneticas)
+				Largura de banda
+				Retardo
+				Custo
+				
+	IOT - todo dispositivo conectado
+	
+	Modos de transmissão
+		Simplex ->
+		Half duplex -> <-
+		full duplex <=>
+		
+	Regras de conversão entre camadas são chamadas de PROTOCOLOS
+	Limites entre camadas são as interfaces
+	
+	Abstração de camadas
+		decomposição do problema
+			processos modulares
+			
+########	Unidade 2
+
+********	Inspire-se
+Camada de aplicação
+	protocolos
+		DNS
+		SMTP
+		HTTP
+		WWW
+
+********	Video aula
+Prof Verissimo
+
+********	Leitura
+
+2.1 HISTÓRIA DAS REDES DE COMPUTADORES E INTERNET
+	Rede é um conjunto de equipamentos e dispositivos de comunicação conectados entre si.
+	Internet é o conjunto de duas ou mais redes que se comunicam
+	Tanenbaum 2003 rede é um imenso conjunto de redes diferentes que utilizam certos protocolos comuns e fornecem determinados serviços comuns
+	A internet estabelece um conjunto de regras para envio e recebimento de pacotes de um computador para outro pela internet, o IP
+
+2.2 PRINCÍPIOS DA CAMADA DE APLICAÇÃO
+	Principio de aplicações e redes
+	O principal ponto do desenvolvimento de uma aplicação de rede é desenvolver programas que possam ser executados em sistemas finais diferenciados e que esses se comuniquem entre si pela rede
+	Para um profissional que desenvolve uma aplicação, a arquitetura de rede e estáticaa provê um conjunto específico de serviços às aplicações. Entretanto a arquitetura de rede deve ser pensada e projetada pelo profissional e deve estabelecer como a aplicação é estruturada nos diversos sistemas finais
+	Arquitetura cliente-servidor
+		Nessa arquitetura existe um hospedeiro que está sempre funcionando, chamado servidor, com a função de atender requisições de muitos outros sistemas finais chamados clientes. Dois servidores não conseguem se conectar entre si diretamente. O servidor tem endereço fixo.
+	Arquitetura P2P (peet-to-peer)
+		Não existe confiança total no funcionamento sempre dos servidores então a aplicação faz uso da comunicação direta entre dois hospedeiros conectados de forma alternada, os chamados pares. A autescalabilidade é um ponto importante para ressaltar.
+	
+	Aplicações de mensagens instantâneas utilizam as duas arquiteturas. É importante ter em mente que aplicações não se comunicam entre si e sim processos, a comunicação interprocessos são estipuladas pelo SO do sistema final em questão
+	
+	Serviços de transporte disponíveis para aplicações
+		Existem serviçoes de um protocolo da camada de transporte oferece para as aplicações
+		Transferência:
+		Confiavel e o processo pode passar seus dados a um socket e tem certeza da entrega ao destinatário sem erros. Situações que aceitam perdas geralmente são multimídia em tempo real
+	
+	Quais são os serviços de transporte adotados pela internet
+	TCP e UDP
+		TCP - full duplex - serviço orientado para conexão, confiavel de transporte - possui um mecanismo para controlar congestionamento
+		UDP - não orientado a conexão, não existe apresentação antes que os dois processos iniciem a comunicação - serviço não confiavel sem garantia de entrega, não tem controle de congestionamento
+	
+	Sistema de Nomes de Dominios
+	DNS Tem capacidade de suportar um programa de e-mail para encontrar o endereço IP do destinatário de e-mail
+	
+	A web e o HTTP
+		WWW -Tim Berners-Lee é o serviço mais conhecido (Word wide web)
+		é uma estrutura arquitetônica que permite o acesso a documentos vinculados espalhados por milhões de máquinas na internet.
+		O usuário recebe o que deseja e quando deseja
+	URL - uniform resource locator
+	HTTP - utiliza o TCP como seu protocolo de transporte subjacente
+	
+	Servidor WEB
+	Programa responsável por localizar e administrar páginas web armazenadas - computadores dedicados - por exemplo Apache HTTP Server que domína 70% do mercado, de código aberto e gratuito, e o IIS - internet information services que tem 21% do mercado e é da Microsoft
+	
+	Transferência de arquivos FTP
+	é um protocolo de transferência de arquivos e tem algumas similaridades com o HTTP, uma delas é a utilização do TCP
+	As diferenças são
+		O FTP faz uso de duas conexões TCP paralelas - conexão de controle para envio de informações de controle entre dois hospedeiros, o HTTP realiza envio de linhas de cabeçalho de requisição e de retorno por meio da mesma conexão TCP, conexão de dados o FTP transmite um arquivo diretamente pela conexão de dados e logo é fechada
+	
+	Comandos FTP
+	USER
+	PASS
+	LIST
+	RETR
+	STOR
+	
+########	Unidade 4
+
+********	Inspire-se
+Camada de enlace
+	pega os dados da camada física e transfere para os equipamentos de comunicação
+	
+********	Video aula
+Prof Verissimo
+	Endereçamento IPv4(32 bits - 4 octetos de 8 bits) e v6()
+	
+
+********	Leitura
+NAT E FRAGMENTAÇÃO
+	ISP internet service provide - 
+	ADSL assymetrical digital subscryber line
+	NAT network address translation
+	
+	Tradução de endereços de rede 
+		Para que ocorra uma separação dos endereços usados internamente, em casa ou na empresa, os provedores de internet se baseiam em um conjunto chamado de endereçoes privados
+		
+	Fragmentação
+	Um datagrama consegue trafegar por diversas redes diferenciadas, em cada roteador ocorre um desencapsulamento do datagrama IPV4, a partir do frame recebido por ele ocorre o processamento e então o encapsula em um outro frame. Cada protocolo da camada de enlace de dados prossui seu proprio formato de frame e um dos campos estabelecidos no formato é o tamanho máximo do campo dedaos, ou seja, no momento que o datagrama é encapsulado em um frame, o tamanho total do datagrama deve ser menor que esse tamanho máximo o qual é estabelecido pelas restrições exigidas pelo wardware e software utilizados na rede
+	A fragmentação de um pacote IPV4 cabe a camada de transporte no host de origem
+	Campos do cabeçalho
+		Identificação - 16 bits - ipv4 identificação do datagrama
+		Flags - 3 bits primeiro reservado segundo é bit de não fragmentação se for 1 não pode ser fragmentado, terceiro bit mais fragmentos se for 1 indica que não é o ultimo
+		Offset de fragmentação - 13 bits - posição relativa desse fragmento relacionado ao datagrama inteiro. É o ofset de dados no datagrama no datagrama original medido em unidades de 8 bytes, os bytes do datagrama original possuem numeração de 0 a 3999 - 
+			O primeiroa fragmento transporta os bytes de 0 a 1399 o offset para esse fragmento é 0/8=0
+			O segundo fragmento tranporta os bytes 1400 a 2799 o offset para esse fragmento é 1400/8=175
+			O terceito fragmento transporta os bytes 2800 a 3999 o offset para esse fragmento é 2800/8=350
+		O valor de offset tem sua medida em unidades de 8 bytes em função que o comprimento do campo de offset ser de apenas 13 bits e não conseguir realizar a representação de uma sequência de bytes maior do qie 8191
+	
+	IPV6
+	Estudos iniciados em 1990 pela IETF
+	Endereços de 128 bits
+	Introdução de um novo endereço chamado anycast - etrega de um datagrama a qualquer hospedeiro dentro de um conjunto
+	Cabeçalho de 40 bytes
+	Campos do IPV6
+		Versão - campos de 4 bits numero da versão IP
+		Classe de tráfego - campo de 8 bits tem função semelhante à função do campo TOS do IPV4
+		Rótulo de fluxo - 20 bits - utilizado para a identificação de um fluxo de datagramas
+		Comprimento de carga útil - valor de 16 bits é tratado como um número inteiro sem sinal que fornece o número de bytes no datagrama ipv6
+		Próximo cabeçalho - dotada a responsabilidade de indentificaçẽo do protocolo ao qual o conteúdo, ou campo de dados do datagrama será entregue - usa os mesmos valores do campo de protocolo no cabeçalho IPV4
+		Limite de dados - Este campo tem seu conteúdo decrementado de um para cada roteador que repassa o datagrama - quando a contagem do limite de saltos for igual a zero esse datagrama é descartado
+		Endereço de fonte e de destino - Campo destinado a variados formatos de endereço de 128 bits do ipv6
+		Dados - é o campo responsável pela carga útil do datagrama IPV6
+	Funcionamento básico:
+	O campo prioridade faz a definição da prioridade entre pacotes
+	O trafego possui duas categorias amplas, controlado ou não por congestionamento
+		Controlado por congestionamento ocorre se a maquina de origem consegue fazer a adaptação de um trafego mais devagar quando existe congestionamento - é necessário ter o entendimento que os pacotes poderão, mesmo que de forma eventual, chegarem atrasados, sem estar na ordem correta ou até mesmo serem perdidos
+		Trafego não controlado por congestionamento faz referência a um tipo de tráfego que possui expectativa bastante reduzida de atraso. O descarte de pacotes é indesejavel. Na maioria das vezes a retransmissão é impossível de acontecer.
+	
+	Camada de enlace de dados
+		Canais de camada
+			Canais de broadcast	
+		Enlace de comunicação ponto a ponto
+		
+		tem proposito de prover uma maneira de realizar a ligação entre dois hosts para o envio e recebimento de datagramas, prestar alguns serviços a camada superior como detecção e correção de erros; endereçamento de datagramas após o encapsulamento de quadros
+		tem como papel a transformação da camada física em um link com responsabilidade pela comunicação de dados nó a nó - Possui algumas responsabilidades - framing, endereçamento, controle de fluxo, controle de erros e controle de acesso ao meio de transmissão
+		Faz a divisão do fluo de bits recebidos a camada de rede em unidades de dados gerenciaveis que são chamadas de frames. Faz o acessimo de um cabeçalho ao frame para a definição dos endereços de quem envia e de quem recebe 
+		Consegue acrescentar confiabilidade à camada física incorporando mecanismos para detectar e retransmitir frames que posam ser corrompidos ou então duplicados e até perdidos
+		
+	ARP e RARP
+	Address Resolution Protocol - consegue converter um endereço IP para um endereço MAC, faz a conversão de endereços IP somente para os nós na mesma sub-rede.
+	Reverse address resolution protocol - proposito de mapeamento do endereço lógico de uma máquina partindo de seu endereço físico
+	Ethernet
+	A ethernet é para rede local o que a internet é para rede global.
+		CSMA/CD - protocolo de acesso múltiplo denominado
+	Formato do quadro ethernet
+		O frame possui sete campos
+			Preâmbulo - 7 bytes
+				56 bits 0 e 1 - alertar o receptor sobre o frame que está chegando e também habilitar a realização da sincronização do seu clock de entrada
+			SFD - 1 bytes
+				Start frame delimiter é capaz de anunciar o inicio de um frame, os dois ultimos bits avisam o receptor que o proximo campo será o endereço de destino (10101011)
+			Endereço de destino - 6 bytes
+				DA - possui o endereço físico da estação de destino
+			Endereço de origem - 6 bytes
+				SA - endereço físico de quem envia o pacote
+			Comprimento ou tipo - 2 bytes
+				definição do protocolo da camada superior que foi encapsulado pelo frame MAC
+			Dados e preenchimento min 46 bytes max 1500bytes
+				realizar o transporte de dados encapsulados oriundos dos protocolos das camadas superiores
+			CRC - 4bytes
+				capacidade de conter as informações para realização da detecção de erros
+		
+		Um frame ethernet necessita ter um comprimento mínimo de 512 bits ou seja, 64 bytes
+		

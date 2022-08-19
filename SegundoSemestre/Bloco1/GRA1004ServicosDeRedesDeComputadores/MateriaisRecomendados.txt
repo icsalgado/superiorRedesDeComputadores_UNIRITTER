@@ -1,0 +1,22 @@
+https://pt.wikipedia.org/wiki/TCP/IP#Protocolos_para_Internet - tem os protocolos de cada camada do TCP/ip
+https://www.reddit.com/r/Infographics/comments/8avtky/network_communication_protocols/ - imagem dos protocolos gerais
+https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?&page=3 - lista de portas oficial IANA
+https://www.youtube.com/watch?v=h70939yYgXM - portas Prof Ramos
+https://pt.wikipedia.org/wiki/Lista_de_portas_dos_protocolos_TCP_e_UDP - lista de portas wikipedia
+https://www.citisystems.com.br/protocolo-tcp-ip/ - sobre o protocolo TCP
+https://www.luiztools.com.br/post/servidores-raiz-de-dns/ - servidores raiz DNS
+
+
+Materiais recomendados
+
+https://www.youtube.com/embed/efGBoJ-f_2Y
+
+https://www.youtube.com/embed/1hJaTQIT2HQ
+
+https://www.youtube.com/embed/epWv0-eqRMw
+
+https://www.youtube.com/embed/lYtOnHNsio4
+
+https://www.youtube.com/embed/YOIKKe2hm8c
+
+https://www.youtube.com/embed/7pU9iHoJRm4

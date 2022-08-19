@@ -1,0 +1,397 @@
+Programação em Shell Script
+Inspire-se
+Entrevista com Gerente de Projetos de TI no Gupo EMBRAS - Nitai Fernandes
+
+	Software livre (Linux como exemplo)
+	Linguagem Script no caso Shell Script
+____________________________________________________________
+Unidade 1 - Introdução Ao Linux
+Prof. Marcia Melo Bacharel em Ciência da Computação, Especialista em Gestão Estratégica da TI
+
+Introdução ao Sistema operacional Linux e suas Caracateristicas
+	Linus Torvalds 
+	Gerenciado pelo GNU
+	E licenciado pela GPL general public licence
+	Kernel de código fonte aberto
+	Licença GPL/GNU
+		Liberdade 1 - Executar livremente PJ ou PF para qualquer propósito
+		Liberdade 2 Estudar o Programa
+		Liberdade 3 - Modificar o programa
+		Liberdade 4 - Distribuir cópias
+	Copy Left - Não é permitido fechar o código fonte
+	
+	Sistema leve com amplo suporte a diferentes tecnologias
+	
+	Shell é o interpretador de comandos do Linux
+	
+O que é shell e quais suas utilizações
+	Interprete de comandos, interface entre usuario e SO 
+	Sua função é ler a linha de comando e interpreta-la, executar e devolver o resultado
+	Inteface de linha de comando
+		fornecida através de um shell
+		normalmente escondida
+		apropriada para automação de tarefas
+Shell Script
+	Script é um arquivo que guarda varios comandos
+	Indicado para automaçao de tarefas repetitivas
+	Não é compilado
+Shell ou Bash qual é a diferença?
+	Shell é a ligação entre o usuario e o sistema
+	Bash é um interpretador de comandos (born again shell)
+	
+Leitura prof Emmanuel Joca Nolêto
+1.1.1 O que é o Sistema Operacional Linux	
+	Recomendação!	https://www.techtudo.com.br/artigos/noticia/2011/11/conheca-linus-torvalds-o-criador-do-linux.html
+	Kernel de codigo aberto e colaborativo
+1.1.2 Dristribuições Linux
+	Recomendação! Artigo sobre shell script de Fábio Correia	https://www.revista-programar.info/artigos/Shell-Script/
+	
+	Slackware
+		Uma das mais antigas
+		Atende usuarios menos técnicos
+	Red Hat
+		Utiliza gerenciamento de pacotes em formato RPM
+		Grafico
+		Em alguns casos a distribuição é paga
+	Fedora
+		Teste de soluções recentes no mercado
+		Serve de ambiente teste da Red Hat
+	Ubuntu
+		Baseado no debian
+		Estável
+1.2.1 Introdução às caracteristicas dos sistemas operacionais
+	Sistemas desktop utilizam em sua maioria interfaces graficas, o que não acontece nos servidores pois impacta diretamente na performance do sistema
+1.2.2 Diretórios
+	Lunux tem um formato de diretorios, diferente do Windows
+	O diretorio raiz é representado não por uma letra e sim por uma barra
+	/bin - executaveis do sistema ou binários essenciais
+	/usr - programas e bibliotecas utilizados pelo usuário
+	/usr/bin - binários não essenciais
+	/usr/lib - bibliotecas usadas pelos programas, semelhante à .dll no windows
+	/boot - Kernel do SO e GRUB
+	/dev - links para acesso a dispositivos externos
+	/etc - arquivos de configuração do computador
+1.2.3 Permissões em sistemas Linux
+	Leitura -r
+	Gravação -w
+	Execução -x
+	
+	Modelo octal para permissões
+	0 - nenhuma permissão (-rwx)
+	1 - execução (x)
+	2 - gravação (w)
+	3 - gravação e execução 2+1 (rw)
+	4 - leitura (r)
+	5 - Leitura e execução 4+1 (rx)
+	6 - Leitura e gravação 4+2 (rw)
+	7 - Todas permissões 4+2+1 (+rwx)
+1.3 O que é shell script e quais são suas utilizações?
+	Sem interface grafica
+	Modo texto
+1.3.1 terminal shell
+	São usados os Softwares VIM e NANO que funcionam apenas em modo texto para construção de scripts
+1.3.2 O shell script pode ser considerado linguagem?
+	Em ambiente linux sim.
+	Os comandos são interpretados e executados de forma sequencial
+1.3.3 Criação de um Shell Script
+	extensão shell
+	Tipos de shell (bash, csh, zsh)
+	Variaveis locais devem ser declaradas com letras maiusculas, podem ser listadas por meio do mando set ou env e devem ser definidas no login do sistema
+	Recomendação!
+	https://www.gnu.org/software/bash/manual/
+
+_______________________________________________
+Unidade 2 - Comandos Linux
+Aspectos básicos do linux
+	Evitar utilizar o root pois as alterações efetuadas podem ser catastroficas e irreversíveis
+	Todo arquivo possui um dono
+	Pode existir um grupo de usuarios que tem acesso ao arquivo
+	Os grupos podem ter 3 modos de acesso R W X sendo ler, escrever, executar
+Comandos de gerenciamento de pacotes
+	O linux utiliza pacotes pré compilados o que agiliza a instalação e remoção
+	O conceito de dependencias se refere exatamente ao signifado da palavra, um pacote depende de outro para ser executado
+Terminal linux e navegação entre diretorios
+	um terminal virtual é uma segunda sessão do sistema
+
+Leitura
+Comandos Linux
+2.1.1 Pacotes e dependências
+	Atenden a necessidade de controle sobre atualização, instalação e remoção de aplicativos
+	Comando APT (advancedPAcking Tool)
+		apt update - atualização de pacotes
+		apt upgrade - atualização do sistema operacional
+		apt-add-repository - adicionar softwares que não estão nos repositorios do SO
+	Recomendação ler sobre programas front-ends!
+https://www.debian.org/doc/manuals/apt-howto/ch-search.pt-br.html. 
+	Gerenciamento de pacote RPM e YUM
+https://www.ibm.com/developerworks/br/linux/library/l-lpic1-v3-102-5/index.html.
+2.1.2 YUM versus APT
+	Usado em distribuições:
+		Red Hat Enterprise Linux (RHEL);
+		Fedora;
+		CentOS;
+		Mandriva;
+		OpenSuSE;
+		Scientific Linux;
+		Oracle Linux;
+		ClearOS;
+		ROSA Enterprise Linux Server;
+		Rocks Cluster Distribution;
+		Fermi Linux.
+	O comando apt origina da junção do apt-get e apt-cache que eram muito similares e causavam confusão
+2.2.1 Processos de um sistemas Linux
+	O processo é um tipo de atividade
+	Os processos possuem estados:
+		Execução: processo ativo usando a CPU
+		Pronto ou espera: temporariamente parado permitindo a entrada de outro processo na fila
+		Bloqueado: Processo arad aguardando um evento para voltar
+	Pode ser conhecido como tarefas ou tasks
+	Recomendação ver video
+https://youtu.be/a5mOaYqAuKo.
+	O controle de processos pai e filhos são feitos por meio da numeração PID
+2.3.1 Console do sistema Linux - Terminal
+	Terminal é um programa dentro do qual pe acionado um shell para execução de comandos
+	Console é um tipo de terminal que utiliza uma porta serial dedicada a um computador que realiza a comunicação deireta por um nível mais baixo
+	Existem 4 niveis de comunicação ao reporoduzir a hierarquia do sistema por meio de camadas
+	Usuario executa o shell
+	envia instruções aos serviços de baixo nível
+	estes interagem com o kernel
+	é realizado i acesso ao hardware do computador
+2.3.2 Comandos de busca em shell
+	Recomendação de leitura
+https://linux.ime.usp.br/~lucasmmg/livecd/documentacao/documentos/terminal/Terminal_basico.html.
+	comando which
+	comando whereis
+	comando find
+	comando locate
+____________________________________________________________
+Unidade 3 Controle de Fluxo da informação
+3.1.2 Fluxos IF
+	sintaxe:
+		if [ CONDICAO ] ;
+		then
+			AÇOES
+		fi
+	os espaços são importantes. o if pode ser sem as []
+	sintaxe para redirecionamento < > e >>
+	Canalização | ou ^
+	Suporte a comandos seuenciais ;
+	comando assincronos &
+3.1.3 Operadores
+	Para escapar elementos e exibilos como caractere especial
+		Aspas ignora exceto $ ou ` ou \
+		Apóstrofos todos os caracteres são ignorados
+		barras invertidas ignora apenas um caratere que segue a barra
+	crases são usadas para avisar ao shell que é um comando e dar prioridade de execução
+	Redirecionamentos de saida
+	> redireciona a saida para um arquivo, criando ele , iniciando ou apagando o conteudo caso exista
+	>> redireciona para um arquivo, anexando ao seu fim
+	2> redireciona os erros para um arquivo
+	Redirecionamento de entrada
+	< avisa que uma outra entrada sera especificada
+	<< here documento especifica que o escopo de um comando começa na linha seguinte e termina quando encontra uma linha com o conteudo do label que segue o <<
+	Redirecionamentos especiais
+	| pipe direciona a saida de um comando  para a entrada de outro
+	tee captura a saida do pipe copiando para a saida padrão e outro comando ou arquivo
+	Operadores aritmeticos
+	+
+	-
+	*
+	/
+	% módulo
+	** exponenciação
+	Operadores de atribuição
+	=
+	+= soma constante
+	-=
+	*=
+	/=
+	%= resto da divisão
+	++
+	--
+	Operadores relacionais
+	==
+	!=
+	>
+	<
+	>=
+	<=
+	Operadores lógicos
+	&& AND
+	|| OR
+	Operadores de BIT bitwise
+	<< deslocamento a esquerda
+	>> deslocamento a direita
+	& AND de bit
+	| OR de bit
+	^ XOR de bit
+	~ negação de bit
+	! NOT de bit
+	Recomendação de leitura simulacros e simulação de Jean Baudrillard
+Vantagens do linux
+	Grande retorno sobre o investimento
+	Funciona em desktop e server
+	Baixo investimento para desenvolvedores
+	Suporte de grandes empresas como a IBM
+____________________________________________________________
+UNIDADE 4 - Programação em shell script
+inspire-se - Utilidade do shell script
+simplificar tarefas
+substituir comandos executados com frequÊncia, em conjunto com comando único
+
+Utiliza tanto CLI quanto GUI
+
+Expressão regular [ER] - composição de metacaracteres 
+
+metacaracteres tem funções epecificas
+
+linguagem completa de quarta geração 4GL
+Original e de protótipo rápido
+
+Video Aula prof Marcia Melo.
+Declarando funções para o encadeamento de rotinas em shell
+função é um código para resolver uma pequena parte de um problema, é encapsulada
+function minhaFuncao () { echo "minha função" }
+deve ser declara antes de ser usada
+para chamar uma função se usa apenas o nome, sem os parenteses de argumentos
+
+# é um comentário
+
+Variaveis são caracteres que armazenam dados
+são reconhecidos pelo bash pelo $
+convencionado o uso de caixa alta para variaveis
+
+editores de texto são diferentes de processadores de texto (por exemplo o word e libre office)
+Editores famosos:
+	PICO
+	NANO (antigo TIP)
+	VI (ou VIM) 1976 
+	XEMACs
+	GIACONOS
+
+Leitura /prof Andrea Karina Garcia
+4.1.1 O que é uma função shell
+	é a separação de um problema em partes, blocos lógicos, segmentação
+	Pode ser declarada de duas formas
+
+	function NomeDaFuncao()
+	{
+		corpo
+	}
+	ou
+	NomeDaFuncao()
+	{
+		corpo
+	}
+	Pode ser evocado outro script dentro de uma função
+	function teste()
+	{
+		.ScriptTeste.sh
+	}
+	Nesse caso o caractere ponto-final indica que o script se encontra na mesma pasta, caso esteja em outro local, deve-se indicar o caminho
+	Para executar o modo de depuração:	
+		$sh -x script.sh
+	o parametro -x indica a depuração e deve ser seguido do comando SH
+	Indicação de video: 
+	<https://www.youtube.com/watch?v=zZXxpXnxLj4.
+4.2.1 O que são variaveis em Shell
+	São estruturas que armazenam dados, uma especie de atalho com nome, tipo e tamanho e são reconhecidas pelo bash quando precedidas de um $
+		$nomedavariavel=valor
+	Diz-se que a variavel de nome nomedavariavel foi instanciada com "valor"
+	Para criar uma variavel não se utiliza o $, apenas para referência-la
+	E não se usa espaços entre o nome da variavel o = e seu valor
+	Temos também o contexto de variaveis locais, como as dos exemplos anteriores e as variaveis globais, que são criadas com o identificador export
+		export nomedavariavelglobal
+	ou
+		export nomedavariavelglobal=valor
+	Regras para criação de variaveis
+		iniciada por letra ou underline
+		caracteres alfanuméricos
+		sem espaço em branco, acento ou caracteres especiais
+	Para desalocar uma varivel usa-se o unset
+		$unset nomedavarivel
+	O comando SET visualiza as variaveis locais e o ENV as variaveis globais
+4.2.2 Variaveis do sistema
+	São variaveis que são proprias do sistema ou são inicializadas diretamente pelo shell
+	HOME – Contém o diretório home do usuário. 
+	LOGNAME – Contém o nome do usuário atual. 
+	IFS – Contém o separador de campos ou argumento (Internal Field Separator). Geralmente, o IFS é um espaço, tab, ou nova linha, mas é possível mudar para outro tipo de separador. 
+	PATH – Armazena uma lista de diretórios onde o Shell procurará pelo comando digitado. 
+	PWD – Contém o diretório corrente. 
+	PS1 – Esta é denominada “Primary Prompting String”. Ou seja, ela é a string que está no prompt que vemos no Shell. Geralmente, a string utilizada é: \u@\h:\w $. 
+	PS2 – Esta é denominada “Secondary Prompting String”. Ela armazena a string do prompt secundário. O padrão usado é o caractere >. Mas pode ser mudado para os caracteres mostrados acima. 
+	MAIL – É o nome do arquivo onde ficam guardados os e-mails. 
+	COLUMNS – Contém o número de colunas da tela do terminal.  
+	LINES – Contém o número de linhas da tela do terminal. Existem muitas outras variáveis que são descritas na página do manual do Bash, na seção “Shell Variables”.
+
+	Caracteres usados no PS2
+	>
+	\s nome do shell
+	\u nome do usuario do shell
+	\h hostname
+	\w nome do diretorio desde a raiz
+	\d data (ter setembro 21
+	\nnn caractere correspondente em numeros na base octal
+	\t hora atual 24h
+	\T hora 12h
+	\W Contém nome do diretorio corrente
+
+	Uma variavel pode referenciar outra usando as aspas
+		$var2="A variavel 1 é $var1"
+	Para o conteudo de uma variavel não ser exectado usa-se o apostrofo
+	As crases são usadas para a interpretação de um comando e seu retorno de valor
+	Para exibir uma variavel e seu conteudo usa-se
+		set | grep testevar
+ 4.3.1 Editor de texto Vi
+	virtual interface
+	O Vi pode ser iniciado com os seguintes parametros
+	vi nomedoarquivo apenas abre o arquivo
+	view nomedoarquivo abre apenas leitura
+	vi -R tambem é somente leitura
+	vi -t tag procura uma tag e inicia sua edição a partir de sua definiçã
+	vi -w n abre uma tela com n linhas
+	vi + nomedo arquivo abre o arquivo com cursor na ultima linha
+	vi +n arquivo abre com cursor na linha n
+	vi -c comando arquivo geralmente abre com comando de busca
+	vi +/padão arq abre fazendo busca de padão
+
+	O Vi opera de 3 formas, duas delas são
+	Modo de comando
+	Modo de inserção
+
+	comando a dentro do Vi posiciona o cursor à direita do caractere em que ele está sobre
+	comando i inicia a inserção a partir da esquerda do caractere
+
+	para sair da inserção pode usar o esc
+		^[
+		meta
+		alt
+		diamond
+		star
+		menu
+		^3
+		ou F11 em terminais DEC
+	Comandos para salvar e sair do Vi
+		:w salva e continua editando
+		ZZ grava o texto se alterado e sai do Vi
+		:wq grava o texto e sai
+		:w! grava mesmo em somente leitura
+		:q sai do vi e alerta se tiver alterações
+		:q! sai sem gravar
+	comandos para deslocamento pelo texto
+		h cursor para esquerda
+		j cursor para baixo
+		l cursor para direita
+		[n]^b volta n paginas
+		[n]^f avança n paginas
+	Sugestão de filme Blade Runner e o livro Do androids dream of eletric chip?
+4.3.2 Expressões Regulares
+	Metodo formal para especificar um padrão de texto
+	metacaracteres são combinações de caracteres com funções especificas
+	Alguns metacaracteres alem da tabela salva
+	? opcional pode aparecer ou não
+	* asterisco pode aparecer em qualquer quantidade
+	+ mais deve aparecer no minimo uma vez
+	[^aeiou] negação de qualquer caractere
+	Pesquisar o ataque do dia 3 e buffer overflow4
+		e SElinux security Enhanced Linux

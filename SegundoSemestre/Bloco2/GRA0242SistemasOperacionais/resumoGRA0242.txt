@@ -1,0 +1,442 @@
+GRA0242 SISTEMAS OPERACIONAIS 
+**** UNIDADE 1 ****
+inspire-se - Nitai Fernandes
+	
+Video aula
+	Prof Alexandra Soares - Admistração de sistemas de informação
+	Sistema operacional
+		interface entre usuario e computador
+	1945 - 1955
+		válvulas e paineis
+		chaves, fios e luzes
+	1955 - 1965
+		Sistemas em lotes
+		programa monitor para enfileirar tarefas
+		cartões perfurados carregados com compilador
+			FORTRAN / COBOL
+		linguagem de controle JCL
+	CTSS - MIT
+	Multics - Mit + At&t
+		base para UNIX de Ken Thompson
+			programado em assembly
+	Linguagem C - dennis ritchie
+		Reescrita do UNIX em C thompson & ritchie
+	Funções de gerenciamento
+		Processos
+		Recursos
+		sistemas de arquivos
+		memoria
+		ES
+	tipos de sistemas
+		monoprogramado
+		em lote JLC também monoprocessado
+		multiprocessadores
+			fortemente acoplados
+				memoria unica e um SO
+					simetricos
+					assimetricos
+			fracamente acoplados
+				mais de dois SO e hardware independentes
+		distribuidos
+		multiprogramado para tempo real
+		
+	interfaces de uso
+		Terminal
+		textual
+			menu janelas e botões
+		GUI
+		VUI - interface de voz
+	Gerações
+		são 4
+	Funções do SO
+		Innterface de aplicativo API
+		Interface de usuário
+		gerenciamento de recursos
+	Recursos do SO
+		multiprocessamento
+		multiprogramação
+		time-sharring
+		memoria virtual
+	Gerencia de processos
+		contexto de hardware
+		contexto de software
+		estados do processo
+			execução - running
+			pronto - ready
+			espera - wait
+	gerenciadores de processo
+		por admissão
+		por tempo médio
+		despachantes
+	Usando SOsim
+	LPL - lista de paginas livres
+	LPM - lista de paginas modificadas
+
+Leitura:
+	Osvaldo de Souza
+1.1 Conceito e evolução de SO
+	geração 0 - Blaise Pascal  - maquina de calcular
+	geração 1 - Alan Turin - Colossus x Enigma
+	geração 2 - TX-0
+	geraçao 3 - circuios impressos integrados
+	geração 4 - VLSI very large scale integration
+		eram vendidas partes de um computador a serem montadas porem, para usar era preciso escrever um código
+1.1.1 Conceitos de SO e classificação
+	Quanto a interface Grafica ou linha de comando
+	Sistema Proprietario ou Livre
+	Quanto ao gerenciamento de memoria apenas física como CP/M e MSDOS e o que gerenciam memoria fisica e virtual (SOs atuais)
+1.1.2 Virtualização e estruturação do SO
+	Virtualização é a capacidade do SO de gerenciar mais memória do que a máquina possui de fato
+		Estruturação
+			Núcleo ou kernel
+				funções primordiais do sistema
+			Drivers
+				comunicação com periféricos
+			Programas utilitarios
+				Ferramentas do sistema
+			Códigos de carregamento do sistema
+		Módulos de um SO
+			Gerenciador de Processos
+				tarefas do computador
+			Gerenciador de memória
+				controle da memória disponível
+			Gerenciador de dispositivos
+				condições para dispositivos serem usados por processos
+			Gerenciador de arquivos
+				organização criação leitura e escrita de aquivos - permitir que outro aplicativo tenha acesso ao arquivo
+1.1.3 Design arquitetural, espaco do núcleo e espaço do usuario
+	Nucleo de construção monolitica
+		Todos os modulos estão no mesmo bloco
+		cada parte do bloco pode ter finalidades e responsabilidades diferentes
+		não existe a necessidade dee protocolos de comunicação e politicas de segurança
+		velocidade alta por ter acesso direto a regiões de memória compartilhada
+		programação mais complexa 
+		dependencia entre diversas partes
+		uma falha em uma das partes pode degenerar o núcleo rápidamento
+	Nucleo de construção em camadas
+		camadas inferiores povêm serviços a camadas superiores
+		quanto mais baixa a camada maior o envolvimento com hardware
+		mudanças em uma camada são facilmente isoladas das superiores
+		protocolo de comunicação para acesso estável, ordenado e com politicas de segurança para acesso a serviços providos pelas camadas inferiores
+		dedicação de diferentes camadas a diferentes grupos de funções
+	Para proteção do SO é separado um espaço de memória do núcleo e um para aplicativos de usuário	
+1.2 Gerenciamento de Recursos
+	Os recursos podem ser de
+		Hardware
+			placa grafica que solicita recursos de um monitor
+		Software
+			solicita recursos da placa grafica
+			Capacidade de uso de GUI
+				Motor gráfico com papel de manipulação de interfaces
+					Criação de espaço de interação
+						janelas
+					Criação de objeto de interação
+						vão dentro de janelas
+1.2.1 conceitos básico e aplicabilidade de gerenciamento de recursos
+	Os recursos são limitados e o gerenciamento destes cabe ao SO, bem como o tempo de acesso a um recurso
+	O conceito de processos e sub-processos é o modo commo um SO lida com os aplicativos, por meio de um identificador único
+	O numero de registro de recurso são dados aos recursos do SO ou endereço de porto de entrada do recurso. O usuario não lida com isso, os aplicativos lidam atravez de chamas de sistemas
+1.3 Gerenciamento de processo
+	gerencia o tempo em uso de cada processo da CPU
+1.3.1 Definicão de processo
+	um aplicativo sendo executado (job)
+		o contexto de um processo refere-se aos recursos que esteja usando
+	Estados de um processo
+		novo
+			processo em fase de criação
+		pronto
+			preparado aguardando direcionamento para CPU
+		esperando
+			Esperando recurso ou evento para execução
+		executando / escalonado
+			em execução na CPU
+		terminando
+			contexto liberado
+1.3.2 Diagrama de execução e estados do processo
+	Cada processo é representado por um bloco de controle de processos, o qual consiste em um conjunto de metadados sobre os processos, normalmente referenciado por Process Control Block PCB contendo informações sobre
+		numero do processo que o identifica
+		estado atual do processo
+		contador do programa que aponta o endereço de memoria que contém a proxima instrução do cod de execução do app que devera ser executado quando o processo mudar para o estado de executando
+		Os registradores da CPU
+		Dados de prioridade do processo
+		A gerencia de memoria para o processo
+		O status de ES que inclui dados dos recursos usados no contexto
+	DEADLOCK ocorre quando um processo A depende da liberação de um recurso que o processo B dentem controle e este depende de um recurso que o processo A detem controle, travando o sistema
+	Estudar o caso dos Filosofos glutões
+	A escolha de qual processo deve ir para o status de executando requer a estrategia de escalonamento ou politica de escalonamento
+		FCFS
+			First come, first served ou FIFO - algoritmo não preemptivo, preemptivo refere-se a interrupção do processo sempre que o SO julgar necessário como o tempo destinado ao processo (quantum)
+		SJF não preemptivo
+			Shortest job first e o executa até seu termino
+		SJF preemptivo
+			Shertest job first e o executa até terminar seu tempo
+		Prioridade Preemptivo
+			conforme a prioridade dos processos obedecendo seu quantum
+		Round Robin 
+			FIFO preemptivo - escalonamento por revezamento
+1.4 interagindo com gerenciador de processo
+	O gerenciamento de processo pode definir arbitrariamente a prioridade de um processo
+	Cada processo é executado de cava vez dentro do seu quantum
+	O quantum de um processo pode ser alterado pelo usuario, definindo novas prioridades e resultando na execução mais rapida de um processo
+1.4.1 usando linguagem de programação
+	A comunicação entre aplicativos ocorre atravez da API application programming interface
+		conjunto de chamadas de sistema e/ou chamas de aplicativos
+		IPC interproces comunication comunicação entre aplicativos
+1.4.2 Simulação de processos
+	SOsim
+
+**** Unidade 2 ****
+Inspire-se - Nitai Fernandes
+	sistemas operacionais tolerantes a falhas
+		identificação e reparo de erros em tempo real
+	sistema embarcado
+		especifico para um hardware
+
+Video aula - Alexandra Soares
+	sistemas fisicos
+		hardware
+	sistemas logicos
+		software
+
+	Linguagem de programação
+		conjunto de regras sintaticas e semanticas usadas para definir um programa
+		o conjunto de palavras contitui o código fonte
+		possui a propriedade de portabilidade
+		Fortran foi largamente usada em 54
+		Cobol foi outra bem difundida
+
+	Programação estruturada
+		sequencia
+		decisão
+		execução
+	Programação modular
+		Rotinas de programação atravez de modulos
+	Programação aorientada aobjetos
+		conjunto de classes
+	Programação linear
+		
+	Classificação
+		linguagens aplicativas ou de aplicação
+		linguagens concorrentes, distribuidas e paralelas
+		linguagens de fluxo de dados
+		de projeto
+		extensiveis
+		montagem e de macro
+		microprogramaçãos
+		não deterministicas
+		não procedurais
+		orientada a objeto
+		aplicação especializada
+		altissimo nível
+
+	Paradigmas
+		imperativo	
+			mudanças de estados
+				procedural - Fortran Basic
+				estrutura de blocos - Pascal C
+				OO - C++ Java
+				distribuida - ADA
+		declarativo
+			especifica relação e função
+				funcional - Lisp Scheme
+				Lógica -- Prolog Gödel
+
+	Estruturas de tipos
+		Forte
+			tipo é sempre o mesmo
+		Fraca
+			variavel muda dinamicamente
+
+		dinamicamente tipada
+			tipo definido em tempo de execução
+		estaticamente tipada
+			tipo definido em tempo de compilação
+
+	Escalonador define qual programa irá rodar
+		escalonador de curto prazo
+		escalonador de medio prazo
+		escalonador de longo prazo
+		criterios
+			taxa de utilização do CPU
+			throughput
+			tournaround
+			tempo de resposta
+			tempo de espera
+		objetivo
+			ser justo
+			maximizar produtividades
+			ser previsivel
+			minimizar tempo de resposta
+			maximizar o numero de usuarios
+			minimizar sobrecarga overhead
+			favorecer processos bem comportados
+			balancear o uso de recursos
+			exibir degradação previsivel
+		Escalonamento não preemptivo
+		Escalonamento preemptivo
+
+	alterando prioridades
+		gerenciador de processos
+			definir prioridade no processo
+
+	Numero de prioridade em linux por exemplo
+		vai de -20 a 20 com prioridade inversamente proporcional
+
+	IPC - interprocess communication
+		conhecimento sobre processos
+		
+Leitura: Prof. Osvaldo de Souza
+2.1.1 Linguagem de programação
+	conjunto de palavras-chave (instruções) utilizadas para compor sequencias de comandos
+	Linguagem de baixo nível
+		lidam diretamente com questões associadas ao hardware
+		Produção de drivers e SO
+		Assembly e C
+	Linguagens de alto nível
+		construção de aplicativos diretamente usados pelo usuário ou que não lidam diretamtente com o hardware
+		com a abstração é possível que uma linguagem de alto nivel faça acesso ao hardware - é uma maneira que nos permite esconder detalhes técnicos
+	O SO produz uma abstração enorme que esconde o hardware e o disponibilizado aos programadores por meio de um conjunto de chamadas de sistema, o qual é utilizado pelas linguagens na produção de APIs
+2.2.2 Threads
+	constitui o primeiro passo para programação concorrente e é utilizada quando desejamos que um programa tenha duas ou mais linhas de execução simultâneas
+	Uma linha de execução corresponde a uma sequência de comandos que estão executados, sendo que a linha principal é aquela que deu início ao programa e é a tarefa principal para o SO. As threads são ramais da linha principal, utilizadas, normalmente, para realizar alguma atividade que seja complementar ao processamento que está sendo executado na linha principal.
+	Threads são usadas para apressar o processamento em hardwares com mais de uma CPU - estabelecendo o conceito de paralelelismo no qual a execução de um processo é fragmentada em segmentos que são executados simultaneamente em diferentes cpus
+2.1.3 Modelos de ciração de threads
+	- criar o trecho de código de execução que representa a thread. Este trecho deve realizar a tarefa que é necessária ser “paralelizada”. A execução irá ocorrer (em geral) independente do estado de execução da linha principal. Assim, a linha principal (o processo principal) pode estar em estado de “aguardando”, enquanto uma de suas threads pode estar em “executando”, outra em “encerrado”;
+	- criar um trecho de código de execução que represente a linha principal. Em geral, pode ser resumido como um grande loop (laço de execução) que dá início as threads, e toma providências quando alguma delas é encerrada, ou surge alguma condição (ou solicitação) externa que faz com que uma nova thread seja necessária. Nesta situação, a linha principal dará início a uma nova thread.
+	Processo é o ponto no qual os recursos são solicitados
+	Threads destinada exclusivamente ao trabalho que requer o tempo da cpu
+2.2.1 Escalonamento FIFO e prioridades
+	é a decisão sobre qual processo deve ser executado
+	Preemptivo é quando um processo pode ser interrompido a qualquer momento
+	Uma interrupção é uma sinalização de hardware ou software - o termo técnico é interrupt request (IRQ)
+	Outros algortitmos de escalonamento
+		FCFS
+		SJF não preemptivo
+		SJF preemptivo
+		Prioridade preemptivo
+		Robin Round
+	Um algoritmo em lote é usado quando existe um connjunto conhecido e finito de processos que devem ser executados e para os quais não ha necessidade de interação entre o SO e o usuário. Utiliza o FIFO ou SJF - não é largamente utilizado em SOs com interação com usuario
+	Quantum é a parcela de tempo que o processo pode utilizar - utilizado no algoritmo por prioridade preemptivo
+2.2.2 troca de contexto
+	Os dados, os recurss e as informações sobre a proxima instrução compoem o contexto de um processo
+	A preservação do contexto se da pelo deslocamento de dados da memoria RAM para o disco ou para outro ponto da propria RAM
+	PCB process control block - facilita a manipulação reunindo o contexto no bloco
+		reunie informações como
+			ponteiro contador do programa que indica o endereço da proxima instrução
+			registradores - controles para que a cpu execute corretamente os processos - variaveis que pertencem a CPU 
+			registrador de base de memoria - informa qem que parte da memria os dados do processo estão
+			Info E/S - dispositivos em uso e arquivos abertos por exemplo
+	Toda troca de processo a ser executada é precedida de uma atualização do PCB, ocorre um salvamento do PCB do processo que foi interrompido e um novo PCB entra em execução
+2.3.1 SJF preemptivo
+	caso especial do algoritmo scheduling por prioridade
+	Dois problemas são como determinar o tamanho de um processo e como processos maiores podem nunca ser executados
+	é a plicavel a processos em lote, onde o usuario pode informar o tamanho aproximado do processo
+2.4 comunicação e sincronização de processos
+	a comunicação entre processos pode ser exemplificada por um navegador web que não acessa diretamente o hardware mas faz uso da placa de rede - e também pode se dar por meio do uso de API e chamadas de sistema
+	pipeline - caracteriza a comunicação entre processos na qual a saida de um é a entrada de outro e a sincronização é a forma de um processo informar a outro que  há dados disponíveis
+	A sincronização deve auxiliar na solução do uso compartilhado de recursos
+	para estabelecer comunicação entre processos
+		utilizar api ou chamada de sistema
+			cenario previsivel com a api definindo os mecanismos envolvidos na comunicação
+		memoria compartilhada
+			dois ou mais aplicativos terão acesso a mesma região de memoria e sera necessário estabelecer de que forma irão compartilha-la - problematica de controle de concorrencia e região critica
+		encadeamento de E/S - pipeline
+			digamos X, inicia um processo Y, este produz dados e os disponibiliza através, por exemplo, da saída padrão (normalmente é o vídeo)
+2.4.1 Programação concorrente
+	Para superar este tipo de problema uma estratégia bastante utilizada é o estabelecimento de regiões críticas e o uso de semáforos para controlar quem tem acesso à região, definindo-se assim apenas um por vez.
+2.4.2 problemas de compartilhamento de recursos
+	semáforos são variaveis de controle de acesso a região critica
+	um processo pode travar essa variavel mudando seu valor porem esta solução não é correta
+	solução de espera ocupada - que usa tempo do processador
+	solução de espera não ocupara - dormir - quando uma IRQ ocorrer o processo será acordado
+
+*** unidade 3 ***
+inspire-se - Prof Sandra de lima asturi 
+
+video aula - Prof alexandra soares
+	Threads semaforos e deadlocs
+	Programação concorrente
+	xomunicação entre threads é mais simples do que em processos
+	semaforo é um mecanismo de sincronização sem espera ativa - variavel especial protegida -controle de acesso a recursos compartilhados
+		inicialiação
+		wait - decrementa o valor do semaforo o valor for 0
+		signal - incrementa se o valor for 0
+		utilização para exclusão mutua
+	mutex - sessão critica - principio de exclusão mutua
+	hierarquia de memoria
+		cache
+		ram
+		hd
+	memoria lógica é visivel para programas
+	memoria fisica composta por circuitos integrados MMU
+	modelo de memoria de processos
+	Alocação de memoria
+		estatica ou dinamica
+	Fragmentação
+		interna ou externa
+	Reciclagem de memoria
+
+	Paginação em frames
+	mapa de bits
+		simplicidade
+		lento
+	listas encadeadas
+
+	memoria virtual possibilita o uso de mais memoria que o computador possui
+**** unidade 4 ****
+Inspire-se
+
+video aula : alexandra soares
+	cache
+		copia de dados e instruções mais utilizados
+Leitura: Prof Osvaldo de Souza
+4.1 Gerenciamento de memoria cache
+	historia
+		fornece um aplicativo a partir do teclado
+		usar um gravador de fita k7
+		usar um disco flexivel
+	memoria volátil
+		registradores - acesso em 1ns
+		cache nivel 1 e 2 - acesso em 2ns
+		RAM - acesso em 10ns
+	memoria persistente
+		HD - acesso em 10ms
+		Pendrivre
+4.1.1 conceitos e funcionalidades
+	quando a cpu for executar a proxima instrução do processo, ela busca essa instrução da memoria cache
+4.1.2 segmentação
+	abstração da memoria virtual, dividida em frações e frnecidas aos processos
+4.2.1 interrupção, acesso direto a memoria
+mecanismo solido para que quando um dispositivo E/S precise de atenção ele possa lançar mão desse recurso
+	DM - acesso direto a memoria - canal exclusivopara transferencia de dados
+4.2.2 Deadlock
+	Tecnica de Avestruz - não fazer nada para lidar
+	Tecnica de preempção - so suspende o privilegio de acesso a um determinado recurso
+4.3 gernciamento de arquivo
+	sistema de arquivo - protocolo que governa a forma como os dados arquivos e pastas são criados acessados e mantigos no HD
+		suportam criação de diretorios
+		de arquivos
+		exclusão deles
+		renomação
+		funcionalidades de r w x
+4.3.1 tipos, sistemas e acesso
+	Alguns sistemas de arquivos suportam a recuperação de arquivos e/ou pastas apagadas (o que nem sempre é possível), outros não suportam (mesmo que parcialmente) esse tipo de operação e há aqueles que suportam a encriptação dos dados, de forma que apenas quem possuir chaves e senhas possa ter acesso aos dados.
+	diferentes tipos de arquivos podem ter ou não compatibilidade com diferentes SOs isto pode ser um problema aos usuarios podendo impossibilitar o acesso a dados
+4.3.2 estrutura de diretorio
+	conceito que permite agrupar um conjunto de arquivos e outros diretórios sob um mesmo nome com o fim de uma melhor organização
+	para estruturas de alocação direta pode ser utilizada uma referencia ao disco inteiro
+	para estruturas encadeadas um numero que inique uma determinada posição do diretorio em disco deve ser indicado
+	A tabela de alocação contem os dados que precisam ser armazenados em um ponto do disco para que exista uma conveção sobre como utiliza-los - FAT file allocation table
+4.4.1 ambiente, controle de acesso aos reecursos
+	virtualização pode ser usada para executar aplicativos que rodam em sistemas diferentes
+	a maquina hospedeira torna-se mais distante do usuário
+	dentro de um servidor com uma maquina virtual, caso ocorra alguma falha de segurança, apenas a maquina virtual seria invadida
+	a critografia complexa também pode ser e deve ser utilizada para a segurança dos dados
+4.4.2 Noção básica de criptografia
+	transformação de dados em outros de forma controlada e reversível
+	a reversão somente poderá ocorrer quando o usuário possuuir o algoritmo e a chave de criptografia
+	a criptografia pode ser
+		simetrica
+			existe apenas uma chave de decriptação
+		assimetrica
+			requer duas chaves - uma pública e outra secreta

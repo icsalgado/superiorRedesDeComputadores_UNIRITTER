@@ -1,0 +1,343 @@
+#### GRA0244 Banco de dados
+
+########	Unidade 1
+
+********	Inspire-se
+Profissional: Guilherme Henrique - Analista de Sistemas
+-Banco de dados é um sistema para guardar dados (números, nomes, planilhas, etc)
+-Sem BDs não é possível fazer uma busca
+
+********	Vídeo Aula
+Professor: Luiz Rodrigo - Mestre em Eng. de Computação
+
+Introdução
+
+Informação - Conjunto de dados que juntos fazem sentido
+BDs podem ser Manuais ou Informátizados
+
+Segundo Heuser BD é um conjunto de dados integradros que tem por objetivo atender uma comunidade de usuários
+
+História
+
+Anos 1960 - armazenamento para grandes corporações (mainframes)
+	Modelos hierarquicos
+	Problemas	Redundancia
+			Consulta
+			Pouca flexibilidade em transferências
+Anos 1970 - banco de dados relacionais lentos -> a indexação deixa mais rápido
+	Surge a interface com SQL para consultas mais fáceis
+Anos 1980 - bancos de dados orientados a objeto
+	popularidado de computadores
+	o relacional sai a frente por que a utilização do BD-OO é muito especializado
+	BD monoúsuário - consultas individuais 
+	BD multiusuarios - multiplas consultas
+	
+SGBD - bd - coleção coerente de dados armazenados logicamente
+	sg - sistema de software de proposito geral de definição, manipulação, construção e compartilhamento do BD entre vários usuários e aplicações
+	
+Níveis de abstração 
+	OBJ - Prever visão abstrata e dados
+	1. Nível físico ou interno
+	Como os dados estão armazenados mais próximos do nível físico - Tamanho dos campos - indices - como são representados - sequencia física - etc
+	2. Nível conceitual ou lógico
+	Quais dados estão armazenados e relacionamento entre eles
+	3. Nível de visão ou externo
+	Lógica do usuário
+	Cada usuário vê aquilo que lhe eé permitido
+	Simplifica a interração com o sistema
+	
+Usuários dos BDs
+	Navegante
+		interage com o BD por uma aplicação
+	Programadores da aplicação
+		linguagens especificas como Java, Pascal, C#, etc.
+	Usuários sofisticados
+		Programadores SQL e DML
+	Usuários especializados
+		Escrevem as aplicações - sistemas de base de conhecimento - dados complexos
+	DBA
+		administrador - controle sobre os dados e recursos - softwares que tem acesso ao BD
+		RESPONSABILIDADE 
+			Autoriza o acesso ao BD e seus dados
+			Coordenar e monitorar o uso dos BDs
+			Administrar a aquisição de recursos de software e hardware conforme necessidade
+			Autorizar o acesso ao BD
+			Segurança
+			Tempo de uso de SGBD
+			
+Modelo de dados
+	Coleção de ferramentas conceituais para descrição de dados, relacionamento entre dados, semantica e restrições de dados (Korth 2006)
+	Construir um MD 
+		-coletar e documenta e documentar informações do ambiente estudado
+		-representar as informações de forma clara e objetiva
+		-escopo claro
+		-entedimento do ambiente com refinamento do modelo
+		
+	DER - Diagrama entidade relacionamento
+		No modelo físico a linguagem não pe padronizada
+		-Entidade (representado por um retângulo)
+			concretas ou abstrata { conjunto de objetos ou elementos que apresentam caracteristicas comuns
+		-Relacionamento (representado por um losango)
+			verbo para um vínculo, pode envolver mais entidades (Recursivo 1 entidade - Binário 2 entidades - Ternário 3 entidades)
+		-Cardinalidade
+			Máxima 1 ou N - Não é necessário distinguir entre diferentes cardinalidades máximas maior que 1
+			Mínima 0,n 1,1 - Associação é obrigatória
+		Atributo
+			Propriedades para passar as entidades de dados para informações
+		Especialização
+			Outra sub-entidade com atributos
+			
+	cliente -> cpf
+		-> cnpj
+	T (total) P (parcial)
+
+********	Leitura
+	Importância dos Sistemas de informação e dados na sociedade
+	A sociedade está imersa em dados em cenários como redes sociais, bancos, viagens e mercados por exemplo.
+	
+	Sistemas de informação
+		Pode ser definido como um conjunto de componentes inter-relacionados que coletam, processam, armazenam, e distribuem informações destinados a apoiar a tomada de decisão a coordenação e controle de uma organização
+	Dados e informação e conhecimentos
+		dado - registro mais simples, bruto, sem processamento
+	Informação 
+		combinação de dados
+	Conhecimento
+		contextualiza a informação
+			Análise crítica
+			Correlação de fatos
+			
+O conhecimento tem valor mais alto por estar relacionado a tomada de decisão estratégicas para os negócios. Por sua vez é baseado em informações resultantes do processamento de dados
+	Pirâmide topo - conhecimento -> direção
+			- manipulação da informação -> Nível tático
+			- Geração de dados -> Nível operacional
+
+Arqurquitetura e funcionamento de um Sistema de informação
+Aparato tecnológico
+	Conjunto de equipamentos e softwares
+Os dados em um BD estão organizados e estruturados conforme um modelo de dados,como exemplo o modelo Relacional
+Arquiteturas do tipo cliente-servidor são as mais comuns
+
+SGBDs
+	Coleção de programs que permite aos usuários criar e manter BDs. Sistemas de software de uso geral que facilitam o processo de definição, contrução, manipulação e compartilhamento de BDs entre usuários e aplicativo - Exemplo SQLServer, oracle, mysql
+DB
+	Coleção de dados relacionados
+		BD > tabelas > atributos > entidades
+		
+	Modelo em cascata para construção de BDs
+	1. análise de requisitos
+	2. projeto de software
+	3. código ou implementação
+	4. teste
+	5. instalação
+	6. manutenção 
+	
+DBA -> Montagem da estrutura de BD
+USER -> DEV -> Usuário final -> Software
+SQL	DDL (create, drop, alter)
+	DML (insert, update, delete, select)
+	DCL (create user, grant)
+
+########	Unidade 2
+
+********	Inspire-se
+Victor Pedroso - analista de software
+	Modelagem de um projeto - visualização das informações 
+		-análise de requisitos
+		-modelo conceitual
+
+********	Vídeo Aula
+Prof Luiz Rodrigo
+
+Modelo relacional
+	tabela ou relação
+		linhas ou tuplas
+			atributos ou campos
+
+Restrições de integridade
+	integridade de domínio - valores admitidos
+	integridade e vazio - pode ou não ser vazio
+	integridade referencial - chaves estrangeiras são referenciadas na chave primaria da origem
+
+********	Leitura
+
+INTRODUÇÃO À MODELAGEM DE DADOS
+É o inicio da implementação de um BD, com base nos requisitos é identificado o modo de estruturar entidades, atributos ou campos e relações.
+
+O MR (modelo relacional) é o equivalente a uma planta ou diagrama - Tem objetivo de modelar o banco, com visão preliminar do que será construido, para Booch (2012) as vantagens são:
+	Melhor compreensão do que está sendo concebido
+	Comunicação entre partes interessadas
+	Especificação para construção
+	Automatização do processo
+	
+MODELO CONCEITUAL, LÓGICO E FÍSICO
+Os modelos são formas de abstração ou detalhe para as fases de implementação de um BD até o armazenamento em disco no SGBD. Esse caminho origina a distinção entre os moedelos.
+Conforme Amadeu (2019):
+	Modelo conceitual
+	informações no contexto do negócio com maior foco nos processos, é o mais próximo do mundo real, não existe preocupação com os tipos de dados
+	Modelo lógico
+	preocupação com a tecnologia a ser utilizada, tipo de banco (hierarquico, em rede, BDOO), nomes de entidades e dos campos em uma linguagem mais próxima da programação
+	Modelo físico
+	questões do armazenamento físico dos dados, como os dados serão implementados em uma solução computacional, tipos de dados e restrições de integridades
+	
+MODELAGEM DE ENTIDADE E RELACIONAMENTO
+O MER é popularmente aplicado para para o nível lógico e físico
+Proposto por Peter Chen 1970' visa apresentar uma perspectiva do mundo real como coonstituído de um conjunto de objetos, entidades que se relacionam entre sí.
+Conforme PUGA (2013) uma entidade representa uma categoria de elementos relevantes para um negócio. Formada por atributos que apresentam alguma caracteristica ou inormação de entidade. Um relacionamento indica uma relação entre duas entidades
+	Diagrama de entidade e relacionamento
+	A modelagem é o ato de refletir sobre como representar e o diagrama pe o quesquema ou desenho que especifica o que está sendo modelado. O DER é uma notação do que será representado.
+	Atributos e cardinalidade
+	Atributos identificadores são aqueles que podem identificar exclusivamente a entidade - são conhecidos como chave primária
+	Cardinalidade indica quantos objetos de uma entidade podem se relacionar com objetos de outra entidade:
+		(0,n) nenhum ou muitas
+		(1,1) um e somente um
+		(1,n) ao menos ou muitos
+		
+		1:1 um para um - um um objeto se realiciona apenas com um de outra entidade
+		n:n
+		1:n
+	Entidades fortes e fracas
+	A generalização ocorre quando uma entidade engloba caracteristicas de outras entidades subjacentes, a entidade mais alta generaliza os conceitos subjacentes.
+	Uma entidade fraca é uma entidade cuja existência depende da existência de outra entidade, que no caso seria a forte, como por exemplo um dependente de um funcionário
+
+MODELAGEM RELACIONAL
+Introduzido inicialmente por Ted Codd da IBM Research 1970'
+	Relações ou tabelas
+		Os termos são equivalentes
+	Atributos, tipos, obrigatoriedade e chaves primárias
+		Cada atributo precisa ser associado a um tipo de dados que é associado ao conceito de domínio 
+		Algumas restrições podem ser associadas a um atributo como por exemplo a obrigatoriedade
+		O atributo que identifica a tupla é considerada chave promária
+		Outros atributos podem ser considerados chaves candidatas
+		Chave composta pode ter mais de um atributo
+	Relacionamentos e chaves estrangeiras
+		A chave estrangeira é uma chave primária importada de outra tabela
+	Normalização
+	Redução de redundâncias
+	Segundo Elmasri trata a normalização da seguinte maneira
+		Um processo de analisar os esquemas de relação de dados com base em suas dependencias funcionais e chaves primarias para conseguir as propriedades desejadas de minimização de redundância e minimização de anomalias de inserção, exclusão e atualização. Processo de filtragem ou purificação que faz com que o modelo tenha qualidade cada vez melhor
+	A dependencia diz respeiro entre dois atributos, na normalização algumas dessas dependências serão checadas ou testadas de forma que se encontre uma melhor forma de separar as informações
+		Primeira forma normal 1FN
+		Os atributos não podem, para uma mesma entidade, ter valores diferentes ou atributos possuindo mais de um valor, ou seja, na mesma relação atributos multivalorados
+		Deve-se identificar a chave primaria e o atributo multivalorado e separá-los em uma outra relação ou tabela e utilizar a chave primaria da entidade commo chave estrangeira na nova relação
+		Segunda forma normal 2FN
+		Os atributos que não compõem a chave devem depender unicamente da chave primária. Depende da 1FN
+		Identificar a chave prmária, os atributos dependentes e os atributos não dependentes - separam-se os atributos não dependentes em uma outra relação e faz-se o relacionamento através da chave estrangeira
+		Terceira forma normal 3FN
+		é preciso eliminar os campos que podem ser obtidos a partir de um cálculo ou de uma lógica aplicada a outro campo
+	Normalização, desnormalização e performance
+	A normalização permite que os dados fiquem melhor estruturados para conseguir melhor integridade e qualidade da informação
+	A normalização tem impacto na performance, podendo consumir maior processamento.
+	A desnormalização deve ter a regra de negócio bem especificadas a fim de que os dados sejam mantidos com uma boa consistência
+	
+
+########	Unidade 3
+
+********	Inspire-se
+DBA -> crar/backup/migração/usuários/permissões/servidor/hospedagem 
+x 
+DEV -> consome o BD
+
+********	Vídeo Aula
+Prof Luiz Rodrigo
+
+Engenharia Reversa
+	Modelo Relacional -> MER
+	-Para bancos sem documentação
+	
+	Benefícios { -facilita a manutenção -facilita a anlise -facilita o entendimento }
+	
+	Etapas { -definição de destrutura DER -definição dos relacionamento -definição dos atributos -determinação do id das identidades -modelo conceitual }
+	
+	Observar chave primária { -chave com mais de um FK -> gerada por um relacionamento n:n -PK forma uma FK, entidade que faz parte de uma especialização -PK sem multiplos FK }
+	
+	Normalização { Objetivo -impedir redundância -evitar resultados indesejados }
+		1FN (primeira forma normal - não contem tabelas aninhadas) => 2FN - elimina redundâncias de dados => 3FN Colunas não chave dependem da PK
+
+********	Leitura
+Prof ME Otacílio José Pereira
+
+SQL e Álgebra Relacional
+	SQL linguagem própria para o trato de dados, dividida em grupos/subconjuntos de comandos (ex. DDL, DML). DDL Definição de dados como criação, alteração e exclusão de tabelas - DML Manipulação de dados como operar com os registros das tabelas ex. recuperar, inserir, alterar ou excluir dados
+	
+	Álgebra relacional (Elmasri 2011) Relação é o bloco básico na qual este tipo de banco de dados funciona
+	(Puga 2013) Éuma linguagem formal de alto nível para expressar as operações sbre tabelas, suas linhas e colunas Operações de conjuntos(união, interseção, produto cartesiano e diferença de conjuntos) Operações de prjeção(seleção, junção, divisão)
+	É a fundamentação que permite entender como a linguagem SQL foi concebida, é um conceito matemático
+	
+	Operação de SELEÇÂO para filtrar linhas (σ - sigma)
+	Visa filtrar as linhas da tabela conforme uma condição ex: σ idade<40 (tbCliente) sintaxe-> σ <condição> (<Relação>)
+	Condicional E ^
+	Condicional OU ˇ 
+	σ ((idade > 40) ^ (Cidade= ‘Salvador’ )) (CLIENTE)
+	
+	Operação de PROJEÇÂO para escolher colunas (π -pí)
+	Visa escolher colunas de uma determinada relação ou tabela ex: π NOME, CIDADE (CLIENTE) sintaxe-> π <lista de atributos> (<Relação>)
+	
+DDL
+Criação de tabelas - CREATE TABLE (nomeDoCampo tipoDoCampo)
+Alteração e exclusão de tabelas - ALTER TABLE / DROP TABLE
+DML
+SELECT ... FROM ... WHERE
+INSERT
+UPDATE
+DELETE
+
+Operadores lógicos AND OR e NOT
+
+########	Unidade 4
+
+********	Inspire-se
+Victor Pedroso ADS
+Armazenador de dados
+	Recebe a carga do front e back end
+	
+********	Vídeo aula
+Prof. Luiz Rodrigo
+Algebra relacional é utilizada para fazer calculos
+	Tabela > relação
+	Coluna > atributo
+	Linha > tupla
+	Tipo de dados > domínio
+	
+Linguagens formais
+	Algebra relacional
+	Calculo relacional
+SQL
+	IBM 70'
+	DDL - definição dos dados
+	DML - baseada na algebra e no calculo relacional 
+	DCL - 
+		
+********	Leitura
+JUNÇÕES
+	select * from [tabela1] inner join [tabela2] on [tabela1.coluna=tabela2.coluna]
+	Essa é a junção interna, os campos usados precisam ter valores nas duas tabelas.
+	
+	select * from [tabela1] left outer join [tabela2] on [tabela1.coluna=tabela2.coluna]
+	Os registros da tabela da esquerda que não possuirem correspondentes aparecem mesmo assim
+	
+	select * from [tabela1] right outer join [tabela2] on [tabela1.coluna=tabela2.coluna]
+	Os registros da tabela da esquerda que não possuirem correspondentes aparecem mesmo assim
+	
+SUBCONSULTAS OU CONSULTAS ANINHADAS
+	select * from tbexemplo where codprincipal no in (select codprincipal from tbexemplo2)
+	
+ORDENAÇÃO
+	select nome from tbcliente order by nome
+		pode usar as clausulas ASC e DESC para ascendente e decrescente
+		
+FUNÇÕES DE AGREGAÇÃO E AGRUPAMENTO DE LINHAS
+	Funções de agragação
+	Permitem calcular um total (sum), contar(count), avaliar o maior(max), avaliar o menor(min), calculo de média(avg)
+	Agrupamentos
+	Um conjunto de linhas são combinadas com base em um mesmo grupo de valores
+	Filtros em agrupamentos HAVING
+	select nome from tbcliente inner join tbcompra on tbcliente.codcliente=tbcompra.codcliente group by tbcliente.nome havin sum(tbcompra.valor)>100
+	Também pode ser usar os operadores lógicaos AND e OR
+	
+VIEWS
+	Elmasri(2011)
+	view é uma única tabela que é derivada de outras tabelas, é considerada uma tabela virtual, portanto não apresenta dados em si
+	
+	create view compras as select nome, cidade from tbcliente inner join tbcidade
+	
+	O objetivo é facilitar consultas recorrentes

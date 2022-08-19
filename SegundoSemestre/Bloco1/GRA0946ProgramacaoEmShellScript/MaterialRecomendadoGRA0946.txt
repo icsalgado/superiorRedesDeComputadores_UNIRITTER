@@ -1,0 +1,19 @@
+https://pt.windoq.com/diferencas-entre-o-kernel-do-windows-e-o-linux/ - diferenças linux windows
+
+
+Material Recomendado
+https://www.youtube.com/embed/lFLzAFnTevM
+
+https://www.ufsm.br/laboratorios/lince/2021/05/18/11-melhores-distribuicoes-linux-para-2021/
+
+https://www.youtube.com/embed/JEhVB4VHsTI
+
+https://www.linuxpro.com.br/dl/guia_500_comandos_Linux.pdf
+
+https://www.youtube.com/embed/zjS1wfpKEmQ
+
+https://mange.ifrn.edu.br/shell-script-wikipedia/17-operadores-aritmeticos.html
+
+https://www.youtube.com/embed/VUyLS_gPGO4
+
+http://www.dsc.ufcg.edu.br/~jacques/cursos/progsh/progshell.htm

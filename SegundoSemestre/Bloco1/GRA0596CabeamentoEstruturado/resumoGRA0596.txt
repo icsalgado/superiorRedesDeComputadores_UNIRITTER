@@ -1,0 +1,552 @@
+Inspire-se
+Cabeamento Estruturado
+Entrevista com Dornelles Vissotto Junior - Eng. Prod. Md. Dr. 
+
+ITU - união das telecomunicações internacional
+	ANSI - certificação e padronização de comunicações
+		ABNT - normas nacionais
+		
+Houve a necessidade de padronização para as novas tecnologias que surgem no mercado
+As leis nacionais vem evoluindo seguindo os padrões iternacionais (ABNT).
+
+Vantagem - velocidade, estabilidade e segurança
+Desvantagem: Alto custo para instalação e limitação de usuarios
+
+__________________________________________________
+Unidade 1 - As Redes de Computadores
+
+Prof Rafael Murakami - Sistemas da informação
+
+Evolução das redes:
+	Década 1970 - inicio do pensamento computacional
+	IBM - System Network Archtect
+	Modelo OSI - 1979/80 pela ISO
+		Digital/Intel/Xerox > Ethernet adotado pela ISO e I3E
+	IBM cria Token Wing - Forma de comunicação semelhante a uma troca de bastão entre computadores - utilizando cabo do tipo ASTP e posteriormente o cabo UTP, sem blindagem.
+	1985 - EIA/TIA - padronização e normas para o cabeamento de redes - Cabos de par trançado com categorias de 1 a 7 como conector RJ45
+	Cabos de fibra ótica são as mais recentes tecnologias onde o monomodo são para logas distancias e multimodo para curta distancias.
+	Na topologia de redes temos, token ring, estrela, barramento, anel entre outras.
+Modelo OSI:
+	Como vai funcionar a comunicação entre computadores em uma rede.
+	Dividido em 7 camadas
+		1 - física - Toda parte palpavel
+		2 - Enlace - como vão ser transmitidos os dados da rede
+		3 - Rede - como vão ser utilizados os protocolos
+		4 - Transporte - meio de transmissão dos dados
+		5 - Protocolo
+		6 - Apresentação
+		7 - Aplicação - software utilizado para leitura de dados
+Modelo TCP/IP:
+	Criado pelo Departamento de defesa dos EUA e padronizado em 1981
+	Dividido em camadas
+		1 - Aplicação - representação codificação e controle de dialogos (asmtp, nfs, ftp)
+		2 - Transpote - fim a fim (tcp, idp)
+		3 - Internet - (ip, icmp, arp, rarp)
+		4 - Rede - entrelaçamento (fddi)
+Topolgia Física:
+	Conexões multiponto ou ponto a ponto 
+		Utilizado cabo coaxial(ja em desuso), Fibra optica 
+		(Monomodo/multimodo) e Cabo de par trançado
+		Redes sem fio. níveis a, b, ou g.
+		
+	Topologia Anel
+	Topologia Estrela
+	Topologia Barramento
+	
+	Redes LAN (local), redes MAN (metropolitana) e WAN (Mundial)
+	
+	Rede SAN (Rede interna entre servidores)
+	
+	Rede PAN (rede pessoal)
+Padrão internacional de organização:
+	ISO > 7498 > Padrões de interconexão de sistemas heterogeneos (sistemas abertos - Redes publicas por exemplo)
+	ITU > Verificação de camadas
+	
+Leitura Prof. Silvana Carla Soares Correa
+1.1.1 Elementos da comunicação
+	Emissor
+	Meio de comunicação - Fíicos e não físicos
+	
+	Receptor - HOSTS finais com função de clientes, executam a função de rquisição de um serviço a rede (Ex. abrir uma página no browse, enviar arquivo para impressão, requisitar configurações de rede para que a placa seja configurada)/ HOSTS finais com função de servidor, executam a função de resposta do serviço solicitado pelo cliente na rede (Ex. enviar a pagina requisitada, enviar para impressra adequada o arquivo, enviar as configurações de rede que o cliente solitou acesso)
+1.1.2 Classificação de rede quanto ao escopo
+	Classificação conforme a dimensão geografica
+		LAN - Local area network
+			O gestor da rede tem total controle a nivel de hardware e software presentes na rede, possibilitando maior taxa de transmissão
+		MAN - Metropolitan area network
+			Por dependenrem de meio físicos que podem interferir no solo ou em postes precisa seguir as leis e regras regionais
+		WAN - Wide area network
+			O gestor responsável vem a ser grandes empresas 
+		
+		Recomendação! https://www.youtube.com/watch?v=8k07ouKKBH8
+1.2.1 O modelo de referência em redes
+	O objetivo é que todos que fazem parte de um rede, independentemente do fabricante, possam estabelecer uma conexão adequada (Modelo RM-OSY Reference model - open systems interconnections. O modelo TCP/IP é a adaptação para os padrões de comunicação para as redes do tipo internet.
+	Menor complexidade na comunicação por ter problemas menores em cada camada e a facilidade em incluir novos serviços, funções e seus protocolos em qualquer camada aderente à função, sem a necessidade de alterar as outras camadas.
+		Recomendações!
+		Autor Jim Kurose - Redes de Computadores e a internet
+1.2.2 Modelo OSI
+	Dividido em 7 camadas
+		Aplicação
+			Tudo que ocorre nesas camada é nomeado mensagem. É a camada mais proxima do usuário e recebe requisições e a envia para a proxima camada ou recebe e mostra para o usuário
+		Apresentação
+			Tem por função adequar a sintaxe e a semântica da menságem que é enviada ou recebida, que diz respeito a forma de compressão da informação e o protocolo de criptografia a ser aplicado. As caracteristicas desta camada também são denominadas menságens
+		Seessão
+			Tem objetivo de sincronizar a troca de dados entre usuários. Também denominada de menságens
+		Transporte
+			Divide  a mensagem em unidades menores chamadas segmentos. No emissor a mensagem chega e se divide e é enviada segmento a segmento para a proxima camada, no receptor ela recebe cada segmento e executa sua união
+		Rede
+			É adicionado seu endereço lógico para a rede que pertence. Cada pedaço da mensagem recebe um endereço lógico do equiamento que está enviando, passando a se chamar datagrama
+		Enlace
+			Trata os erros da menságem  e controle de fluxo e de acesso às conexões dos dispositivos. O tipo de informação que executa esta camada é chamado de quadro
+		Física
+			Não possui protocolos associados, recebe o quadro da camada de enlace e o transforma em uma sequencia binária
+			
+			Recomendação!
+			Projetos e imlementação de redes: fundamentos, soluções, arquitetura e planejamento  -Lindeberg Barros de souza 
+1.2.3 Modelo TCP/IP
+	O objetivo é o mesmo do modelo OSI
+	Possu menos camadas, 5 ao todo
+		Aplicação
+			adicionadas as funções das camadas de apresentação e sessão
+		Transporte
+			Permanece inalterada
+		Rede
+			Permanece inalterada
+		Enlace
+			Permanece inalterada
+		Física
+			Permanece inalterada
+			
+1.3.1 Os tipos de topologias físicas em redes de computadores
+	Para a documentação de rede deve-se identificar a forma como os dipositivos estão interligados em si.
+	Topologias básicas
+		Estrela
+		Anel
+		Barramento
+	Novas topologias
+		Híbrida
+		Malha completa
+		Malha parcial
+		Árvore
+1.3.2 Topolgia Estrela
+	Se destaca com o uso de um equipamento central
+	Vantagens:
+		Possibilidade de expansão
+		Melhor gerência e administração
+		Facilidade de instalação e remoção de equipamentos
+	Desvantagens:
+		Caso o equipamento central apresente problemas toda a rede será afetada
+1.3.3 Demais topologias
+	A topologia do tipo anél tem como caracteristica formar um circuito fechado, a mensagem trafega por cada ponto até chegar ao receptor
+	A topologia de barramento dispõe os dispositivos em forma de linha, sem a conexão direta entra eles, possui simplicidade na instalação
+	O uso da topologia de barramento e estrela dá origem a topologia Híbrida, atravéz de um concentrador
+	Para solucionar problemas na topologia do tipo anel que necessita de novas conexões quando existe uma falha, adotou-se a Topologia do tipo grafo parcial (malha parcial - quando os dipositivos tem ligações parciais entre seus pares) ou quando todos os pares estão ligados entre si, a denominaão é grafo total ou malha completa
+	E na topologia estrela, com a ligação de mais concentradores, da-se origem a topologia do tipo arvore
+1.4.1 A importancia dos padrões para redes de computadores
+	Os padrões que tem como uso uma convenção de mercado são denominados padrões de facto (por convenção)
+	Os padrões de jure(por direito) são os que tiveram sua implantação com base em uma decisão atrav´s de órgãos oficiais
+1.4.2 As organizações mais comuns
+	ISO - International Organization for Standartization (atua de forma voluntária
+	IEEE - Institute of Electrical ans Eletronics Engineers
+	IAB - Internet Architecture Board
+		IETF - internet Engeneering Talk Force
+		IRTF - Internet Reserarch Rask Force
+	EIA/TIA - Eletronic Indstries Association / Telecommunications Industry Association (trazem a responsabilidade de fornecer padrões para os meios físicos de transmissão)
+	ABNT - Associação Brasileira de Normas Técnicas
+
+______________________________________________
+unidade 2 - Rede Cabeada
+
+Meios físicos
+	Serve para trsnsformar informação em bits para transporte
+	Os cabos de par trançado são dividios em categorias onde a blindagem é o elemento principal
+	Os cabos de fibra optica podem ser de dois tipos onde a distância é o elemento principal
+	
+Camada de enlace
+	Serve para inserir o dado dentro da rede por meio de equipamentos. com drivers que fazem o endereçamento lógico 
+
+Rede sem fio
+	Equipamentos mais antigos podem não se adaptar a redes com aparelhos mais novos. 
+
+Dispositivos intermediarios de redes de computadores
+	Repetidor de sinal
+	hub 
+	switch
+	roteador
+
+Servidores
+	Fornecimento de dados, informações etc.
+	servidor de impressão
+	servidor de arquivos
+	servidor de rede
+	servidor de banco de dados
+	servidor de e-mail
+	servidor de dns
+	servidor ftp
+	servidor de web
+	servidor proxy
+
+Leitura:
+2.1.1 A camada física
+	a representação da mensagem em bits. No emissor as informações são provenientes da camada superior e transformadas em bits, no receptor os bits são revcebidos do meio de transmissão e encaminhados para a camada superior
+	Para acesso ao meio de transmissão sçao observados os seguintes itens:
+		Codificação - como os bit setão representados pelos sinais do meio de transmissão no emissor
+		Decodificação - comos os bits serão entendidos na recepção dos sinais do meio de transmissão no receptor
+		Definição dos sinais para controle do fluxo entre emissor e receptor
+		Prpriedades físicas e elétricas do meio físico de transmissão
+		Propriedades mecânicas dos conctores do emissor e no receptor 
+	Para o meio sem fio as informações são encapsuladas em ondas de rádio e no meio físico podem ser por pulsos elétrios ou em feixes de luz
+2.1.2 O cabo par-trançado
+	Adoção de material mais flexivel em sua constituição física é o ponto forte dete tipo de cabo além de ser a melhor forma de uso da topologia estrela
+	Caracateristicas: 
+		condutor de cobre entrelaçado em pares
+		isolante em cada condutor
+		Capa externa geralmente de pvc
+	Vantagens:
+		Boa aceitação nas topologias estrela
+		flexibilidade de manuseio
+		Baixo custo de instalação e manutenção
+	Desvantagens:
+		Sensibilidade a ruidos elétricos
+		Limitação de distância
+		Limitação de largura de banda
+	Classificações
+		quanto a quantidade de pares
+		quanto ao uso ou não de blindagem
+		quanto a categoria
+	O motivo do cabo ser de par trançado é para evitar que quando em transmissão gere um campo eletromagnetico
+	A blindagem serve para proteção contra interferencias eletromagneticas e podem ser de malha ou folha de aluminio. O esquema X/ZTP refere-se a X como tipo de blindagem total e Z tipo de blindagem por par. O X pode ser sustituido por U para quando não existe blindagem, F quando a blindagem for com folha de alumino e S quando for malha de aluminio e podem ser:
+		U-UTP
+		F/UTP
+		U/FTP
+		S/UTP
+		U/STP	
+	A categoria refere-se a taxa maxima de transmissão do cabo e vai de cat1 até cat7a
+		cat1 taxa 2,5Mbps banda 2MHz
+		cat2 taxa 4Mbps banda 4MHZ
+		cat3 taxa 10 banda 16
+		cat4 16	20
+		cat5 100 100
+		cat5e 1Gbps 100
+		cat6 1Gbps 100
+		cat7 10Gbps 600
+		cat7a 10Gbps 1GHz
+	A categoria é normatizada pela EIA/TIA em ambito norte americano, na Europa as cats são substituidas por classes alfabéticas
+		A
+		B
+		C para cat 3 e 4
+		D para cat 5 e 5e
+		E
+		EA para cat 6A
+		F para cat 7
+		FA para cat 7A
+	Recomendação de livro:
+		Cabeamento estruturado Desvendando cada passo: do projeto à instalação”, escrito por Paulo Sergio Marin (2010)
+2.1.3 O meio de transmissão óptico fibra optica
+	Veio para solucionar a falta de evolução dos pares trançados por conta da interferencia eletromagnetica
+	Recomendação de video
+	Reflexão especular e difusa	https://pt.khanacademy.org/science/physics/geometric-optics/reflection-refraction/v/specular-and-diffuse-reflection
+	O Segredo das Coisas – Como se fabrica a fibra óptica de vidro - https://youtu.be/up2cSYJohnc
+	Pesquisar sobre - Narinder Singh Kapany
+	Monomodo(SM) - Diametro entre 7 e 9 um isolante de 125um alcance na ordem de quilometros
+	Multimodo(MM) - diametro entre 50 a 62.5um isolante de 125um alcance de pouco mais de 2km
+	Essa classificação é quanto ao diametro do cabo, quanto a presença ou não de material viscoso semelhante a olho o cabo pode ser Loose ou Tight respectivamente e o objetivo é que as fibras sofram menos impacto
+	Quanto ao tipo de fonte de luz podem ser Laser (8 a 10um) maior potencia e distancia maio, Led (> 100um) distâncias menores e Vcsel(30 a 40um)
+2.2.1 A ação da camada de enlace
+	É nela que estão estabelecidas as conexões de rede
+	O driver da placa de rede tem papel fundamental, bem como os Sistemas operacionais para equipamentos de rede
+	Esta subdividida em duas camadas
+		LCC - Logical Link Control: wifi, bluetooth, wi-max, ethernet, token ring, PPP(point-to-pont protocol), HLDC(high level data link control)
+		MAC - Media Access Control - Endereço de hardware ou MAC
+2.2.2 - Método de acesso ao meio
+	A sintonia dos quadros no meio de transmissão de acordo com a tecnologia é feita atravez de tipo de acesso ao meio
+		Ethernet - CSMA/CD(carrier sense multiple access with collision detection) - acesso multiponto ao meio
+		WiFi(wireless fidelity) CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) - possui a prevenção de colisão
+2.3.1 Uma rede sem fio
+	Trafega em ondas eletromagneticas pelo ar
+	Na rede Wfi são usadas duas faixas de frequencia.
+	2.45GHz
+		13 canais com intervalo de 2Mhz em cada
+	5.5GHZ
+		24 canais com intervalo de 20MHz
+	Quanto a topologia são:
+	Infraestrutura
+		Onde exite um euipamento de rede que centraliza a comunicação chamado AP - Access Point
+	Ad-Hoc
+		Onde a não existe o AP e a comunicação das maquinas é entre si
+	A rede wifi é identificada como IEEE802.11
+	802.11 - 2.4GHz taxa 2Mbps
+	802.11b - 2.4GH taxa 11Mbps
+	802.11ª - 5GHx taxa 54Mbps
+	802.11g - 2.4Ghz taxa 54Mbps
+	802.11n - 2.4Ghz e 5Ghz taxa 600Mbps
+	802.11ac - 2.4Ghz e 5Ghz taxa 7Gbps
+	802.11ax - 2.4Ghz e 5Ghz taxa 10Gbps
+2.4 Dispositivos intermediários em redes de computadores
+	Switchs
+		amplifica o sinal como um repetidor
+		tem varias conexões como um hub
+		faz o controle com uso do mac como uma ponte
+		Está associado a camada 2
+		Podem ser de 24 ou 48 portas. Ainda é possivel obter 96 potas usando pilha (stack) interligando dois de 48
+		Além disso é possivel efetuar o cascateamento de até 3 equipamentos
+	Roteadores
+		Usado para acesso a internet
+		A ação de encaminhar os pacotes entre as redes particulares e as redes públicas é uma tarefa da camada 3 no modelo de referência
+___________________________________________________________
+Unidade 3 - Normas de Cabeamento estruturado
+
+
+Leitura
+3.1.1 A historia das normas em redes de computadores
+	Necessidades:
+		inclusão do serviço de dados a mesma estrutura de voz ja existente;
+		Aumento dos dispositivos finais;
+		Crescimento de fabricantes com soluções mais inovadoras;
+		Falta de interoperabilidade entre as infraestruturas;
+	Em 1988 surge primeiros sistemas de CE com interligação de voz vídeo e dados com xploração comercial
+	O termo cabeamento estruturado vem da sigla SCS - Structured Cabling System 
+	Pesquisar sobre José Mauricio Pinheiro
+3.1.2 A importancia das normas de cabeamento estruturado
+	Pilares do uso das normas em SCS
+		Padronização: Regras a serem seguidas, permite a organização no projeto manutenção ou expansão
+		Rede interna e de Campus: tem o limite de projeto com uso de regras. é uma LAN com ligação interna entre cada prédio, ligação externa entre predios, ligação da rede a serviços externos a empresa dentro do mesmo terreno particular
+		Independencia: tipo de informação que trafega pelo cabeamento, dependendo do tipo de serviço oferecido pelos computadores
+	Recomendação de leitura: Guia Completo de Cabeamento de Redes - José Mauricio ds Santos Pinheiro
+	O cabeamento estruturado pode ser aplicado em diferentes aplicações que podem coexistir com a rede de dados
+		Sistemas de telefonia e computação
+		Sistemas de som e imagem
+		Sistemas de segurança e vigilância
+		Sistemas de Energia
+		Sistemas de detecção de incêncios
+3.1.3 Topologia dos subsistemas em cabeamento estruturado
+	Dividir para conquistar (César, Filipe 2º da MAcedonia, Napoleão
+	Partes da divisão em subsistemas do cabeamento estruturado
+	Area de trbalho - Conectores e tomadas do usuario final
+	Cabeamento horizontal - cabos da area de trabalho até a primeira concatenação do cabeamento
+	Sala de telecomunicações - recebe o cabeamento horizontal e interliga ao restante do sistema  com Switches - tem função de liga/desliga de outros serviços para a area de trabalho
+	Cabeamento backbone - interliga todo o sistema aos servidores
+	Sala de equipamentos - maquinas de recursos de dados, telefonia, segurança, etc.
+	Infra de entrada - Recebe o cabeamento do meio externo
+3.2 Referências Normativas
+	Disponiveis desde 19991 (EIA/TIA568)
+	Vida útil de no minimo 10 anos
+3.2.1 Normas de uso geral
+	ANSI/TIA 568-C - Dividia em 4 partes numericas tem as definições básicas de aplicação
+		568-C.0 -Generic Telecommunications Cabling for Customer Premises - trata sobre a estrutura SCS regras e topologia adotadas para qualquer sistema de cabeamento estruturado
+		568-C.1 -Commertial Building Telecommunications Cabling Standards - Diz respeito aos padrões de projeto regras que dizem respeito a cada elemento da topologia, incluindo as especificações do cabeamento que pode ser utilizado
+		568-C.2 -Balanced Twisted-Pair Telecommunication Cabling and Components Standard - Par trançado
+		568-C.3 -Optical Fiber Cabling Components Standard - Cabo fibra optica
+			parâmetros de desempenho para cada tipo de cabo, além das características técnicas mínimas
+	Subsistema Área de trabalho é o ponto final onde se tem uma conexão fixa (outlet) disposta em um espelho onde se tem 2 conectores RJ45 fêmea para cada 10m² de área. O cabo entre esse conector e o dispositivo final é o Patch Cord entre 50cm e 5m onde o conector RJ45 segue os padrões A (brancoLaranja, laranja, bancoVerde, azul, brancoAzul, verde, brancoMarrom, Marrom) ou B (brancoVerde, verde, brancoLaranja, azul, brancoAzul, laranja, brancoMarrom, marrom). Nesse substitema também é possivel usar o cabo de fibra optica
+	Subsistema cabeamento horizontal utiliza fibra optica ou par trançado e vai da parte traseira do espelho na area de trabalho até a concatenação com a sala de telecomunicações. Topologia Estrela não podendo ter derivações. Maximo de 90m de distância
+	Subsistema Sala de telecomunicações ambiente fechado geralmente que abriga componentes de concentração do cabeamento horizontal e o encaminhamento da ligação para o cabeamento backbone. Switches (ativos) Patch Panel (passivos). A ligação de cabeamento horizontal ao backbone é neste subsistema e ocorre da seguinte forma:
+		Cada lance do CH é conectado na parte traseira do patch panel
+		Da parte da frente do patch panel sai um ptach cord até a frontal do switch
+		Uma das conexões do patch panel é disponivel para interligação do backbone
+		A ligação com o backbone ocorre no sentido inverso da parte frontal do switch sai o patch cord até a frontal do patch panel
+		Da parte traseira do patch panel faz-se a ligação do cabo backbone e encaminha até sua estrutura
+		Na fibra optica o patch panel pe o DIO Distribuidor interno optico e o tamanho maximo de patch cord é de 5m
+	Subsistema backbone cabos que interligam a sala de telecomnicações e sala de equipamentos de rack para rack. Topologia estrela ou arvore de no maximo dois niveis
+		Distancias maximas de 90m para par trançado, 2000m para fibra multimodo e 3000m para fibra monomodo
+	Subsistema sala de equipamentos é semelhante a sala de telecomunicações podendo ter servidores
+	Subsistema infraestrutura de entrada recebe o cabeamento externo, tem um rack patch panel e patch cords
+3.2.2 As normas de proteção do cabeamento
+	Norma ANSI/TIA569B Telecommunications Pathways and Spaces
+	Subsistema Area de Trabalho - O expelho deve estar bem fixo e a distância do piso deve ser de no mínimo 30cm e o patch cord não deve estar torcido
+	Subsistema Cabeamento Horizontal - Envolve eletrodutos metalicos ou não, rigidos ou flexiveis com ocupação maxiima de 60% para circulação de ar. A rota pode ser por piso, parede ou teto ou a combinação deles.
+		Pelo piso pode ser embutido com uso de tubulação fechada com profundidade minima de 64mm, ou elevado do piso e pode ser fechada ou aberta
+		Pela parede pode ser embutida em duto fechado ou aparente fechado ou ventilado
+		Pelo teto pode estar abaixo ou acima, com uso de dutos com distancia minima de 75mm
+		Deve-se aplicar caixas de passagem a cada 30m tanto para linha reta ou curvas. 
+		Curvas não podem ser mais de duas de 90º entre duas caixas de passagem. Em curvas reversas é obrigatório o uso de caixa de passagem
+	Subsistema Sala de Telecomunicações - consiste num espaço fechado para acomodar o rack com equipamentos. O tamanho depende da quantidae de areas de trabalho atendidas, sendo uma sala de telecominicações no minimo uma centralizada por andar. A área da sala de telecom segue: menores que 100m² - um rack; até 500m² tamaho de 3x2m; até 800m² tamanho 3x2.8;
+até 1000m² tamanho 3 x 3.4m; mais de 1000m² uso de mais uma sala de telecom
+	Subsistema backbone - dividido em cabeamento externo (entre sala telocom e de equipamentos em predios diferentes) onde as rotas podem ser enterrado ou túnel que usam cabos especificos para evitar danos físicos, e ainda pode ser aéreo sem proteção extra, apenas contra vento, frio chuva e calor e um guia entre postes. E o cabeamento interno usa o mesmo tipo de rota do cabeamento horizontal
+	Subsistema Sala de Equipamentos - precisa prever expansão física e o tamanho depende do numero de areas de trabalho sendo no minimo de 14m² e 0.07m² para cada 10m² de area de trabalho. A temperatura e umidade é controlada todos os dias 24x7
+	Subsistema infraestrutura de entrada - ligação entre cabeamento externo e interno tanto para operadora de serviços como conexão LAN. Deve ser proxima a sala de equipamento ou até dentro dela e o cabeamento pode ser o mesmo do backbone externo
+3.3.1 Os problemas com negligência no uso da eletricidade
+	Recomendação de video PVC x LSZH da Furukama - https://youtu.be/VMYd8w46vDw
+	Atenção as tensões e frequencias utilizadas no local, bem como o aterramento
+3.3.2 O Aterramento
+	Consiste em ligar a terra todas as partes metalicas de uma estrutura atravez de um condutor elético. A barra de cobre vai direto no solo conectado a um condutor que vai até as tomadas, gerando um caminho com menor resistência elética
+3.3.3 As normas de proteção elétrica
+	Norma ANSI-J-STD 607 A Generic Telecommunications Bonding and Grounding (Earthing) for Customer Premises
+		TGB - Telecommunications Grounding Busbar
+			Barramento que conecta elemento metalicas e proteções metálicas
+			Um por andar dentro da sala de quipamentos ou da de telecom
+			barra de cobre pre-perfurada que liga o aterramento das partes metalicas daquela area com o Tbb.
+			a barra é menor que a Tmgb
+		Tmgb - Telecommunications main grounding busbar
+			Barramentos que conecta os TGBs
+			Fica no subsistema infra de entrada ou no sala de telecom, proximo do painel elétrico
+			é uma barra de cobre pré perfurado onde são conectados os aterramentos dos demais componentes
+		Tbb - Telecommunications bonding backbone
+			Interliga TGB ao Tmgb
+3.4.1 As interferências na rede elétrica
+	Transiente - ruidos provocados por fontes eletromagneticas no mesmo circuito, pode ser minimizado usando filtros de linha
+	Sub e Sobretensão - Diminuição ou aumento da tensão repentino ou duradouro, pode ser minimizado com estabilizadores
+	Falta de tensão - curta ou longa o problema é o retorno do fornecimento que pde ser mais alto gerando uma sobretensão. Pode ser utilizado um nobreak juntamente com o aterramento bem dimensionado
+3.4.2 A blindagem do cabo
+	Na area de trabalho, cabeamento horizontal, sala de telecom, backbone e sala de equipamentos os patch cords e patch panels são blindados com ligação ao aterramento
+	No subsistema horizontal o cabeamento backbone não ficam em paralelo, são também entrelaçados
+
+	Executar os seguintes processos
+		reconhecer os limites de cada subsistema
+		identificar o tipo de material que sera preciso para proteção dos elementos do subsistema
+		identificar os tipos de interferências ara escolher o ipo de técnica de proteção
+	Deve-se conhecer para isto	
+		identificar a localização da area de trabalho em cada ambiente
+		identificar possiveis rotas de cada andar  da ligação entre cada um deles
+		identificar locais onde as salas de telecomunicações, sala de equipamentos e infra de enrtrada podem ser acomidadas
+		determinar custo beneficio das proteções
+		determinar as proteções elétricas
+______________________________________________________________
+UNIDADE 4 - PROJETO DE CABEAMENTO ESTRUTURADO
+4.1.1 Análise para o projeto de cabeamento estruturadp
+	site survey ou inspreção técnica local pe a análise prévia do ambiente de instalação do cabeamento
+	objetivo de coletar dados que possam ser obstaculos e problemas
+	pesquisar sobre José Mauricio Pinheiro
+	Pontos importantes a se observar
+		planta baixa do local que é alvo do projeto;
+			disposição e localização de salas de concentração, sugestão de rotas e distâncias
+		possibilidades de rotas horizontais e entre andares;
+		distâncias envolvidas;
+		possibilidade de inclusão de salas de concentração do cabo;
+		localização da passagem do cabeamento entre a área interior e exterior;
+análise sobre fontes de interferências eletromagnéticas;
+informações sobre a infraestrutura elétrica do local.
+	Cada subsistema terá uma observação envolvida
+	-area de trabalho: medição de cada sala para dimensionamento de cabos e conexões
+	-cabeamento horizontal: avaliar os percursos e definir a melhor proteção
+	-sala de telecomunicações: procurar centralizar esta sala no escopo atendido
+	-cabeamento vertical backbone: ligação entre andares e percursos dos cabos para adequar a proteção
+	-sala de equipamentos: prever a expansão na hora de definir a localização
+	-infraestrutura de entrada: analisar a necessidade de um espaço separado ou compartilhado com sala de equipamentos e a passagem do cabeamento externo
+
+	A aplicação é facil em novos projetos mas em retrofits que são as instalações que sofrem reforma a liberdade é menor, tendo limitações para adequar o espaço e restrições arquitetonicas
+	Ainda deve-se atentar para as interferencias eletromagneticas causadas por equipamentos que utilizam motor ou antenas que irradiam ondas eletromagneticas, alem de separar a rota de dados da rota de cabos elétricos
+	Analise da infraestrutura elétrica, aterramento, para raios e tomadas de uso exclusivo para equipamentos computacionais
+4.1.2 as normas para documentação do cabeamento estruturado
+	diz respeito a organização ANSI/TIA 606 A
+	Recomendação livro “Cabeamento Estruturado. Desvendando cada passo: do projeto à instalação”, escrito por Paulo Sérgio Marin (2014)
+	As regras da norma são divididas em 4 classes com um metodo de localização no registro associado a qualquer identificador espessifico
+		classe 1
+	Ambiente simples, sala de equipamentos+telecom com cabeamento horizontal ligado direto ao rack da sala que abriga os servidores- identificação acontece na area de trabalho, cabeamento horizontal, aterramento e componentes de proteção dos mesmos
+		classe 2
+	edificio com mais de um andar com salas de telecom - identificação da classe 1 + cabeamento backbone e proteção contra incendio
+		classe 3
+	mais de um edificio dentro da area particular - identificação da classe 2 + cabeamento e toda a infraestrutura para backbone entre edificios
+		classe 4
+	mais de um edificios dentro da area particular que sejam de redes diferentes - identificação da classe 3 + cabeamento e backbone entre edificios das diferentes redes
+
+	Os identificadores são unicos para cada elemento ou componente do projeto, é um codigo em etiqueta permanete inteligivel e de facil acesso ao profissional de redes fornecendo localização do elemento, numeração como elemento, numeração de conexão(patch panel , outlet) e tipo do elemento
+	Alem dos identificadores deve-se manter os registros digitais ou manuais com rotas, espaços, alimentação elétrica, refrigeração, alarmes e iluminação, sempre datados a cada alteração
+	Patch cords seguem uma identificação por cor conforme a tabela de cores de patch cords
+4.1.3 o projeto de cabeamento estruturado
+	associado aos subsistemas
+	-area de trabalho: identificar as conexões de rede, cada uma significa uma dupla de rj45 e a localização precisa estar espalhada pela sala
+	-cabeamento horizontal: linha que conecta a area de trabalho ate a sala de telecom que a atentende
+	-sala de telecom: informa a sala que terá este elemento, o rack tem o desenho de um retangulo
+	-cabeamento backbone: linha que conecta os racks desta zona
+	-sala de equipamentos: sala que tera este elemento e rack em forma de retangulo
+	-infra de entrada: sala deste elemento e/ou rack em orma de retangulo
+4.2.1 importancia de teste do cabeamento estruturado
+	saber se o padrão A ou B estão corretos
+	aterramento conectado
+	scanners de rede podem usar duas tecnicas, de canal e de link
+	de canal: são testados os elementos que fazem parte do enlace entre computador e switch, que sçai oatch cords nas duas extremidades outlet e patch panel e o cabeamento horizontal
+	de link são excluidos os patch cord das duas extremidades
+4.2.2 a certificação da rede cabeada
+	 ação de realizar esses testes, comparar com os valores informados pelas normas de cabeamento estruturado e atestar se está ou não dentro dos valores adequados, dá-se o nome de “Certificação do Cabeamento"
+	Essa ação consiste em:
+		utilizar o escâner de rede para efetuar as medições em todo o cabeamento: pode fazer a escolha entre o teste de canal ou o teste de link permanente, para análise dos parâmetros elétricos/ópticos e os mecânicos;
+		produzir a documentação com os resultados dos testes: o escâner é capaz de gerar os resultados com base em tabelas e/ou gráficos;
+		analisar as identificações dos elementos: verificar se as identificações estão de acordo com a norma ANSI/TIA 606A;
+		analisar o registro do gerenciamento da rede: verificar se os registros estão de acordo com a norma ANSI/TIA 606A.
+	A boa pratica é que profissional da certificaçõa seja diferente da instalação
+4.2.3 os parametros de análise do cabo metálico
+	diafonia crosstalk;
+		imunidade a interferencia eletromagnetica
+		Next (near end crosstalk)
+
+Mede o grau de imunidade à interferência de um par sobre outro par em relação ao sinal de entrada e na mesma extremidade.
+
+		Fext (far end crosstalk)
+
+Semelhante ao next, só que a medição ocorre na extremidade oposta à entrada do sinal.
+
+		Psnext (power sum next)
+
+Somatório dos graus de imunidade ao next, gerado entre três pares do cabo metálico.
+
+		Psfext (power sum fext)
+
+Somatório dos graus de imunidade ao fext, gerado entre três pares do cabo metálico.
+
+		Elfext (equal level fext)
+
+É razão entre o sinal atenuado, na outra extremidade, com o fext medido na mesma extremidade.
+	
+		Pselfext (power sum elfext)
+
+É o somatório da razão entre o sinal atenuado, na outra extremidade, com o fext medido na mesma extremidade.
+		Os valores devem estar acima do minimo informado pelo fabricante para estar APROVADO
+	atraso de propagação;
+		tempo que o sinal leva para percorrrer todo o comprimento do cabo
+	atraso de propagação relativo;
+		diferença de tempo de propagação entre pares 
+	NVP (Nominal Velocity of Propagation);
+		velocidade de propagação de sinal em porcentagem em relação a velocidade da luz
+	RL (Return Loss);
+		porda por retorno pe a diferença entre a potência do sinal transmitido e dos sinais refletidos
+	perda por inserção;
+		quantidade de energia que é perdida quando o sinal chega na extremidade de recepção do link de cabeamento. Com esse resultado, sabe-se o quanto de resistência o cabo oferta à passagem do sina
+	Alien crosstalk.
+		identificar a imunidade a interferencia de um cabo em relação a outro
+4.2.4 os parametros de analise do cabo optico
+	trata a atenuação do sinal na fibra, no conector e na emenda
+	na fibra leva-se em consideração o coeficiente de atenuação do tipo de fibra (SM ou MM) pelo comprimento de onda dela multiplicado pelo comprimento da fibra
+	no conector é a perda no par de cada conector que tambpem depende da fibra SM ou MM
+	na emenda depende do tipo feito, mecanico ou por fusão
+	
+	absorção
+		dissipação de energia na forma de calor
+	espalhamento
+		desvio da luz para varias direções
+	deformações mecanicas
+		microcurvaturas ou maiores provocam fuga de luz do núcleo
+4.3.1 arquitetura de um datacenter
+	a diferença para o antigo cpd é que antigamente os computdaores de usuarios tinham baixa capacidade de processamento
+	a localização geografica pode estar distante do usuario e utiliza a internet
+	o objetivo é possuir uma grande infraestrutura de hardware com diversos servidores
+	atenção especial a segurança de daos armazenados, segurança dos equipamentos, climatização e disponibilidade 24x7
+	recomendação vídeo Faça um passeio pelo data center do Google <https://www.google.com/intl/pt-br/about/datacenters/inside/streetview/>
+4.3.2 A norma de cabeamento para datacenter
+	noma tia 942
+	Informações da norma particulares para catacenters pode-se citar inicialmente a localização de um predio que o abrigue alguns locais permitidos são os que estejam:
+	próximos a acessos de estradas principais das cidades;
+	próximos à empresas fornecedoras de energia elétrica;
+	próximos a centros consumidores de seus serviços disponíveis;
+	em condomínios comerciais específicos para Datacenters.
+deve-se evitar
+	próximos a locais com grande concentração de água (rios, lagos, oceanos), vales ou de perigo de incêndio, pelo risco de acidentes da natureza;
+	próximos de aeroportos, pelo risco de acidente ser bastante considerado;
+	locais em guerra.
+	A preferência do cabeamento é por fibra optica mas não é proibido o uso do par trançado
+	o uso do piso elevado é recomendado para facilitar a passagem e a refrigeração
+	O fornecimento de energia eletrica deve ser ininterrupto
+	sistema HVAC (Heating, Ventilation, and Air Conditioning) que consiste em uma arquitetura preparada para fornecer em simultâneo o sistema de aquecimento, ventilação e ar condicionado ao ambiente
+	Em relação a segurança fisica deve ter o controle de acesso e na virtual tudo que estiver disponivel
+	topologia do datacenter
+	A seguir, você vê a descrição de cada elemento (MARIN, 2011):
+
+caixa de acesso: espaço destinado para receber o material de conexão dos cabos dos provedores de acesso do meio externo para o meio interno do Datacenter;
+sala de entrada: sala que abriga os equipamentos de rede dos provedores de acesso de telecomunicações;
+sala de telecom: abriga o maquinário que será utilizado pelos profissionais que cuidam da administração do Datacenter;
+MDA (Main Distribution Area): comporta o ponto central de distribuição do cabeamento estruturado do Datacenter;
+HDA (Horizontal Distribution Area): área de distribuição do cabeamento até o servidor;
+ZDA (Zone Distribution Area): área de distribuição intermediária do cabeamento que vai até o servidor;
+EDA (Equipment Distribution Area): espaço onde ficam os servidores que armazenam os serviços e dados disponibilizados pelo Datacenter;
+cabeamento backbone: cabo de interligação entre a Sala de Entrada e o MDA e também entre o MDA e os HDA´s;
+cabeamento horizontal: cabo de interligação entre cada HDA e o EDA, ou entre um HDA e um ZDA e ainda, entre o ZDA e o EDA;
+sala de computadores: formada pelo MDA, HDA, ZDA e EDA.

@@ -1,0 +1,198 @@
+GRA1034 - Técnicas de Roteamento
+
+### UNIDADE 1 ###
+
+*** inspire-se ***
+
+Proposito do roteamento em uma rede:
+	Interligação entre redes diferentes na internet
+		O roteador é o equipamento que faz a ligação entre redes de computadores
+			O roteamento é o processo de escolha do melhor caminho entre o nó de origem e o nó de destino
+				Roteamento Estático: Configuração manual dos roteadores pelo administrador da rede. Vantagens [Menor consumo de CPU e memoria, Não consome largura de banda na troca de informações entre roteadores, administrador tem um controle maior sobre a rede] Desvantagem [O administrador precisa efetivmente possuir um profundo conhecimento da rede como um todo e avaliar par qual rede de grande porte isso é inviavel, para cada nó ou rede adicionada o administrador terá que cadstrar manualmente uma rota em cada roteador da rede o que torna esse roteamentoinviavelem redes de grande porte] - Distância administrativa: Estabelece a confiabilidade da rota, quanto menor o valor, mais confiavel é a rota (Em rotas etáticas o valor padrão é 1)
+					Configurar a rota estatica em roteadores cisco:
+						1. Determinar todos os prefixos, máscaras e endereços desejados, podendo ser uma interface local ou proximo salto que leve ao destino
+						2. Acessar o roteador no modo de configuração global
+						3. Digitar comando IP ROUTE com um endereço de destino e uma máscara de sub-rede, seguidos do gateway correspondente da etapa1
+						4. Repetir a etapa 3 para todas as redes de destino definidas na etapa1
+						5. Sair da configuração global
+						6. Slvar a configuração por meio do comando COPY RUNNING-CONFIG STARTUP-CONFIG
+					Rotas Default: é utilizada quando os pacotes não possuem rotas correspondentes na tabela de roteamento dos roteadores
+						Etapas para configurar uma rota default em roteadores cisco:
+							1. Entrar no modo de configuração global
+							2. Digitar o comando  IP ROUTE 0.0.0.0 pra o prefixo e 0.0.0.0 para a máscara. A opção endereço para a rota padrão pode ser tanto a interface do roteador local que se conecta as redes externas como o endereço ip do roteador do próximo salto.Na maioria dos casos é preferivel especificar o endereço ip do roteador do próximo salto
+							3. Sair da configuração global
+							4. Salvar a configuração por meio do comando COPY RUNNING-CONFIG STARTUP-CONFIG
+				Roteamento Dinâmico: Utiliza protocolos de roteamento para mapear a rede e atualizar automaticamente a tabela de roteamentos dos roteadores. A vantagem é simplificaro processo de configuração da rede para que seja viavel em rede de médio e grande porte e como desvantagem requer maior uso da CPU e memoria e maior largura de banda. Os 3 tipos de protocolo de roteamento dinâmico são:
+					RIP (Routing Information Protocol)
+					OSPF (Open Shortest Path First)
+					EIGRP (Enhanced Interior Gteway Routing Protool)
+						E são agrupados nas categorias:
+							IGP (Interior Gateway Protocol)
+								Os roteadores fazem parte de uma mesmo domínio administrativo de roteamento, ou seja, pertencem a um mesmo AS (Autonomous System)
+							EGP (Exterior Gateway Protocol)
+								Roteadores pertencentes a AS distintos como por exemplo para interligar a matriz e as filiais de uma empresa por meio da internet - Adotam metodos diferentes para a definição da melhor rota, que são chamados de metricas que são resultados de calculos matematicos executados pelos protocolos sobre as informações coletadas das rotas que chegam até o roteador encaminhadas pelos roteadores vizinhos
+					Os protocolos de roteamento são classificados de acordo com a metrica utilizada e podem ser agrupados em 3 classes
+						Vetor de distância
+						Estado do link
+						Hibrido (Vetor de distância com contagem de salto entre origem e destino)
+
+*** Aula ***
+
+Prof Paulo Lacerda
+
+Roteadores determinam o melhor caminho para os pacotes, usado na camada 3 do OSI e roteia protocolos roteaveis (Como o IP), troca tabelas de roteamento entre os roteaveis afim de garantir o entendimento para tomar a decisão da melhor rota. Fazem a conexão de rede entre computadores diferentes (união de uma rede lan com uma wan), fazem o compartilhamento de acesso a internet, Determinam rotas para o trafego do pacote.
+
+O encaminhamento de pacotes por rotas é chamado de roteamento
+	Estático
+		Ideal para redes pequenas
+		O caminho pode ser determinado ou configurado pelo administrador de rede por conter poucos elementos
+		As tabelas de roteamento podem ou não ser divulgadas pelos roteadores para outros dispositivos de rede
+		O administrador de rede tem o conhecimento da topologia da rede e pode mostrar corretamente as tabelas de roteamento de rede garantindo a convergênca da rede assim todos os elementos ficam sabendo de todas as possíveis rotas
+		Facil de configurar porém de dificil manutenção 
+	Dinâmico
+		Ideal para redes mais complexas
+		As tabelas de roteamento são construidas a partir de informações trocadas entre protocolos de roteamento
+		Ajustam rotas dinamicamente para refletir as alterações nas condições da rede
+		Os roteadores resolvem problemas mais complexos e mais rápido do que os administradores de rede
+
+No roteamento existem dois tipos de protocolos
+	Vetor a distância
+		RIP - route information protocol
+		um vetor (salto) é a quantidade de roteadores que existem entre a origem e o destino
+	Estado de link
+		Dependem do estado de toda a rede como vazão do fluxo de dados ou condução do link
+		OSPF - Esses protocolos são responsáveis por tomada de decisão para melhor rota e rotas alternativas
+Quando os dados passam pela camada 4 são segmentados e na camada 3 são criados os pacotes e adicionado o cabeçalho IP
+
+Nuvem Forma transparente de simbilizar toda a complexidade de envio de mensagens e determinação de melhor caminhos da origem até o destino
+Rotas são os caminhos que os pacotes fazem
+
+Algoritmo de enlace ou de estado de link
+	Algoritmo é uma solução computacional para resolução de um problema
+	Tem como premissa o conhecimento do estado da rede total usando variaveis para decidir a melhor rota como
+		largura de banda
+		congestionamento
+		quantidade de equipamentos intermediários
+		alteração na topologia da rede
+		falha de hardware e software
+		atrasos
+			Essas informações são associadas ao termo custo (Custo de uma rede de computadores está relacionado aos problemas e a complexidade existente no processo de envio do pacote ao destino com qualidade e sem perda de informação)
+	Podemos dizer que o estado de link toma decisões baseado na topologia da rede
+	Trafego e problemas com vazão também estão associados a ele
+	Ele fa uma atualzação periodica no estado da rede
+	Todos os roteadores ou nós tem a mesma informação sobre o estado da rede
+	Cada roteador cria seu melhor caminho independente dos outros
+	Os bancos de dados de link state usados para criar as arvores de roteamento de cada roteador, devem ser idênticos
+	Cada roteador detem informações sobre suas proprias redes diretamente conectadas
+	Cada roteador é responsável por enviar um pacote de hello a seus vizinhos diretamente conectados
+	Cada roteador tem um pacote de link state que contem o estado de cada link diretamente ligado
+	Cada roteador inunda o pacote do link state em todos os vizinhos que armazenam todos os pacotes de link state recebidos em um banco de dados
+	Cada roteador usa o banco de dados para criar um mapa completo da topologia e computa o melhor caminho para cada rede de destino
+	As LSPs não precisam ser enviadas periodicamente. sendo enviada durante a primeira inicialização do roteador ou do processo de protocolo de roteamento nesse roteador e sempre que houver uma mudança de topologia incluindo um link para cima ou para baixo ou uma adjacencia de vizinho que estiver sendo estabelecida ou quebrada
+
+Algoritmo de vetor a distância
+	São interativos, distribuidos e assincronos
+		Distribuido por que cada nó recebe informação a respeito de um ou mais vizinhos diretamente conectados, faz cálculos e após distribui os resultados para seus vizinhos 
+		Interativo pela troca de dados constante até não seja possivel realiza-la 
+		Assincrono por que não requer que todos os nós rodem simultâneamente
+	Processos
+		Mecanismo para enviar e receber informações de roteamento 
+		Mecanismo para calcular os melhores caminhos e instalar rotas na tabela de roteamento 
+		Mecanismo para detectar e reagir as alterações na topologia
+	Os roteadores trocam informações sobre o link diretamente conectado ao seu vizinho e atualização a sua tabela de roteamento
+	Tem implementação e manutenção simples
+	Requer baixa largura de banda, memoria e cpu
+	A rota possui uma metrica que pode ser o numero de salto(hops) ou milisegundos. A somatoria destes determina o custo
+	Problemas
+		Convergência lenta por causa das atualizações constantes
+		Escalabilidade limitada
+		Loopings de roteamento ocorrem quando as tabelas de roteamento inconsistentes não são atualizadas
+			O processo de atualizações lentas, muitas trocas e nenhuma convergência é denominado contagem ao infinito
+	Faz uso do algoritmo de Bellman-ford - busca de caminho mínimo em um gráfico orientado, ponderado, cujas arestas tem peso inclusive negativo 
+	Também pode ser usado o algoritmo de dijkstra que só faz uso de numeros positivos
+	Técnica de split-horizon - impede que o envio das informações pela mesma interface da qual foram recebidas evitando os loopings de roteamento
+	
+Protocolos que utilizam o estado de enlace
+	OSPF descoberta de caminhos mais curstos - RFC2328 baseado no SPF em 1989 - faz roteamento de protocolo IP e pertence a categoria de link state da camada de rede do OSI - utiliza variable length sub-mask (vlsm) - tecnica que permite dividir um espaço de endereçamento IP em subredes de diferentes tamanhos
+		Pontos positivos
+			não existe limitação da contagem de saltos ao contratio do vetor a distância
+			faz envio de pacote IP-multicast para enviar atualização de link state
+			velocidade de convergência
+			melhor balanceamento de carga
+			Autenticação de roteamento
+				padrão Muro - trafego aberto mais vulneravel a ataques
+				texto simples - transmissão de dados em forma bruta sem criptgrafia
+				md5 - nivel de autenticação 2 ospf
+				criptografia e senha
+		Tipos de pacote que fazem uso de um cabeçalho inicial de 24 bytes
+				cabeçalho(versão [numero da versão do cabeçalho] tipo [tipo do pacote seguindo o cabeçalho] comprimento do pacote [incluindo cabeçalho] roteador ID [roteador de origem] area ID [de onde o pacote se originou - se for link virtual o id é 0.0.0.0 pois os links virtuais são considerados backbone] test sum [validação do IP] auth-type [modo de autenticação] autenticação [campo de 64bits usado para informar o esquema de autenticaçã])
+			pacote de aviso - Hello
+			pacote info BD - Database description
+			Requisição de estado de link - link state request
+			Atualização de estado de link - link state update
+			Recebimento de informações de lin - link state acknowledgement
+
+						
+### Unidade 2 ###
+
+*** inspire-se ***
+Para redes grandes o ideal é utilizar um protocolo de roteamento que realize a configuração de forma automatica como o protocolo de vetor de distâncias
+	BELLMAN-FORD - calcula a distancia do roteador de origem ate o roteador de destino - metrica de contagem de saltos - Ele envia a tabela inteira de roteamento periodicamente consumindo maior largura de banda no link e recursos de cpu. Mesmo sem nenhuma alteração ele continua enviando as tabelas periodicamente. Cada nó que utiliza o vetor de distância inicia identificando seus vizinhos e solicita que cada um envie toda a sua tabela de roteamento para cada um de seus vizinhos adjacentes 
+		A operação do algoritmo de vetor de distância em uma rede 3 roteadores é decrita como:
+			Aquela em que todos os nós recebem vetores de distância simultaneamente de seus vizinhos
+			Em que novos vetores de distância são clculados e infromam aos seus vizinhos se esses vetores mudaram
+		O algoritmo realiza a opeção de modosincrono, em que todos os roteadores  recebem os vetores de distância simultaneamente, realizam o calculo de seus novos vetores de distância e informam aos seus vizinhos esses valores
+		O processo de receber vetores de distância atualizdos > recalcular os valores das tabelas de roteamento> informar os novos valores > o caminho de menor custo aos vizinhos continua até que nenhuma mensagem de atualização seja enviada
+		Caso exista alguma modificação no custo do caminho de menor custo, o nóinforma aos seus vizinhos o seu novo vetor de distância
+		Quando ocorrem mudanças no custo e/ou falhas no enlace o nó que detectou essa mudança atualiza seu vetor de distâncias
+
+### Unidade 3 ###
+
+*** inspire-se ***
+Onde aplicar o protocolo OSPF
+	é um protocolo de roteamento dinâmico que tem como objetivo encontrar o melhor caminho baseado no estado e na velocidade do link
+	é um protocolo de interior gateway IGP - projetado para trabalhar dentro de um sistema autonomo e utiliza como parametro o estado do link
+	é um protocolo de roteamento por estado dos links não proprietário
+	Principais caracteristicas:
+		Protocolo de roteamento por estado dos links
+		Protocolo de roteamento de padrão aberto
+		Uso do algoritmo SPF (Shortest path first) para calcular o menor custo até um destino
+		Quando ocorrem alterações na topologia, há uma enxurrada de atualizações de roteamento
+	As rotas de uma AS não são divulgadas para a internet inteira por esse motivo os roteadores são divididos em conjuntos conhecidos como Autonomous System e o protocolo OSPF trabalha dentro do AS e usa como metrica os links e a velocidade dos links
+	O OSPF trabalha através de anuncios, ou seja, necessita de comunicados para que funcione corretamente
+	O LSA (Link state advertiser) é responsável por fornecer a troca de informações entre os roteadores da rede - Esses pacotes LSA, chamados de HELLO, medem a convergência da rede e quando ocorre uma mudança na tabela de roteamento, os pacotes são enviados a todos os roteadores da rede OSPF com a nova topologia da rede. Como beneficio podemos destacar que os pacotes HELLO são bem pequenos e não causam sobrecarga de informação na rede
+	O OSPF precisa de muito menos processamento que o RIP, que envia toda a tabela a cada 30segundos. Pode trabalhar no modo single area ou multiarea, vários AS para justamente minimizar o processamento baseado na sumarização de rotas
+	Os problemas podem ser resumidos da seguinte forma:
+		Um banco de dados de topologia maior requer mais memoria em cada roteador
+		O processamento do banco de dados de uma topologia maior com algoritimo SPF requer processamento e energia que crescem exponencilmente com o tamanho do banco de dados de topologia
+		Uma unica interação no status da interface (on-off ou off-on) força todo roteador a executar o SPF novamente 
+
+### Unidade 4 ###
+
+*** inspire-se ***
+O que é uma VPN PPTP?
+	Virtual private network - point to point tuneling protocol
+	Em uma VPN temos 4 ferramentas de segurança
+		Firewall
+			Barreira de entrada entre a rede pública e a rede privada, pode ser composto de hardware e software e possui 3 objetivos
+				Todo o trafego de fora para dentro e vice versa passam por um firewall
+				Somente o trafego autorizado como definido na politica de segurança local poderá passar
+				O proprio firewall é imune a penetração
+		Criptografia
+			Conjunto de regras aplicadas aos dados com chaves de criptografia
+				Chave simetrica
+				Chave assimetrica
+		IPSEC
+			Extensão do IP
+				modo de transpote
+					mensagem criptografada
+				modo de tunelamento
+					todo o pacote ip é critografado incluindo o cabeçalho
+			Existem dois protocolos principais
+				AH - protocolo cabeçalho de autenticação
+					Prove autenticação da origem e integridade dos dados mas não prove sigilo
+				ESP - protocolo carga de segurança de encapsulamento
+					Prove sutenticação integridade e sigilo
+		Servidores AAA
+			Autenticação, autorização e auditoria
+			

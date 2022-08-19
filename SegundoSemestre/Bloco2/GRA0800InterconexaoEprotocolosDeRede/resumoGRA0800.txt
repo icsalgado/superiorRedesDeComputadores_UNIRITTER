@@ -1,0 +1,540 @@
+GRA0800-INTERCONEXÃO E PROTOCOLOS DE REDES 
+***Unidade 1 - COMUNICAÇÃO DE DADOS
+Inspire-se:
+	Matheus Abreu - Grad Redes de Computadores
+
+Video aula:
+	Prof Paulo Lacerda - Eng. Eletrica
+	Comunicação de dados
+		emissor
+		receptor
+		meio de comunicação
+		regra/protocolo
+		mensagem
+	Rede de comunicação de dados
+		entrega
+		precisão
+		sincronização
+		jitter - dados sem atraso entre os pacotes
+	Meios de transmissao de dados
+		guiados
+		não guiados
+	Transmissão de dados
+		simplex
+		half-duplex
+		full-duplex
+	Cmutação de dados
+		por circuito
+		por pacote
+			datagrama
+			circuitos virtuais
+		por mensagem
+Leitura:
+	Me. Ramiro Sebastião Córdova Junior
+	revisor Luciana de Castro Lugli
+Visão geral da comunicação de dados
+	Uma rede é o conjunto de computadores interligados por enlaces de comunicação (nós)
+	Roteadores tem a função de definir a direção dos dados que trafegam nele
+	Divisão da rede internet
+		Acesso
+			equipamentos de menor capacidade de processamento na casa das pessoas por exemplo
+		Núcleo
+			core com infraestrutura com muitos equip de rede dedicados ao processamento de dados de grande porte
+	Transporte de dados por meio físico
+		Principais parametros da sinalização
+			quantidade de dados
+			velocidade
+			imunidade a interferência
+	Sinalização é a quantidade de dados que podem trafegar no meio físico por unidade de tempo (medida em bauds quantidade de sinais por segundo)
+	O cálculo da taxa de informção é dado por:
+		baunds multiplicado pela quantidade de bits do sinal
+
+Meios de Comunicação de Dados
+	Cabo par trançado
+		altas taxas de transferÊncia
+		100m entre enlaces
+		sensivel a interferÊncia
+		preço e facilidade de trabalho são vantagens
+		UTP - unsielded twisted pair
+		STP - shielded twisted pair
+		SSTP - screened shielded twisted pair
+	Fibra ótica
+		alcance maior que o par trançado
+		menor quantidade de repetidores de sinal
+		fragilidade para curvas
+		monomodo
+			unico feixe de luz e nucleo fino com numero baixo de reflexões
+			80km 10Gbits/s
+		multimodo
+			varios feixes de luz e nucleo grosso e aumenta a perda de sinal
+			300m 10Gbits/s
+	Wireless
+		Mobilidade
+		Conveniência
+		Facilidade de configuração
+		Expansão de rede
+		Custo
+		
+		https://www.techtudo.com.br/noticias/2019/10/20-anos-do-wi-fi-relembre-historia-da-conexao-no-brasil-e-no-mundo.ghtml
+
+
+Tipos de Comunicação de dados
+	Modos de comunicação
+		simplex
+			comunicação unidirecioal
+			utiliza toda a capacidade do link
+			Emissor e Receptor definidos
+		half-duplex
+			comunicação bidirecional porém um de cada vez
+			utiliza toda a capacidade do canal
+		full-duplex
+			comunicação bidirecional simultânea
+			divisão da capacidade do link para as duas direções
+
+Comutação de dados
+	técnica pela qual os nós controlam ou alternam dados para transmiti-los entre pontos específicos de uma rede
+	Comutação de circuitos
+		Recursos de rede (largura de banda) são alocados conforme necessidade durante uma conexão
+		taxa de dados garantida sem atrasos pelo caminho dedicado entre emissor e receptor
+		necessita de ligação física
+		Inexistencia de congestionamento no meio físico
+		desperdicio de banda em periodos ociosos
+		falta de correção de erros
+		atraso no estabelecimento de conexão quando os caminhos estão ocupados
+		3 etapas
+			Estabelecimento do circuito
+			Transmissão
+			Desconexão
+		Multiplexação
+			envio de mais de uma menságem utilizando o mesmo meio físico
+			FDM - frequency division multiplexing
+				divisão da banda de frequencia em faixas diferentes chamadas canais
+			TDM - time division multiplexing
+				divisão de fatias de tempo fixas chamadas de quadros que são divididos em novas fatias chamadas de slots
+	Comutação de menságens
+		Os usuarios finais se comunicam enviando e recebendo msgs sem o estabelecimento de um caminho dedicado
+		Não existe conexão direta
+		Em cada nó que passa é feito o armazenamento temporario da msg
+		Permite maior aproveitamento das linhas de comunicação
+		Atrasos reduzidos
+		Aumento do tempo de transferência não sendo indicado para aplicações de tempo real
+	Comutação de pacotes
+		Dados divididos em pequenos pedaços chamados de pacotes
+		utiliza a tecnica store and foward onde a cada salto o pacote é armazenado e depois encaminhado
+		pacotes diferentes de um mesmo arquivo podem percorrer caminhos diferentes até seu destino
+		2 tecnicas
+			Datagramas
+				cada pacote é tratado de forma independente podendo seguir rotas diferentes
+				a entrega não é garantida
+			Circuito virtual
+				Caminho lógico definido antes do estabelecimento da transmissão por meio de um protocolo de sinalização entre o emissor e receptor. 
+				os pacotes seguem essa rota predefinida
+				a identificação do circuito virtual é dada pelos switches/roteadores para identificação exclusiva
+				os dados sao divididos em unidades que são anexadas com ajuda do número de sequência
+*** UNIDADE 2 ***
+Inspire-se:
+	Matheus Abreu - Grad Redes de Computadores
+Video aula:
+	Prof Paulo Lacerda
+	
+	Modelo OSI
+		rege a transmissão de dados entre computadores
+	
+		7 camadas independentes com responsabilidades e funções escificas e entendem como passar os dados para a camada superior ou inferior
+
+		camada fisica
+			sinais eletricos 
+			recebe e envia dados da camada de enlace
+		camada de enlace
+			recebe e envia da camada 1 e 3
+			opera com MAC address
+		camada de rede
+			endereçamento de pacotes
+			conversão dos endereços logicos para endereços fisicos
+			dados são chamados de pacotes
+			protocolo IP
+		camada de transpote
+			os dados são divididos em segmentos
+			reagupar os segmentos
+			potocolos TCP e UDP
+		camada de sessão
+			estabelecer comunicação entre aplicações em computadores diferentes
+		camada de apresentação
+			convertidos para um formato comum, compressão para transporte
+		camada de aplicação
+			camada em que o usuario atua
+	
+	camada fisica
+		transmissão por meio fisico
+			cabos, conectores e hubs
+		Protocolo IEEE 802
+	camada de enlace
+		elementos, placas de rede, switch e bridge
+		Protocolos, framerelay 
+		Protocolo IEE 802.2
+			subcamadas
+				controle de link logico LLC - IEE 802.3
+				controle de acesso ao meio MAC - IEEE 802.3
+	camada de rede
+		roteamento de protocolos
+		equipamentos roteadores que determinam as rotas
+	camada de transporte
+		TCP orientado a conexão
+		UDP não orientado a conexão
+	camada de sessão
+		sincronizar a comunicação 
+		chat é um exemplo de uso da camada
+	camada de apresentação
+		compressão de dados
+		protocolo jped gif mp3
+	camada de aplicação
+		http e pop são alguns dos protocolos
+		criação e leitura de dados
+		
+			
+	Datagrama
+		elemento que contem informações a respeito de um dado
+
+Leitura: Prof Ramiro Sebastião Córdova Júnior
+Visão Geral de Protocolos de Comunicação
+	um protocolo define regras e conveções para comunicação, regras de formatação, como os dados são empacotados ou encapsulados, técnicas de comutação de pacotes
+	uma pilha de protocolos refere-se a uma familia de protocolos que formam um conjunto de protocolos menores que atuam
+	RFC request for comments são criadas pelas regulamentadoras de protocolos
+		Internet Protocol (IP)	RFC 791
+		Transmission Control Protocol (TCP)	RFC 793
+		Telnet Protocol	RFC 764
+		File Transfer Protocol (FTP)	RFC 765
+		Simple Mail Transfer Protocol (SMTP)	RFC 788
+		Post Office Protocol (POP)	RFC 1939
+		Simple Network Management Protocol (SNMP)	RFC 1157
+		Domain Name System (DNS)	RFC 1034 e RFC 1035
+		Dynamic Host Configuration Protocol (DHCP)	RFC 4477
+		Classless Inter-Domain Routing (CIDR)	RFC 159
+		Virtual Private Network (VPN)	RFC 4026
+		Hypertext Transfer Protocol (HTTP)	RFC 2068
+		Internet Protocol version 6 (IPv6)	RFC 2373
+Apresentação do Modelo OSI
+	A necessidade de padronização entre as tecnologias deu origem ao OSI
+	O modelo pode ser dividido em 2 blocos conforme a finalidade
+		bloco 1 
+			camada de aplicação
+			apresentação
+			sessão
+		define como os hosts vão se comunicar entre si
+		bloco2
+			transporte
+			rede
+			enlace
+			fisica
+		define como os dados irão trafegar de uma ponta a outra da conexão
+
+Detalhamento das Camadas do Modelo OSI
+	aplicação
+		interage com dados do usuario
+		aplicativos de software não fazem parte da camada de aplicação e sim os protocolos e manipulação de dados que o software utiliza por exemplo http smtp
+		utiliza requisição de usurios da rede para selecionar os serviços que devem ser entregues a camadas mais abaixo
+		a divulgação de serviçps que podem ser utilizados pelos clientes pode ser atraves de metodos ativos (os serviços são divulgados em broadcast)ou passivos (registro central de serviços suportados, acessada via interrupção de chamadas, operação remota ou cooperação)
+			interrupção de chamada
+				quando o app faz requisição de serviço ao SO
+			Operação remota
+				o so realiza uma conexão direta entre solicitante e servidor
+			operação de cooperação
+				recursos compartilhados entre solicitante e o servidor
+	apresentação
+		preparação dos dados para a camada de aplicação
+		responsável pela tradução, criptografia e compactação de dados
+		adequação de sintaxe
+		responsável por compactar dados recebidos da aplicação e entrega-los a sessão
+	sessão
+		Responsável pela abertura e fechamento da comunicação de dados entre dois dispositivos
+		garante que a sessão de transferencia de dados ficará aberta pelo tempo necessário
+		sincroniza a tranferência de dados com os pontos de verificação o que garante que caso a conexão seja interrompida, a transferencia de dados será retomada de onde parou assim que a conexão for restabelecida
+		configuração, coordenação, autenticação, termino da conexão e reconexão após queda
+	transporte
+		responsável pela comunicação de ponta a ponta entre dois dispositivos
+		pega dados da camada de sessão e divide em segmentos antes de enviar para a camada de rede
+		remonta os segmentos recebidos
+		TCP
+		Responsável pelo controle de fluxo (balanceamento entre uma conexão rápida e outra lenta) e controle de erros (solicita retransmissão caso os dados não estejam completos)
+		3 fases
+			Estabelecimento da sessão - realizada a conexão entre as funções de serviços e as camadas mais altas, negociações relacionadas a qualidade dos serviços de conexão
+			tranferencia - realiza a transferencia dos dados
+			termino - encerrada a conexão enviando notificação para emissor e receptor
+	rede
+		facilitar a transferencia de dados entre duas redes diferentes, em uma mesma rede esta camada é desnecessária
+		divide os segmentos em pacotes para transferência e encontra o melhor caminho físico, o roteamento
+		protocolos ip e ipv6
+	enlace de dados
+		semelhante a rede
+		facilita a transferencia entre dois dispositivos na mesma rede sem a necessidade de roteamento
+		recebe os pacotes e os divide em quadros
+		também faz cntrole de fluxo e de erros
+		responsável pela identificação exclusiva de cada dispositivo existente em uma rede local
+		divisão entre hardware e software
+		uma sbcamada realiza a interface com a camada de rede quase totalmente por software 
+		outra subcamada realiza a interface com a camada física, sendo implementada em grande parte por hardware e um pouco de firmware
+	Física
+		Cabos e comutadores
+		conversão dos fluxos em bits
+		sinais elétricos, oticos ou ondas de rádio
+		funções
+			configuração da linha - modo de conexão física
+			transmissão de dados - simplex, half-duplex ou full-duplex
+			topologia - como os dispositivos estão organizados físicamente
+			sinais - tipo de sinal transmitido
+Cabeçalhos nas Camadas do Modelo OSI
+	um pacote de dados é um dado estruturado onde os dados uteis são aninhados em etiquetas (tags) de cabeçalho
+	carga util de dados - payload
+*** unidade 3 ****
+inspire-se:
+	HTTP e DNS
+
+Video aula: Prof Paulo lacerda
+	modelo de pilha protocolo TCP/IP
+	maior flexibilidade nas conexões de rede
+		camada de aplicação - capacide de acesso a serviços de outras camada - http ftp... asseguar o fornecimento de serviços - diponibilizar os serviços ao usuario
+		transporte - fim a fim - fonecimento da camada de aplicação - tcp e idp
+		internet - endereçamento da internet da origem, empacotamento - ip, icmp - validade dos pacotes
+		acesso ao meio - inserir os pacotes e receber
+
+	http
+		protocolo de comunicação - navegação pela web - uma sessão é uma sequencia de transções
+	udp não fornece controle de erros
+		porta de origem e porta de destino
+			voip por exemplo
+	rtp maneira de programas gerenciarem a transmissão de dados - conferencia de video com multiplos participantes
+		não garante entrega em tempo real de dados
+			combina com o rtcp - para grandes redes multicast
+	tccp - implementa conexões bidirecionais em broadcast para grande tranferencia de dados
+Leitura: Prof Luciana de Castrio Lugli
+Pilha de protocolos tcp/ip
+	DARPANET 1960 deu inicio ao tcp/ip com fins militares
+	pode-se dizer que o tcp/ip é uma versão mais simples do OSI
+		composto por 4 camadas
+			aplicação
+			transporte
+			rede/internet
+			Física
+	especifica como dados devem trafegar pela internet
+	divisão em pacotes, endereçados, transmitidos, roteados e recebidos no destino
+	requer pouco gerenciamento central e foi desenvolvido para tornar as transmissões confiaveis
+	modelo cliente servidor
+
+	camada de aplicação
+		interage com softwares aplicativos utilizados pelos usuarios
+		é de mais alto nivel
+		FTP, POP3, DNS, SNMP, HTTP, SMTP
+	Camada de transporte
+		comunicações ponta a ponta
+		protocolo TCP lida com comunicações entre hosts, fornece controle de fluxo, multiplexação e confiabilidade
+		são definidos os niveis de serviço e o status da conexão durante o trafego de dados
+	Camada de rede / internet
+		trabalha com pacotes e conecta redes independentes para transportar pacores
+		endereçamento, roteamento e controle do envio e da recepção dos pacotes de dados
+		identificação dos dispositivos por meio do IP - endereçamento lógico
+		IP, ICMP
+	Camada física
+		de nivel mais baixo
+		combinação da camada de enlace e fisica do OSI
+		sequenciamento de bits
+		protocolos Ethernet e ARP
+
+Protocolos da camada de aplicação
+	HTTP
+		sistemas de informações de hipermidia distribuidos e colaborativos 
+		é a base da comunicação de dados na www
+		fornecer dados - imagem html consultas
+		porta tcp 80
+		modelo cliente servidor
+		requisição http
+			uri - uniform resource locator que é o endereço do servidor
+			versão do http
+			MIME - multipurpose internet mail extensions - codificação para o ASCII
+			indentificação sobre o cliente
+			conteudo da msg
+		resposta http
+			versão do http
+			codigo de operação (sucesso ou erro)
+			info do servidor
+			conteudo da msg
+		mensagem composta por cabeçalho e corpo da msg
+	SMTP
+		para mensagens de email por meio de softwares clientes e email
+		o cliente abre uma conexão tcp com o servidor smtp e envia o email por essa conexão
+		o servidor smtp utiliza o spool para ficar sempre em modo de escuta
+		porta 25 de escuta
+	POP
+		para clientes de email receberem msgs
+		porta tcp 110
+		geralmente exclui o e-mail após aberto
+	IMAP
+		para acessar email em um servidor web remoto a partir de um cliente
+		permite acesso simultaneo por vários clientes
+		portas 143 e 993
+	FTP
+		mover arquivos entre sistemas de arquios locais e remotos
+		duas conexões tcp são usadas em paralelo
+			conexão de controle
+				porta 21 
+			conexão de dados
+				porta 20
+	DNS
+		descoberta de sistes atravez de nomes no lugar do ip
+		banco de dados distribuido
+	SNMP - simple network management protocol
+		troca de info de gerenciamento de dispositivos de rede
+	DHCP
+		atribui ip dinamico a qualquer dispositivo ou nó
+		cliente-servidor
+		concessão aleatória por tempo limitado - leasing
+		concessão aleatoria por tempo ilimitado
+		concessão de endereço fixo
+		mensagens DHCP
+			discover
+			offer
+			request
+			decline
+			ack
+			nak
+			release
+			inform
+Protocolos da camada de rede/internet
+	IP
+		utilizado para rotear e endereçar pacotes de dados
+		endereços ip de origem e destino e masca de sub-rede
+		cabeçalho ip - serie de bits que registra várias informações sobre o pacote
+			versão
+			Header Length
+			Type of service
+			identificação
+			flags
+				more fragments
+				last fragment
+				do not fragmet
+			Offset
+			time to live
+			protocolo
+			checksum
+			endereço de origem
+			endereço de destino
+			padding
+			opções
+		IPV4 32 bits 2^32 - 4 bilhoes de dispositivos
+		ipv6 128 bits
+	ICMP
+		mensagens de erro e de controle
+	RIP - routing information protocol
+		utiliza contagem de saltos como uma métrica de roteamento para encontrar o melhor caminho entre origem e destino
+		protocolo de roteamento de vetor de distancia
+		port 520
+		a contagem de saltos pe o numero de roteadores existentes entre a origem e o destino
+		impede loops de roteamento
+		no maximo 15 saltos
+Protocolos da camada de transporte
+	TCP
+		comunicação orientada a conexão
+		divide as mensagens em pacotes depois a remonta
+		garante a conexão até o fim da troca de msg
+		confiabilidade em detrimento da taxa de transmissão
+		3 way handshake
+			no inicio da conexão - mecanismo confiavel de 3 vias
+			SYN SYN-ACK ACK
+		cabeçalho tcp
+			porta de origem
+			porta de destino
+			numero sequencia
+			numero ack
+			tamanho do cabeçalho
+			reservado 000
+			bit controle CWR - congestion window reduced
+			bit de controle ECE (ECN echo)- bit no receptor com informe de congestionamento
+			bit controle URG - urgent pointer
+			bit de controle ack
+			bit de controle PSH - push
+			bit de controle RST - reset
+			Bit SYN - synchronism
+			bit FIN - finishing
+			tamanho da janela
+			checksum
+			urgent pointer indica onde termina  conjunto de dados urgentes
+			opções
+			padding
+	UDP
+		não confiavel e sem conexão
+		serviços em tempo real
+		sem veriicação de erro
+		economia de larura de banda
+		cabeçalho udp
+			nr porta de origem
+			nr porta de destino
+			comprimento
+			checksum
+		encapsula dados em um pacote udp
+**** unidade 3 ****
+inspire-se - Matheus Abreu
+	HTTP
+	FTP
+	DNS
+Video aula - Paulo Lacerda
+	simulação em trafego de rede
+		barateamento de teste
+		ambiente controlado
+		multiplos cenarios
+	emuladores de sistemas operacionais
+		Virtual PC
+		VirtualBox
+		VMware
+		
+		GNS3
+			dynamips
+			docker
+			virtualbox
+
+	simulador packet tracer
+		netAcad
+
+	wireshark
+		analisador de protocolos
+		analise de trafego
+			captura de pacotes para analise
+		placa de rede/wifi ou modem
+
+	Packet tracer
+		interconexão pode ser a conexão de duas redes
+		interconexão de redes de provedores
+		software simulador para cenarios de redes
+	protocolos da camada de aplicação no packt tracer
+	
+	email
+		POP3
+		SMTP
+		IMAP
+leitura: Prof Ramiro Sebastião Córdova Jr
+Simulação e analise de trafego em redes
+	Simulação
+		o grande problema são as interfaces as vezes não tão amigaveis
+		exemplos GNS3  Packet Tracer
+		Packer tracer
+			Lógico
+				costrução de topologias lógicas de rede
+			fisico
+				visualização gráfica da rede lógica - representação gráfica de cidades e prédios e racks
+			representação visual do comportamento da rede
+				tempo real
+					práticas de configuração
+				modo de simulação
+					ver, controlar e analisar intervalos de tempo e propagação de dados
+	Analise de trafego de redes
+		inferÊncia de informações da observação do fluxo de dados de tráfego de rede
+		buffers são pequenos lotes de dados a serem analisados
+		não altera o conteudo dos pacotes - passivas - permitem o armazenamento de pacotes capturados
+		possuem filtros para captura de trafegos selecionados
+		divididos em dois modulos
+			captura de pacotes
+			analise de pacotes
+		monitoramento das atividades nas camadas de enlace rede e transporte
+		wireshark
+			codigo aberto
+	interconexão de rede com packet tracer
+		configuranco rede
+	Protocolos da camada de aplicação

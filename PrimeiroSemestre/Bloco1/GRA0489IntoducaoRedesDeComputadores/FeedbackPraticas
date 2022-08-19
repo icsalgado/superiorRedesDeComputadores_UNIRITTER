@@ -1,0 +1,90 @@
+Feedback introdução a redes - GRA0489
+
+Prática1
+Semelhanças entre os modelos OSI e TCP/IP:
+
+ 
+
+    Ambos são divididos em camadas.
+    Ambos têm camadas de aplicação, embora incluam serviços muito diferentes;
+    Ambos são divididos em camadas de transporte e de rede equivalentes.
+    A tecnologia de comutação de pacotes (e não de comutação de circuitos) é presumida por ambos.
+    Os profissionais de rede precisam conhecer ambos os modelos.
+
+
+Diferenças entre os modelos OSI e TCP/IP:
+
+ 
+
+    o TCP/IP combina as camadas de apresentação e de sessão dentro da sua camada de aplicação.
+    o TCP/IP combina as camadas física e de enlace do modelo OSI em uma única camada.
+    o TCP/IP parece ser mais simples por ter menos camadas.
+    a camada de transporte do TCP/IP, que utiliza o UDP, nem sempre garante a entrega confiável dos pacotes, ao contrário da camada de transporte do modelo OSI.
+    os protocolos do TCP/IP são os padrões em torno dos quais a Internet se desenvolveu, portanto, o modelo TCP/IP ganha credibilidade apenas por causa dos seus protocolos.
+    em contraste, nenhuma rede foi criada em torno de protocolos específicos relacionados ao OSI, embora todos usem o modelo OSI para guiar os estudos.
+
+
+Prática2
+Plano de Segurança da Informação  
+O plano de segurança da informação deve seguir alguns pré-requisitos, como p ossuir a percepção de que a segurança deve respeitar os preceitos da autenticidade, não repúdio, privacidade e auditoria, além, claro, de abranger os aspectos relacionados à confidencialidade, integridade e disponibilidade das informações. É importante col ocar, no plano, as definições de cada item, para que os usuários que lerem-no entendam cada característica.  
+   
+Política de segurança 
+A Política de Segurança da Informação é uma declaração formal da organização acerca de seu compromisso com a proteção das in formações de sua propriedade ou sob sua guarda, devendo ser cumprida por todos os seus colaboradores, com o propósito de estabelecer diretrizes a serem seguidas, no ato da adoção de procedimentos e mecanismos relacionados à segurança da informação.  
+   
+Pessoal 
+A informação está presente no trabalho de todos os profissionais, sendo fundamental para a proteção das informações que os profissionais adotem comportamento seguro. Todos os servidores devem compreender as ameaças que possam afetar a segurança das info rmações da organização, tais como vírus de computador, interceptação de mensagens eletrônicas, grampos telefônicos, dentre outros.  
+   
+Proibições 
+Todo tipo de acesso à informação referente à empresa que não for autorizado é proibido. Informações confidenciai s não devem ser transportadas em qualquer meio (CD, DVD, pen-drive  etc ) sem as devidas autorizações e proteções. As senhas de usuário são pessoais e intransferíveis (inclusive, entre os colaboradores da própria empresa).  
+A autenticação deve ser baseada em  senhas e este meio também é o mais inseguro. Senhas como nome do usuário, combinações simples, datas e diversos  outros são muito fáceis de um atacante descobrir. Dessa forma, vejamos algumas políticas. Uma senha segura deverá conter, no mínimo, 6  caractere s  que  contenham números e letras e, se possível, ainda, caracteres especiais. Exemplo:  Su *6c2. Senhas ainda devem ter uma vida útil, sendo trocadas depois de um determinado tempo.  
+
+Pode-se utilizar somente  softwares  que são autorizados pelos especialistas  de TI da empresa. Esses  softwares  só podem ser instalados exclusivamente pela equipe responsável. Não é permitido utilizar a internet em horário de trabalho para assuntos que não são relevantes a este. É proibido o acesso à conteúdo pornográfico, jogos, ba te-papo e, ainda, é proibido utilizar ferramentas P2P e mensageiros instantâneos.  
+
+As políticas para uso de internet devem ser seguidas rigorosamente. Documentos impressos e arquivos contendo informações confidenciais devem ser adequadamente armazenados e p rotegidos. Não abrir anexos com extensões . bat , . exe , . src , . lnk  e .com, se você não souber de quem veio ou não tiver certeza da confiança em relação ao anexo. Desconfie de todos os  e-mails  com assuntos estranhos ou desconhecidos.  
+   
+Obrigações 
+A área de TI deve avaliar os riscos de incidentes relacionados à segurança da informação. A análise de riscos deve atuar como uma ferramenta de orientação ao Comitê Gestor da Segurança da Informação, principalmente aos riscos que as informações da empresa  estarão expostas.  
+
+Todos os profissionais e colaboradores da empresa deverão ter ciência de que o uso das informações e de todos os sistemas podem ser monitorados e que esse monitoramento pode ser utilizado para detecção de possíveis problemas relacionados  à violação das Políticas de segurança e, assim, aplicadas sanções administrativas ou legais.  
+   
+Política Social 
+Não fale sobre a política de segurança de sua empresa a outros. Não fale de senhas ou digite senhas em máquinas de terceiros. Cuide de sua área d e trabalho e bloqueie o computador ao sair de sua estação.  
+Tome cuidado com ligações estranhas, solicitando informações que são importantes à empresa. Pode tratar-se de uma forma de ataque chamada Engenharia Social.  
+
+ 
+
+Prática3
+Como orientação de resposta, deverá ser analisado o arquivo encaminhado pelo aluno. Assim, o aluno deverá seguir os passos a seguir para realizar o seu trabalho: Na Barra de Dispositivos (canto inferior esquerdo), selecione o componente EndDevices; para isso, clique somente uma vez no elemento PC. Na janela que se abre a direita, clicando apenas uma vez com o botão esquerdo do mouse, escolha o primeiro computador da esquerda chamado PC-PT.
+
+*OBS: note que somente o ato de posicionar o mouse sobre os dispositivos é apresentado logo abaixo sua descrição.
+
+Ao posicionar o mouse na área de trabalho do programa, os cursos deverão estar com um formato de uma cruz. Após isso, basta clicar somente uma vez em qualquer área em branco. Criamos um PC, porém necessitamos de 15 para a rede ponto a ponto, sendo 9 distribuídos em um ambiente e 6 em outro ambiente. Portanto, devemos realizar, novamente, os mesmos passos para a criação de outros PC1s, separando conforme a quantidade por ambiente.
+
+Como os outros dispositivos podem ser dispostos em qualquer ambiente, o aluno poderá colocar conforme achar adequado, sendo assim, 3 tablets, 2 smartphones e 1 impressora.
+
+Agora, devemos adicionar o tipo de equipamento necessário para a conexão destes dispositivos, assim, em Network Devices, o aluno deverá escolher Switches, a opção 2960, que irá aparecer no software. Para cada ambiente, você deverá colocar um equipamento deste.
+
+Para ligar os dispositivos aos equipamentos, o aluno deverá conectar esses dispositivos através de um cabo UTP do tipo Cross-over, ou seja, o nosso cabo de rede específico para conexão direta entre dois computadores. Para realizar a conexão, você deverá clicar no símbolo de um raio avermelhado na Barra de Dispositivos. Ao lado, estará disponível diversos tipos de cabos, Serial, Fibra Óptica, dentre outros. Nesse momento, utilizaremos somente os cabos Copper Straight-Through (direto) e o Copper Cross-over (cruzado, o par trançado diferente, que conecta computador com computador, roteador com roteador e, assim, por diante).
+
+Para realizar a conexão, o aluno deverá escolher o cabo Copper Straight-Through (direto), clicar no dispositivo e arrastar até o equipamento switch. Irá realizar essa funcionalidade em todos os equipamentos dos dois ambientes.
+
+Para a conexão dos dois ambientes, poderá ser utilizado o equipamento wireless. Para isso, o aluno irá selecionar, em network devices, a opção wireless devices. Após isso, irá selecionar a opção homeRouter nos dispositivos existentes. Ao adicionar o dispositivo, automaticamente, os dispositivos wireless irão conectar-se a este equipamento.
+
+Agora, vamos aprender configurar o IP de nossas máquinas. Após certificar-se de que os dois PCs estão conectados corretamente, vamos configurar o IP das máquinas. Clique uma vez no PC0 e abrirá uma nova janela. Clique na aba Desktop e, em seguida, na opção IP Configuration. Preencha os campos da seguinte forma: marque a opção Static, IpAddress: 192.168.10.1, SubnetMask: 255.255.255.0.
+
+Posicione o mouse sobre o PC0, que você acabou de configurar, e, sem clicar em nada, aparecerá uma tela que informe o IP configurado, MAC Address e demais configurações. Observe que a notificação Link está como Up, ou seja, a conexão física está ok.
+
+Agora, clique no PC1 e faça o mesmo procedimento inserindo o endereço IP. Nesse caso, o IP dessa máquina será: 192.168.10.2 / Máscara: 255.255.255.0. O aluno deverá realizar esse procedimento em todos os equipamentos da rede, inclusive para os dispositivos wireless.
+
+Ao final, o aluno deverá encaminhar o arquivo .pkt que, ao ser aberto, poderá estar da seguinte forma:
+
+ 
+***img feedback3***
+Fonte: elaborada pelo autor.
+
+A correção deverá ser feita analisando se o aluno adequadamente realizou as configurações.
+
+Prática4
+Os erros são detectados através de métodos de detecção da própria camada de enlace de dados, porém devemos entender que esses algoritmos não detectam 100% dos erros. Como em nosso caso falamos de rajadas de erros e redundância, podemos dizer que, para a detecção desses erros, são utilizados tanto os testes de paridade quanto os testes de redundância cíclica. Podemos analisar a Verificação de Paridade. Como a transmissão é realizada através de bits 0 e 1, o receptor, para verificar a ocorrência de erro, deverá realizar a contagem de quantos "1" ele recebeu e comparar com a quantidade do que foi enviado. Sendo um único bit de paridade, é simples a verificação pelo receptor, porém há, também, erro de bits bidirecionais, que é chamado de paridade bidirecional, que são divididos em i linhas e j colunas. A verificação no tipo bidirecional deverá ocorrer pela análise da paridade da coluna e linha, caso as colunas e linhas tiverem um bit modificado, ocasionará o erro (ROSS; KUROSE, 2013).
+
+Mas como esses erros são resolvidos? A correção é realizada realizando a transmissão dos dados ou, ainda, por meio da correção antecipada. Ainda para a correção de erros é muito comum encontrar o que chamamos de Código de Hamming. Ele emprega o bit-stuffing para assegurar que eventuais erros sejam detectados. Esses bits vão detectar, com alguma eficiência, possíveis erros no envio de dados e corrigi-los mediante a posição do bit com erro informado pelo receptor.

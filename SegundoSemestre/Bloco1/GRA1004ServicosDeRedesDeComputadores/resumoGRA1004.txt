@@ -1,0 +1,568 @@
+	GRA1004 Serviço de redes de Computadores
+
+Entrevista com Analista de sistemas Marcos
+
+	TCP/IP - Transfer control protocol / Internet protocol
+_____________________________________________________________
+Unidade 1 - Como Funciona uma Rede IP
+Prof. Sidney Arnoni - Engenharia Elétrica e Eletrônica - Gestão empresarial e inovação tecnologica
+
+Como funciona uma Rede IP
+	conjunto de regras que controla a comunicação para que ela seja eficiente sem erros.
+	
+	//Bloco de dados IP
+	versão - 4 bits
+	Comprimento do cabeçalo - 4bits
+	Tipo de serviço - 8bits
+	Comprimento do datagrama - 16 bits [65535bytes]
+	identificado, flag, deslocamento da fragmetação
+		fragmentação IP	
+			MTU - maximum transfer unit
+				Quantidade maxima de dados que pdem passar em um pacote por meio físico da rede, sendo fragmentado quando maior
+	Tempo de vida
+	Protocolo
+	soma de verificação de cabeçalho
+	endereço ip 32bits fonte
+	enderelo ip 32bits destino
+	opções
+	dados
+	
+	IPV6 resolve problemas de segurança do IPV4 e também a falta de IPs para endereçamento
+Protocolo TCP
+	Divisão da mensagem em datagramas
+	arquitetura formada por um conjunto de procolos de comunicação utilizados em redes LAN e WAN
+	
+	Níveis da arquitetura TCP/IP
+	REDE 1/2 OSI
+	ROTEAMENTO
+	SERVIÇO
+	APLICAÇAO 5/6/7 OSI (FTP file tranfer protocol, SMTP simple mail transfer protocol, SNMP simple network management protocor, TELNET terminal emulation, NFS network file system
+
+	//bloco de dados do protocolo TCP
+	Endereço origem
+	Endereço destino
+	Numero sequencia
+	Numero confirmação/reconhecimento
+	hlen, reserved, code, window
+	checksum, urgent poiter
+	options
+	data
+	
+	Classes de IP
+	A
+	B
+	C
+	D
+	E 
+Formato do pacote IP
+	vers, hlen, type, total length
+	identification, flags e fragment offset
+	time to live, protocolm header checksum
+	source ip 
+	address
+	options
+	data
+	
+	Modelo OSI open system interconnect
+		camadas:
+			APLICAÇÃO
+			APRESENTAÇÃO
+			SESSÃO
+			TRANPORTE
+			REDE
+			ENLACE
+			FÍSICA
+Segurança de dados
+	Criptografia - Criptograma é a mensagem criptografada
+	Controle de acesso
+	Autenticação
+	
+Leitura Prof Aline Izida
+1.1 Redes TCP/IP - Protocolo IP
+	RCDE - rede de computadores e dispositivos eletrônicos
+		Os protocolos são a linguagem que a RCDE usa para comunicação
+1.1.1 Endereço IP
+	é um protocolo de rede (existem 3 Rede, aplicação e transporte) que opera nas camadas física, enlace e rede (OSI) e acesso a internet (TCP/IP)
+	IPV4 4 octetos (8bits) 32 bits ou 4 bytes
+	IPV6 128bits (hexadecimal) 32 caracteres organizados em 8 quartetos de 16 bits
+	IPV6 e IPV4 devem coexistir por conta dos softwares e hardwares que podem não ser totalmente compatíveis com o IPV6
+	ISP - internet service provider conhecido por provedor
+		tem cota de IPs distribuidas pela ICANN internet corporation for assigned names and numbers
+1.1.2 Endereço IP funcionamento
+	Dividido em duas partes onde a primeiroa identifica a rede e a segunda os hosts
+	Classes
+		A 
+			0.0.0.0 até 127.255.255.255
+			até 128 redes
+			1677216 dispositivos em cada rede
+			IDs privados 10.0.0.0 ate 10.255.255.255
+			Mascara default 255.0.0.0
+		B 
+			128.0.0.0 até 191.255.255.255
+			até 16384 redes
+			65536 dispositivos por rede
+			IDs privados 172.16.0.0 ate 172.31.255.255
+			Mascara default 255.255.0.0
+		C 
+			192.0.0.0 até 225.255.255.255
+			2097152 redes
+			256 dispositivos por rede
+			IDs privados 192.168.0.0 ate 192.168.255.255
+			Mascara default 255.255.255.0
+			
+			Recomendação! Curso em Video
+1.2.1 O serviço oferecido pelo TCP
+	orientação a conexão
+	comunicação ponto a poento
+	confiabilidade completa
+	comunicação bidirecional
+	interface de fluxo
+	inicio de conexão confiavel
+	finalização de comunicação suave
+	
+	O TCP trata os seguintes problemas
+		comunicaçõa não confiavel	
+			mensagem perdida, duplicadas, corrompidas, em atraso ou fora de ordem
+		Reinicialização de um ponto envolvido
+			cada um ponto trave e reinicie, não deve haver confusão entre as sessões
+		Maquinas heterogêneas
+			tratar com computadores rápidos e lentos sem causar inundação
+		Congestionamento na internet	
+			excesso de pacotes provenientes de transmissões muito rápidas
+1.2.2 comunicação protocolo TCP/IP
+	Cada menságem é encapsulada no que chamamos de datagrama 
+	Definido no documento RFC 793 (request for comments) mantido pela IETF internet enginnering force
+	Modelo de comunicação cliente-servidor
+1.2.3 Mecanismos de resolução de problemas do TCP
+	Sequenciamento - resolve duplicatas e ordem alterada
+	Retransmissão - pacotes que chegam errados 
+	Controle-de-fluxo - impede inundações como mecanismos do ti stop and go
+1.3 Segurança da informação autenticação
+	Autenticação por usuario
+		verifica se alguem é quem diz ser
+		Pode ser de 4 maneiras:
+			Algo que o usuario sabe: Senhas, PIN (personal identification number), resposta secreta
+			Algo que ele possui: tokens, chaves criptograficas, carão de senha, chave física
+			Algo que ele é: biometria estatica (digital, retina e face)
+			Algo que ele faz: biometria dinâmica (voz, escrita manual e ritmo de digitação)
+			Uma quinta maneira seria a localização
+			
+			e outra maneira seria o chaptcha
+	Autenticação por mensagem
+		verifica se o conteudo de uma mensagem não foi alterado e se a origem é quem deveria ser
+1.3.1 mecanismos de defesa a ataques de segurança
+	Recomendação! https://canaltech.com.br/seguranca/google-revela-que-autenticacao-de-2-fatores-bloqueia-100-dos-ataques-via-bots-140005/
+	Pesquisar sobre Kevin Mitnick
+	
+__________________________________________________
+Unidade 2 - SERVIDORES NTP E DNS E PROTOCOLOS HTTP/HTTPS: O QUE SIGNIFICAM EM UMA REDE DE COMPUTADORES?
+Historia da internet
+	1969 arpanet?
+
+
+
+Leitura:
+1.1 Servidores NTP: importância do controle central de hora
+	Network time protocol
+	utiliza o UTC - tempo universal coordenado
+	Atua na camada de aplicação
+	Idealizado por David L Mills
+	Recomendação de leitura RFC1305 e RFC5905
+https://tools.ietf.org/pdf/rfc1305.pdf. 
+<https://tools.ietf.org/pdf/rfc5905.pdf>
+	você pode configurar no seu computador seguindo os tutoriais, conforme seu sistema operacional em utilização:
+Windows <https://ntp.br/guia-win-comum.php>
+Linux <https://ntp.br/guia-linux-comum.php>
+MAC <https://ntp.br/guia-mac.php>
+	Recomendação de video
+http://www.zappiens.br/portal/VisualizarVideo.do?_InstanceIdentifier=0&_EntityIdentifier=cgiFRWd-V3ZGGRqao9GOvyXEQXLYfpqFgvmOU-1_2tcChk.&idRepositorio=0.
+1.1.1 Arquitetura
+	Uma topologia hierárquica forma os servidores NTP, que é dividida em 17 estratos de 0 a 16 onde o 0 representa a referencia primaria de tempo sendo um receptor do GPS ou um relógio atômico. O estrato 16 representa um servidor inoperante
+	Funciona como uma cascata
+	Associações entre dispositivos NTP:
+		Permanentes: criadas por uma configuração ou comando e mantidas sempre
+		Priorizaveis: criadas por um comando ou config. Se houver um servidr melhor ou depois de um tempo, pode ser desfeita essa configuração
+		Efêmeras ou transitórias: Criadas por solicitação de outro dispositivo BTP, podendo ser desfeitas quando acontece um erro ou após um tempo
+	Modos de operação
+		cliente-servidor : utiliza um pull pois o cliente obtem os calores de tempo a partir do servidor
+		simétrico : dispositivos NTP configurados como pares sendo um backup do outro. no modo ativo o dispositivo A configura o B como seu par criando associação permanete e vice-e-versa. No modo passivo o dispositivo A conifigura o B como seu par mas este não tem o A em sua lista de servidores ou pares, cria uma associação transitória para poder fornecer ou receber o tempo de A. É suscetível a ataques de segurança cnfigurado como simetrico ativo
+		broadcast/multicast : indicada para poucos servidores e muitos clientes
+	Recomendação algoritmos NTP <https://ntp.br/ntp.php>
+1.1.2 segurança
+	o NTP tem que atender as 4 propriedades de segurança da informação
+	Integridade
+	Disponibilidade
+	Autenticidade
+	Confidencialidade
+	Recomendação setup de hora precisa com software https://ntp.br/guia-win-avancado.php
+1.2 Servidor DNS funcionamento
+	Domain name system facilita o acesso a endereços ips na internet
+	tracert <<url>>
+	ping <<url>>
+	Projetado por Paul Mockpetris 1984 - é um BD distribuido
+	Os tradutores estão na camada de aplicação
+	As requisições ocorrem do seguinte modo:
+1. A própria máquina do usuário executa o lado cliente da aplicação DNS.
+2. O navegador extrai o nome de hospedeiro, www.someschool.edu, do URL e passa o nome para o lado cliente da aplicação DNS.
+3. O cliente DNS envia uma consulta contendo o nome do hospedeiro para um servidor DNS.
+4. O cliente DNS por fim recebe uma resposta, que inclui o endereço IP correspondente ao nome de hospedeiro.
+5. Tão logo o navegador receba o endereço do DNS, pode abrir uma conexão TCP com o processo servidor HTTP localizado na porta 80 naquele endereço IP.
+	O serviço de diretorio traduz o nomes para endereços IP
+	Apelidos de hosts aliasing
+		O DNS fornece a tradução para o endereço IP e a obtenção do nome canônico
+	Apelidos de servidor de correio	
+		Aplicado o mesmo conceito anterior porem para endereços de e-mail
+	Distribuição de carga
+		Replica sites movimentadoes em diversos servidores com sistema final e endereço de ip diferente
+1.2.2 Hierarquia
+	Servidores raiz: são 13 a maioria na america do norte, cada um é um conglomerado de servidores replicados por motivos de sergunrança e confiabilidade
+	servidores TLD: dominios de alto nivel como .com .org .net .edu .gov e de paises como .br .uk .pt
+	servidores autoritativos: são de organizações que possuem hosts que podem ser acessados publicamente, elas mantem servidores DNS ou tercerizam o serviço
+	Os servidores DNL locais não fazem parte da hierarquia e são de provedores de serviço de internet
+1.3 Protocolos HTTP/HTTPS conceitos
+	hypertext transfer protocol atua na camada de aplicação e é utilizado na comunicação entre servidores web
+	Recomendação pesquisar sobre Tim Berners-Lee
+	Servidores HTTP ou web
+1.3.1 Funcionamento 
+	Metodos HTTP e codigos de erro
+	GET
+Faz a solicitação de um arquivo ou script através do protocolo HTTP. Sendo o método mais comum, é conhecido por todos servidores.
+HEAD
+Faz o mesmo que o GET, no entanto, sem retorno de recurso. Útil para receber metainformações sem que seja necessário obter todo o conteúdo.
+POST
+Utilizado para enviar dados que precisam ser processados, como, por exemplo, dados de um formulário HTML.
+PUT
+Utilizado para atualizar determinado recurso.
+DELETE
+Utilizado para excluir determinado recurso.
+TRACE
+Ecoa a requisição por todo o caminho até chegar ao recurso de destino. É útil para realizar teste de loopback e para debug.
+OPTIONS
+Utilizado pelos clientes para descobrir quais são as opções de requisição permitidas para determinado recurso em um determinado servidor.
+CONNECT
+Utilizado para iniciar uma comunicação bidirecional com o recurso desejado. É útil para abrir um túnel.
+LINK
+Conecta dois recursos existentes.
+UNLINK
+Encerra uma conexão existente entre dois recursos.
+	Códigos de erro
+1xx: indica uma mensagem apenas informativa
+
+2xx: indica sucesso de algum tipo
+
+200: OK
+201: Created (Criada)
+202: Accepted (Aceita)
+204: No Content (Sem Conteúdo)
+3xx: Redireciona o cliente para outro URL
+
+301: Moved Permanently (Mudou Permanentemente)
+302: Moved Temporarily (Mudou Temporariamente)
+304: Not Modified (Não Modificada)
+4xx: Indica um erro na parte do cliente
+
+400: Bad Request (Requisição Malformada)
+401: Unauthorized (Não Autorizado)
+403: Forbidden (Proibido)
+404: Not Found (Não Encontrado)
+5xx: Indica um erro na parte do servidor
+
+500: Internal Server Error (Erro Interno do Servidor)
+501: Not Implemented (Não Implementado)
+502: Bad Gateway (Gateway Errado)
+503: Service Unavailable (Serviço Indisponível)	
+1.3.2 HTTPs: HTTP sobre SSL/TLS
+	SSL secure sockets layer - sistema de criptografia que utiiza uma chave pública e uma prvada que apenas o destinatario conhece
+	TLS transport layer security criado pois a criptografia do ssl foi qubrada em 2014
+__________________________________________________________
+UNIDADE 3 - SERVIDOR FTP E PROTOCOLOS DE CORREIO ELETRÔNICO: COMO FUNCIONAM?
+inspire-se falando do FTP - Analista Marcos
+
+VideoAula: Prof Sidney Arnoni
+file transfer protocol
+manipulação de arquivos e diretorios
+é baseado no tcp
+independente de hardware e SO
+Portas são conexões (porta padrão do FTP é a 21)
+
+FTPS camada extra de segurança SSL secure socket layer
+	canal criptografado entre servidor e browser
+SFTP proteção extra SSH secure shell
+	usado em logins remotos
+	informações são empacotadas
+as diferenças são a quantidade de portas do FTPS que usa várias delas. o sftp precisa de uma porta unica
+TLS transport layer security 
+	garantir a provacidade e integridade
+
+SMTP simple mail transfer protocol
+	opera na camada de aplicação do tcp/ip
+	porta tcp25
+	não lida com a mensagem e sim com a transmissão dela
+
+POP3 post office protocol
+	uma vez visualizada a mensagem é apagada
+	porta 109 POP2
+	porta 110 POP3
+IMAP internet messagem access protocol
+	superior ao POP3
+	mensagens ficam armazenadas no servidor
+	porta 143
+vide tabela po3ximap
+
+Leitura : Aline Izida
+3.1 FTP File transfer protocol
+	Proporciona controle da transferência
+	Segurança do arquivo
+		TFTP trivial FTP usa o UDP não tem controle de acesso nem segurança, transfere arquivos pequenos em redes locais e configurações especiais em equipamentos eletrônicos
+	Arquivo pode ser quelquer objeto arbitrário (documento, planilhha, programa, imagem, video ou som)
+	O que é possível com o FTP:
+		Transferência de qualquer tipo de dados
+		Download e upload
+		Suporte a conteudo proprietário e restrição de acesso
+		Nevegação entre conteudos em diretórios
+		Mensagens de controle entre cliente e servidor FTP como texto ASCII
+		Acomodação da heterogeneidade, escondendo detralhes dos SOs possibilitando a transferencia de uma copia do arquivo entre dois computadores quaisquer
+	Para resolver a heterogeneidade são usados 3 atributos de comunicação
+		Estrutura de dados
+			fluxo de bytes - pode ser estrutura de arquivos(semestrutura)
+			estrutura de registro - arquivo é dividido em registros, suporta apenas arquivos de texto 
+			estrutura de pagina - arquivo dividido em páginas, cada uma com um numero de cabeçalho, podem ser acessadas de forma aleatória ou sequencial
+		Tipo de arquivo
+			Transferencia de arquivos ASCII, EBCDIC ou imagem
+		Modo de transmisão
+			modo de fluxo, padrão, entregues do FTP para o TCP como um fluxo continuo de bytes
+			modo de bloco, dados podem ser entregues do FTP para o TCP em blocos precedidos de um cabeçalho de 3 bytes
+			modo comprimido(compactado)
+	O protocolo é chamado automaticamente pelo navegador quando o usuário solicita uma transferência de arquivo
+	FTPS passa a trabalhar com a alicação de criptografia para transf. de arquivos. Recebe uma camada de sockets segura SSL entre a camada de aplicação FTP e a camada FTP.
+3.1.1 Funcionamento
+	O cliente estabelece uma conexão com o servidor FTP e faz diversas solicitações.
+	Exite uma conexão de controle criada pelo cliente e nela constam os comandos
+	O servidor abre uma nova conexão cada vez que precisa baixar ou carregar um arquivo
+	As conexões para transferir arquivos são chamadas de conexões de dados
+	Consultar - lista de comandos que antes era definida na RFC 956 e atualmente nas que seguem
+	RFC 2228: https://tools.ietf.org/html/rfc2228;
+	RFC 2640: https://tools.ietf.org/html/rfc2640;
+	RFC 2773: https://tools.ietf.org/html/rfc2773.
+
+	Os tempos de vida entre a conexão de controle e a conexão de dados são diferentes, sendo que a conexão de controle permanece aberta durante toda a interação e a conexão de dados é aberta e fechada a cada atividade de transferência de arquivos
+	Sendo assim o FTP utiliza duas portas TCP
+		porta 21 para conexão de controle
+		porta 20 para conexão de dados
+	O FTP inverte o relacionamento cliente-servidor no momento da conxão de dados
+
+	Depois de criar uma conexão de controle o cliente deve se conectar ao servidor com um login e senha
+		um login anonimo com senha de convidade pe usado para arquivos públicos
+	O servidor envia um status numério atravez da conexão de controle como resposta para cada pedido, para que o cliente saiba se o pedido era valido
+	Recomendação video aula
+	https://www.youtube.com/watch?v=JKwk8WFG1zc
+
+	Componentes do cliente
+		interface com usuario
+		processo de controle cliente
+		processo transferencia de dados cliente
+	Componentes do servidor
+		Processo de controle servidor
+		processo de trnsferencia de dados servidor
+
+	A separação das conexões é responsável pela eficiência do funcionamento do protocolo FTP
+		A conexão de controle trabalha com regras de comunicação simples sendo uma linha de comando ou resposta transferida de cada vez
+		A conexão de dados é mais complexa por tratar das transferencias de arquivos com diversas variações de composição
+	Alguns dos principais comandos FTP
+		São sempre com letras maiusculas, com ou sem argumentos e seguindo a ASCII
+	USER - username - identificação do usuario para o servidor
+	PASS - password - senha do usuario para o servidor
+	LIST - lista com todos arquivos existentes no diretorio atual remoto
+	RETR -filename -obter um arquivo do diretorio atual do host remoto
+	STOR - filename - inserir um arquivo no diretorio atual do host remoto
+	STRU - define a organização dos dados (F para arquivo, R para registro, P para página)
+	PORT - identificador de porta, o cliente escolhe uma porta
+	TYPE -tipo padrão do arquivo (A para ASCII, E para EBCDIC e I para imagem)
+	QUIT - sai do sistema
+	
+	Para cada comando exite uma resposta numerica do servidor para o cliente pela conexão de controle
+		331 Nome de usuário OK, senha requisitada;
+		125 Conexão de dados já aberta, iniciando transferência;
+		425 Não é possível abrir a conexão de dados;
+		452 Erro ao escrever o arquivo;
+		226 Fechando conexão de dados;
+		221 Serviço fechando;
+		220 Serviço pronto;
+		200 Comando OK;
+		250 Solicitação de ação em arquivo OK.	
+
+	O acesso ao servidor FTP se da por meio do cliente FTP
+		Alguns softwares para manipulação mais robusta 
+			FileZilla
+			Cyberduck
+			WinSCP
+		Para acessar o FTP basta digitar ftp://número do ip em seu navegador para iniciar o acess
+	Recomendação prticar o filezilla
+	https://www.youtube.com/watch?v=j9Ke6UmheIY.
+	Pesquisar Ray Tomlinson 1972
+3.2 Correio eletrônico: princípios e componentes
+	Funciona no paradigma cliente-servidor porem diferente do FTP, tanto o envio quanto resposta são de mão unica
+	Segundo Comer, existem 3 tipos de normas amplas de protocolo para mensagens na internet
+		Transferência
+			um protocolo utilizado para mover a copia de uma msg de um pc para o outro
+		Acesso
+			um protocolo que permite ao usuario ter acesso a sua caixa de correio eletronico para ler ou enviar mensagens
+		Representação
+			um protocolo que especifica o formato da mensagem quando armazenada no disco
+
+	um software de de e-mail pode ser dividido em duas partes
+		uma aplicação de interface de mensagem
+		uma aplicação de trnasferencia de mensagem
+3.2.1 SMTP simple mail transfer protocol
+	protocolo para transferir uma msg para um seridor por meio da internet
+		segue paradigma stream
+		usa msg de controle textual
+		transfere somente texto
+		permite a um remetente especificar os nomes dos destinatarios e checar cada um deles
+		envia um copia de uma dada msg
+SMTP trabalha acima da camada TCP/IP
+	
+	portas anteriores sem SSL - portas com SSL
+	pop 110				pop3 995
+	imap 143			imap 993
+	smtp 587			smtp 465
+
+	a atualização das portas em 2018 permite apenas conexões com autenticação SSL desse modo o SMTP trabalha na camada de Aplicação
+
+	para transferir msg usa comando-responta (cliente-servidor), o comando é finalizado com um indicador de final de linha de dois caracteres e a resposta é enviada como um codigo de 3 digitos
+
+	3 fases do processo de transferÊncia de arquivos
+		Estabelecimento de conexão
+		TransferÊncia de mensagens
+		Encerramento de conexão
+3.2.2 POP e IMAP
+	post office protocol version 3
+	internet mail access protocol version 4
+		fornecem acesso a caixa de email
+		visualização de cabeçalho, download, excluir ou enviar msgs individuais
+		funcionam o cliente no dispositivo do usuario
+		funcionam o servidor no dispositivo onde a caixa de e-mail está operando
+	O POP3 é simples, sendo um software cliente instalado no compoutador do destinatario e um servidor no servidor de e-mail  Em configuração padrão, realiza-se a leitura das mensagens disponíveis e logo depois há a remoção do servidor dessa mensagem. Não é possivel organizar os emails no servidor nem verificar parcialment o conteudo 
+	O IMAP4 é mais completo e complexo
+		um usuário pode verificar o cabeçalho do e-mail antes de recuperá-lo do servidor;
+permite que o usuário procure por uma sequência específica de caracteres no conteúdo dos e-mails antes de recuperá-los;
+possibilita a obtenção do e-mail de forma parcial, quando a largura de banda é limitada e o e-mail inclui conteúdo multimidia que exija um elevado consumo da capacidade de sua internet;
+possibilita a criação, remoção e renomeação nas caixas de correio no servidor;
+um usuário pode criar uma hierarquia e organização de caixas de correio em uma pasta para armazenamento de e-mails.
+3.2.3 MIME multipurpose internet extensions
+	é possivel enviar dados que não seja apenas ASCII, transforma os dados não ASCII do lado do remetente em dados NVT ASCIIe entrega ao cliente
+_______________________________________________________________
+UNIDADE 4 - PROTOCOLO DHCP E SERVIDOR PROXY: QUAIS SÃO AS SUAS FUNÇÕES?
+inspire-se - fala dos protocolos 
+
+Videoaula
+Protocolo DHCP	
+	Problemática da falta de ips
+	BOOTP? evoluiu para o DHCP - permite atribuição manual e automatica de endereços IP
+	se baseia na ideia de um servidor que atribui endereços de ip a host solicitantes
+	Cliente-servidor
+		inicializada
+		DHCP discover
+		seleciona - cliente aguarda resposta do servidor DHCP
+		offer - info necessarias para configuração e IP 
+		solicita - aguarda resposta de confirmação do servidor
+		renova - periodo de locação
+parametros do DHCP
+discover 
+offer 
+request
+ac  
+mac
+decline
+release
+inform
+
+alocações de endereço IP
+	manual 
+	automático
+	dinamico
+	 
+Servidor proxy - intermediarios entre usuario e servidor
+	conexão do computador local com a rede externa
+	ferramenta de controle de acesso a internet
+	
+	web proxy - esconde o ip real e permite acesso anonimo
+	open proxy - mais convidativo a crackers 
+	redes proxy - comunicação anonima entre usuarios
+	
+	vantagens - ocultar o endereço ip real
+		- protege de malwares
+		- acesso a conteudo com restrição de localização
+		- cache armazena dados de navegação
+		
+Proxy reverso
+	dispositivo de segurança implementado para proteger servidores DHCP
+	DMZ area intermediaria entre rede interna e externa
+squeed web proxy?
+
+Leitura: Aline Izida
+4.1 Serviço DHCP: função
+	Seu antecessor foi o BOOTP  -bootstrap protocol
+		onde o administrador da rede deveria configurar o servidor BOOTP para conhecer o IP d computador
+	DHCP dynamic host configuration protocol
+		permite a obtenção de um ip de forma automática, sem necessidade de configuação manual do servidor, pode ser conhecido como plug and play networking
+	O dhcp trata de configuração para que um dispositivo esteja conectado em uma rede TCP-IP
+	O dipositivo precisa estar configurado com pelo menos 4 parametros de rede
+		Endereço I
+		Mascara de rede
+		Endereço do primeiro roteador da rede(gateway default)
+		Endereço do DNS
+	O Administrador da rede pode configurar o DHCP para que um host tenha sempre o memo IP ou que obtenha um endereço diferente sempre que se conectar
+	O DHCP esta definido na RCF 2131 e 2132
+	(https://tools.ietf.org/pdf/rfc2131.pdf.)		(https://tools.ietf.org/pdf/rfc2132.pdf.
+	Cada atribuição de endereço ip é limitada a tempo fixo definido pelo administrador de rede, a isto se da o nome de lease ou locação. Isso possibilita a recuperação de endereços já atribuidos, o host pode abandonar ou renegociar a extenção de tempo com o DHCP
+	Pesquisar a Xerox PARC  https://www.parc.com/
+4.1.1 Funcionamento
+	Paradigma cliente-servidor
+	Cada sub-rede pode ter um servidorDHCP ou ele pode não existir, assim o agente DHCP (roteador) sabe o endereço de um servidor DHCP para essa sub-rede
+	Relembrar CIDR
+	 /24: https://www.youtube.com/watch?v=igUcU0SFDeI
+	parte 1 (2013):  https://www.youtube.com/watch?v=Xr6gLTENiBU e a parte 2 (2013): https://www.youtube.com/watch?v=0MhAZfu7YGk.
+	O processo de funcionamento do DHCP consiste em 4 etapas
+	DHCP discover
+		o cliente envia uma mensagem de descoberta em modo broadcast 255.255.255.255 e um endereço de IP destinatário 0.0.0.0 dentro de um pacote UDP envolvido em um datagrama IP para a porta 67. essa transmissão vai para a camada de enlace que transmite para todos os nós da sub-rede
+	DHCP offer
+		um servidor DHCP recebe a mensagem do cliente e responde com uma oferta também em broadcast. Cada oferta contem o ID da mensagem de descoberta, o IP proposto para o cliente, a mascara de rede e o tempo de lease
+	DHCP request
+		a resposta de solicitação do cliente deve repetir os parametros de configuração
+	DHCP ack
+		O servidor responde de volta com uma mensagem de confirmação dos parametros solicitados
+	MENSAGENS
+		DHCPDISCOVER: broadcast enviado pelo cliente para encontrar o servidor;
+		DHCPOFFER: mensagem enviada pelo servidor oferecendo seus serviços para o cliente;
+		DHCPREQUEST: mensagem enviada pelo cliente para o servidor, solicitando, confirmando ou renovando um empréstimo dos parâmetros;
+		DHCPACK: mensagem do servidor com as configurações DHCP;
+		DHCPRELEASE: mensagem do cliente liberando os parâmetros emprestados;
+		DHCPINFORM: mensagem do cliente requisitando informações de configuração de rede.
+4.1.3 Acesso indireto ao servidor DHCP por meio de relay
+	O agente relay fica configurado com o endereço do servidor DHCP caso este não esteja na rede e é encarregado de encaminhar as mensagens entre cliente e servidor DHCP
+	Administradores de rede preferente um servidor DHCP e vários agentes relay, centralizando a administração em um único dispositivo
+	Pesquisar como configurar um DHCP em diferentes SO
+	Além dos 4 parametros citados, outros elementos podem ser distribuidos atravéz do DHCP
+		Endereço do servidor de logs
+		Servidor NTP
+		Servidor proxy
+4.2 Servidor PROXY: conceito e aplicação
+	Procuração ou procurador.
+	Opera na camada de aplicaão do TCP-IP. é um software de SO assim como HTTP e DNS
+	é amplamente utilizado como elemento de filtragem de conteudo para praticas de segurança, desde e-mail com spam até firewalls
+	proxy-cache armazenador temporário de arquivos de acesso a páginas web
+	com o proxy pode-se administrar a autenticação de usuarios, registros de acesso a rede e relatórios gerenciais sobre a utilização da rede de internet pelos usuários
+	O firewall nesse contexto possibilita controlar o acesso externo a rede interna
+	com a configuração certa do proxy e do firewall pode-se acessar paginas web mais rapidamente economizando banda do link. Além de promover sergurança bloqueando tentativas de acesso de quem não é autenticado e mantendo registro delas.
+	Pesquisar como autenticar um usuario e controle de trafego com proxy
+	Proxy transparente definido pelo RCF 3040 possibilita impor regras para utilização da rede
+	proxy reverso - é util para dividir tarefas entre servidores, sendo o reverso responsável por tarefas simples, além de fornecer segurança a tentativas de invasão aos servidores da intranet
+4.2.1 Proxy HTTP
+	tipo mais comum de proxy conhecido como proxy web
+	fornece um cache de objetos para todos os dispositivos da rede minimizando o trafego
+	repassa a URL solicitada pelo cliente, se conecta com o servidor web e faz a requisição do objeto, depois de recebido repassa o objeto para o navegador
+	Respostas do campo if-modified-since na atualização de solicitação para o cache armazenado pelo proxy
+		resposta com campo not-modified que indica que o arquivo não foi alterado
+		resposta que contem o arquivo que indica que ele foi alterado
+	O servidor proxy atende a rede interna, fornecendo cache a varios dispositivos. Existem algoritmos responsáveis pela remoção de arquivos de acordo com o tempo que foram acessados: algoritmo LRU least recently used extrai os arquivos que estão amais temp sem serem usados e algoritmo LFU least frequently used extrai os domunets que são usados com menos frequencia

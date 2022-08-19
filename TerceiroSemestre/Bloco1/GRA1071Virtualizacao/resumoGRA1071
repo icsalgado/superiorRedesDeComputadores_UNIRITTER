@@ -1,0 +1,77 @@
+Resumo GRA1071 - Virtualização
+
+### Unidade 1 ###
+
+*** inspire-se ***
+Virtualização de maquinas, permite a existencia de dois oumais ambientes computacionais compartilhando o mesmo hardware
+
+Podem ser diferentes de 3 modos
+	Arquitetura de hardware diferente
+	Sistema operacionais diferentes
+	Maquinas podem orefecer serviços distintos isoladamente
+	
+Arquitetura tipica de sistema computacional
+	Aplicações
+	Sistema Operacional
+	Hardware
+	
+Hypervisor
+	Responsavel por comunicar uma VM com o hospedeiro 
+		Tipos:
+			Bare-metal - Roda diretamento com o hardware do sistema hospedeiro [Hardware hospedeiro] >> [hypervisor] >> [n Sistemas operacionais] - o Hypervisor escalona as maquinas virtuais no hardware
+			Hospedado - SO hospedeiro onde o hypervisor é executado como um processo [hardware] >> [so] >> [Hypervisor] >> [VMs] - mais simples de implementar			
+
+### Unidade 2 ###
+
+*** inspire-se ***
+-Marcos Alexandre - Gerente de desenvolvimento de produtos - Formado em Análise de sistemas e Gestão de TI
+Quais os fatores são fundamentais analisar para a decisão de adotar uma infraestrutura virtualizada?
+	Espaço físico
+	atualização
+	varios serviços virtualizados
+Quais as vantagens da infraestrutura virtualizada?
+	Redução de custo
+	Manutenção simplificada
+	Redução de pessoas
+	Segurança e isolamento
+Qual o impacto de virtualizar várias máquinas no hardware instalado?
+	Balanceamento de cada máquina
+Qual fator econômico motivou a adoção da virtualização da infraestrutura?
+	Redução de custo pela quantidade de servidores
+	Economia de energia
+	
+### Unidade 3 ###
+
+*** inspire-se ***
+- Marcos Alexandre
+Como a infraestrutura de virtualização beneficia o funcionamento do voip?
+	Menor interferência no funcionamento do voip
+Qual fator determinante para o uso de virtualização em uma rede escala administrada?
+	Redução de custo e de maquinas
+	Gerenciamento centralizado
+	Facilicade de migração
+	Segurança controlada
+	Balanceamentode carga
+	Suporte ao usuário
+	Facilidade de backup
+Para aqueles que se interessam pela area de virtualização,como inserir-se no mercado de trabalho?
+	Formação e certificação
+Quais compoetênciasprofissionais serãoimportantes nessa area, como elas influenciarão no seu desenvolvimento?
+	Computação na nuvem
+	
+### Unidade 4 ###
+
+*** inspire-se ***
+- Marcos Alexandre
+O que motivou a mudança para infraestrutura virtualizada?
+	Redução de custo
+	Menor custo de licenciamento
+Quais as vantagens da infraestrutura virtualizada?
+	Custo
+	Centralização
+	Backup facilitado
+Quais as principais tendências desse mercado de trabalho nos ultimos anos?
+	Segurança  
+Na suaopinião,quais tendências tecnologicas devem se formar nos proximos anos?
+	Computação na nuvem
+	

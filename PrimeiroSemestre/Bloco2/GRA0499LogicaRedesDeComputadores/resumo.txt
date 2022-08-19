@@ -1,0 +1,104 @@
+GRA0499 Lógica Para Redes de Computadores
+
+########	Unidade 1 
+
+********	Inspire-se
+
+Pietro de Oliveira - Md CIC
+
+	Não existe melhor linguagem de programação
+	Importante ter boa lógica
+	
+********	Video aula
+Prof Renata Costa - TI 
+Como são construidos os algoritmos
+	Soft x hardskills
+	
+	Linguagem natural - o que você pensa no dia a dia para fazer uma tarefa
+	Fluxograma - desenhos e simbolos matematicos que indicam uma ação
+	Algoritmo - variaveis e comandos estruturados 
+	
+	VisualG para executar lógica de programação em portugol
+Introdução a lógica de programação
+	Variaveis são identificadores que ocupam um lugar na memoria para armazenar um valor, não podem ser usados nomes resevados, não pode começar com números, não podem conter caracteres especiais, na maioria são case sensitive
+	Tipos de variaveis:
+		inteiro 
+		real
+		caractere
+		logico
+	Constantes são valores que não variam durante o programa e segue as regras das variáveis
+	Operadores matematicos
+		soma +
+		subtração -
+		divisão /
+		multiplicação *
+	Operadores relacionais
+		=
+		>
+		<
+		>=
+		<=
+		<>
+	Operadores lógicos
+		não
+		e
+		ou
+Construção Condicional
+	se ... então
+	senão 
+	
+Quiz 4/4
+********	Leitura
+		
+########	Unidade 2
+********	Inspire-se
+Portugol - VisualG
+
+********	Video aula
+Estrutura de repetição
+	Enquanto ... Faça
+Variavel do tipo vetor e laço repita até
+	Repita até ...
+	Vetor é uma variavel com um certo tamanho ou posições
+Conceito de matriz e laço para
+	Variavel matriz pode ter linhas e colunas, seria um vetor de vetor
+	O laço para é usado para varreduras com melhor desempenho, com a instrução no inicio do laço
+Estrutura de repetição prática
+Quiz 4/4
+
+
+########	Unidade 3
+********	Inspire-se
+Linguagem C - historia
+	estrutura básica
+	#include <stdio.h>
+	int main()
+	{
+		printf("Olá mundo\n");
+		return(0);
+	}
+
+********	Video Aula
+Introdução a linguagem de programação C
+	Tipos de variaveis
+		int
+		char
+		float
+		double
+	Saída de dados
+		printf("Olá %f", numero);
+	Entrada de dados
+		scanf("%f", &numero);
+	char - #include <string.h>
+		strcat - concatena
+		strlen - conta os caracteres
+	Limpar tela #include<stdlib.h>
+		system("cls");
+########	Unidade 4
+********	Inspire-se
+Vetores e matrizes
+********	Video aula
+Introdução a construção de estrutura de dados
+
+Manipulando as estruuras de dados unidimencionais
+		srcmp - compara o conteudo

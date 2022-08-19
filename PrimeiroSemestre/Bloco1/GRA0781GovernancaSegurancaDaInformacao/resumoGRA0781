@@ -1,0 +1,274 @@
+GRA0781 - Governança e Segurança da Informação
+
+###Unidade 1
+
+********	Inspire-se
+Prof: Kassia Oshiro - ADS - pós data science - analista de migração na Theos Sist Eclesiais
+	Proteção de dados da organização e terceiros
+	
+Cuidados: Perda de dados por causas físicas ou ataques
+	exemplo: torres gêmeas
+	
+Fatores para segurança de dados e informação
+	Humanos
+	Políticas internas
+	tecnologias
+
+********	Vídeo Aula
+Prof: Priscila Bariani - Adm
+Informação - resultado de manipulação de dados, é um ativo da empresa
+
+Segurança da informação - proteção dessas informações
+	Principios: Integridade, confidencialidade, autenticidade, disponibilidade
+
+Regras
+	Padrão de criptografia
+	Normas de e-mail
+	Controle de acesso a internet e recursos computacionais
+	Normas programas e equipes
+	Backup
+	Mídias Removíveis
+	Responsabilidades e perimetro de segurança
+	Plano de contingência
+	Lógica/Política de senhas e autenticação física
+	Condições e climatização
+	
+Tarefa multidisciplinar
+
+Artigo 202 constituição Federal
+	Preservar o valor dos dados
+	ISO/IEC 17799/2005 => cópia fiel da britsch standard 7799
+	27002/2007 atualização
+	
+Fatores para segurança da informação
+	-compromentimento dos níveis gerênciais
+	-requisitos de segurança claras e objetivas
+	-politica de segurança que reflete no negocio da organização
+	-Gestão eficaz dos processos de incidentes da segurança da informação
+	
+Prover orientação e apoio da direção para segurança da informação de acordo com regras de negócio e leis/regulamentação
+
+Disponibilidade -> não pode falhar
+	Ferramentas: Nobreak, firewall e backup
+	
+Integridade -> alteração autorizada
+	Ferramentas: Assinatura dgital, backup e versionamento
+	
+Confidencialiadade -> Sigilo/Acesso autorizado
+	Ferramentas: Criptografia de dados
+	
+Autenticidade -> Veracidade de autoria e não repudio (não pode nega a autoria)
+	Ferramentas: Biometria, Assinatura digital e certificado digital
+
+********	Leitura
+Informações são os principais patrimônios das organizações e são de valor inestimável. Elas são úteis e reutiliaveis
+
+A segurança da informação e computadores visa preservar a integridade, disponibilidade e confidencialidade dos recursos do SI, onde são inclusos hardware, software, firmware, informações, dados e telecomunicações
+
+CONFIDENCIALIDADE
+	é a privacidade - onde é seguro que informações privadas e confidenciais fiquem indisponíveis a que não tem autorização
+	é pressuposto que o indivíduo dono da informação faça o controle ou influencie informações relacionadas, e como podem ser obtidas e armazenadas e a quem serão reveladas as informações
+
+INTEGRIDADE
+	é assegurado que informações e softwares seja alteradas somente de forma especificada e autorizada, e a integridade de sistemas permite que um sistema realize funcionalidades de forma ilesa e que seja livre de manipulações
+	
+DISPONIBILIDADE
+	é assegurado o continuo funcionamento de sistemas e que os serviços estejam sempre disponíveis
+	
+A maior dificuldade é garantir que todas os funcionários conheçam e adotem normas e políticas de segurança
+
+Controle da informação
+	As organizações passam a considerar ambientes externos (oportunidades e ameaças) e internos (forças e riquezas) para o planejamento estratégico de segurança. O planejamento é de longo prazo, fragmentado em objetivos de curto prazo e compartilhados em linhas de processos que são:
+		Desenvolvimento de sistemas e software
+		Coordenação de operações e comunicação
+		Continuidade de negocio
+		Segurança ambiente e segurança física
+			De acordo com a ISO/IEC 27002. ações que podem ser tomadas para que as informações estejam fora de risco são:
+				Mapear e indentificar a situação atual
+				Detecção de ameaças, vulnerabilidade, riscos, sensibilidade eimpactos
+
+Com objetivo de um correto simensionamento e formação da solução
+
+Política de Segurança da informação
+	Importância da Segurança da informação e seus 5 objetivos
+	Confidencialidade
+	Garantia geral de que não ocorra sisseminação de informação sem autorização
+		Conf. de dados
+			Garante a indisponibilidade de dados confidenciais e privados a não autorizados
+		Privacidade
+			Pessoas controlam quais informações serão relacionadas a elas, obtidas, guardadas, e por quem podem ser reveladas
+	
+	Integridade
+	Manutenção de dados seguros e protegidos
+		Integridade de dados, informações e programas modificados de forma especificada e previamente autorizada
+		Integridade de sistema, executa funcionaldades de forma integra
+	
+	Disponibilidade
+		Acesso a qualquer momento, rápido e confiável
+	
+	Autenticidade
+		Acesso de acordo com permissões
+	
+	Confiabilidade
+		Dados sempre relevantes e corretos
+		
+Valor da Segurança da informação 
+	Monetário e de confiança
+		Ataques internos - uso de má fé
+		Malwares
+		Força bruta
+		DDOS
+		Phishing
+Normas de segurança
+	ISO 17799:2000
+	NBR/ISO 17799
+	NBR/ISO/IEC 17799:2005
+	IDO/IEC série 27000
+		Dividida em 11 sessões
+		a) Porlítica de segurança da informação
+			1 categoria 2 controles
+		b) Organizando a segurança da informação
+			2 categoria 5 controles
+		c) Gestão de ativos
+			2 categorias 5 controles
+		d) Segurança em RH
+			3 categorias 9 controles
+		e) Segurança física e do ambiente
+			2 categorias 13 controles
+		f) Gestão das operações e comunicação
+			10 categorias 25 controles
+		g) Controle de acesso
+			7 categorias 25 controles
+		h) Aquisição, desenvolvimento, manutenção de sistemas
+			6 categorias 16 controles
+		i) Gestão de incidentes da segurança
+			2 categorias 5 controles
+		j) Gestão da continuidade de negocio
+			1 categoria 5 controles
+		k) Conformidade
+			3 categorias 10 controles
+
+########	Unidade 2
+
+********	Inspire-se
+	Frameworks conjuntos de técnicas para resolução de problemas
+	
+********	Video aula
+Prof. Priscila Bariani
+
+********	Leitura
+POLITICA DE SEGURANÇA DA INFORMAÇÃO E DESAFIOS PARA A ADOÇÃO NAS ORGANIZAÇÕES
+	Instruções  que devem ser seguidas para que as organizações fiquem protegidas e para que haja uma gestão de segurança da informação correta
+	Como consta na norma BNT NBR ISO/IEC 27002 (2013) objetivo de prover orientação da direção e apoio para a segurança da informação de acordo com os requisitos do negócio e com as leis e regulamentos relevantes
+	Além de ter uma política de segurança eficaz é necessário que todos os colaboradores a adotem corretamente. Ela garante que as informações serão preservadas contra qualquer ameaça que possa ocorrer
+	
+ESTRUTURA DE UMA POLÍTICA DE SEGURANÇA DA INFORMAÇÃO
+	Etapa 1
+	Elaboração de um questionário no qual serão abordadas as informações sobre a empresa/organização - a meta é analisar se há ou houve uma política implementada, buscar informações sobre o ambiente de negocio da empresa, verificar o ambiente tecnologico
+	O questionário é aplicado a todos os colaboradores
+	Etapa 2
+	Definido o gerenciamento da política em que serão tratados temas como: definição de segurança, objetivo do gerenciamento, fatores críticos de sucesso de sua implementação e gerenciamento de versões bem como manutenções.
+	Atribuição de normas e responsabilidades no que diz respeito à criação da comissão de segurança da informação - são direcionadas aos proprietários da informação, as áreas de segurança, usuarios de informações, RH e auditoria interna
+	Classificação de acordo com nível, reclassificações, armazenamento e descarte
+	Procedimentos: Classificação e tratamento da informação, notificação e derenciamento de incidente, processos disciplinares, compra e utilização de hardwares e mídias, uso da internet, utilização e-mail, uso de recursos de TI, backup, manutenção de equipamentos e testes, coletas de falhas, controle de redes, monitoramento de acessos e utilização de sistemas, administração de criptografias e gestão de chaves, domínio de mudanças de operações, inventário de ativos de informações, controle de acesso físico em setores sensíveis, segurança física, bem como a supervisão de visitantes e prestação de serviços de terceiros
+	Etapa 3
+	Elaborados os procedimentos de segurança da informação - pesqisa sobre melhores práticas a serem adotadas pela organização, a criação de regras bem como padrões para serem mostrados e discutidos com a alta gerência e de acordo com a necessidade da empresa e a apresentação dos procedimentos que deverão ser incormporados às políticas da empresa
+	Etapa 4
+	Revisão, aprovação e implementação da politica de segurança da informação - todas as regras, normas e procedimentos devem ser revisados e aprovados - para ocorrer a implementação em si
+
+ESTRATÉGIAS DE IMPLEMENTAÇÃO DE POLÍTICAS DE SEGURANÇA DA INFORMAÇÃO E A IMPORTÂNCIA DE CONSCIENTIZAR OS COLABORADORES
+	Os recursos humanos são o elo mais fraco da segurança
+	Treinamento e disponibilização de materiais de apoio fazem com que os usuários estejam sempre atualizados no que diz respeiro às políticas de segurança da informação da organização
+	
+FRAMEWORKS ENVOLVIDOS NA GESTÃO DE RISCOS
+	São modelos que contêm ferramentas em regras ou normas que as organizações devem seguir para que os riscos sejam geridos de forma eficiente
+	O IHI utilizado na gestão de riscos de organizações direcionados para cuidades da saúde
+	Value at Risk - riscos de ativos financeiros
+	Auditing Standard no.2 do Public Company Accounting Oversight Board (PCAOB) - ricos de fraudes financeiras
+	COBIT gestão de riscos e governança
+	ISO 31000 - gestão de riscos
+	COSO gestão integrada de riscos e fraudes financeiras
+	
+########	Unidade 3
+
+********	Inspire-se
+	Proteção de informações sensíveis
+		-Planos de continuidade de negócio em momento de contingência
+		
+********	Vídeo Aula
+Prof Pricila
+	PCN/BCP -> Norma ABNT preventiva, conjunto de estratégias e planos de ação - garantir recursos essenciais identificados e preservados em situação de desastre
+	
+	Planos PCN { -Administração de crise -Recuperação de desastre -Continuidade operacional }
+	-Revisão periodica
+		Proposito de permitir a recuperação ou amnter as atividades em caso de interrupção das operações
+		Passos ->Conciesntização ->Testes ->Manutenção continua
+		Identificar quais setores são essenciais para continuidade de negócio
+	Contigência
+		Administração de crise
+			Recuperação
+				Continuidade
+	Auditoria de sistemas tipos:
+		Ao redor do computador
+			Examinar controles da organização
+		Abordagem através do computador
+			Acompanha processamento de dados do computador (Test data)
+		Abordagem com o computador
+			Abrange ao redor e atraves do computador com softwares facilitadores
+			
+########	Unidade 4
+
+********	Inspire-se
+O que faz um perito forense - descobrir vestigios em uma cena 
+
+********	Video aula
+Prof Priscila Bariani
+	Compliance - agir de acordo com a regra
+		assumir responsabilidades e obrigações do negocio
+		garante o comprimento de todos os requisitos legais da organização
+		
+	Dif entre gov e compl
+	Gov muda o mindset dos gestores
+	compl é a conformidade
+	
+	Práticas de compliance
+		Adoção de um programa voltado para a governança corporativa
+		SAAS - software as a service
+
+
+********	Leitura
+Compliance significa estar em conformidade com as obrigações legais, situação em que a organização tem responsabilidades em relação a proteção à saúde, bem-estar e segurança para com os colaboradores, principalmente no que diz respeito a contratações, demissões, assédio, segurança, benefícios, folha de pagamento, salários e discriminação.
+
+COMPLIANCE
+	tem como objetivo dar garantia de que processos e pessoas em organizações cumpram normas reguladoras, regulamentos e leis interna e externamente, por meio de boas práticas. 
+	Evita multas, paralisações, ações judiciais e sanções
+	Se assemelha a segurança da informação no que se refere à proteção de seus ativos
+	Potencializa a necessidade de existir um programa de segurança da informação eficiente
+	ISO 27001 reforça a imagem e pode gerar mais negócios com clientes preocupados com segurança
+	
+MELHORES PRÁTICAS DE COMPLIANCE EM TI
+	Viabiliza a realização de tarfas estratégicas que fornecem suporte para outras atividades e outros departamentos
+	Cloud Computing
+		Trabalho em equipe reduzido, custos para atividade realizada. Facilita a implantação de compliance, pois garante a aceitação da empresa às normas e fazem com que os ricos e custos sejam menores
+	SAAS (software as a service)
+		Feramentas que geram um repositório de dados que podem ser vistos e acessados sempre que necessário e desejado, a partir de qualquer dispositivo para que sejam realizadas consultas sobre requisitos referentes a regulamentações
+	BYOD (Bring you own device)
+		Utilização de dispositivos próprios dos funcionários
+	Ferramentas para monitoramento
+		A infraestrutura pode ser controlada e é possível extinguir a falta de eficiência operacional, bem como facilitar para que sejam encontradas falhas e se aumente a produtividade - dessa forma é possível dar atenção às tarefas estratégicas e verificar realmente o que tem maior importância para o negócio
+	Programa para governança corporativa
+	
+AUDITORIA INTERNA x COMPLIANCE
+	Se complementam, compliance define e estabelece regras, treinamentos, procedimentos, cnscientiza colaboradores bem como os fornecedores a respeito das normas - Auditoria interna identifica oportunidades de aperfeiçoar, controles mais eficientes, indicios e existência de irregularidades nas empresas
+	A auditoria interna ajuda a organização a atingir os objetivos estratégicos a partir  de abordagens metodológicas, com muita disciplina para realizar a avaliação, bem como melhorias nos processos de gestão de riscos, governança corporativa e controles internos
+	
+PERICIA FORENSE DIGITAL
+	da apoio a clientes e assessores jurídicos em relação a sistemas de informação e recursos computacionais, no que diz respeito a ações que precisam de provas para acompanhamento em ações.
+	Procura e preservação das provas para que deem suporte aos processos, a verificação de roubo ou furto de informações, a análise de invasões a sistemas computacionais, a verificação de propriedades intelectuais que tenham sido violadas, a verificação se o controle de normas e políticas de segurança estão sendo cumpridas e o estabelecimento de ocorrencias na ordem em que ocorreram em computadores e dispositivos
+	Etapas:
+	Coleta - Deve-se ter cuidade em relação a integridade do material que será coletadom pos as informações não podem sofrer alterações durante o processo investigatório
+	Exame - Executada uma série de procedimentos para que sejam recuperados e catalogados os dados existentes em dispositivos
+	Análise - Peritos examinarão informações e serão realizadas buscas por evidências referentes ao crime. é importante que se tenha uma definição clara e detalhada sobre o que é preciso investigar e seguramente pode ser uma das mais demoradas etapas da perícia
+	Resultado - Após análise criteriosa de todas as informações, nesta estapa é apresentado o laudo pericial que contém as evidências que forma encontradas e que servirão de provas e deverão ser apresentadas no processo
+	
+	é possivel descobrir transgressões tais como roubo de identidade e crimes financeiros 
