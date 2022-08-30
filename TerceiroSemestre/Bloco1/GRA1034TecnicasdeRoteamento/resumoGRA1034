@@ -166,6 +166,69 @@ Onde aplicar o protocolo OSPF
 		Um banco de dados de topologia maior requer mais memoria em cada roteador
 		O processamento do banco de dados de uma topologia maior com algoritimo SPF requer processamento e energia que crescem exponencilmente com o tamanho do banco de dados de topologia
 		Uma unica interação no status da interface (on-off ou off-on) força todo roteador a executar o SPF novamente 
+		
+*** video aula ***
+Prof Paulo Lacerda
+Roteamento estatico ECMP
+	Roteador estatico é usado em redes com poucos elementos de conexão e controlado pelo administrador de rede
+		
+	Equal coast multipath
+		mecanismo de encaminhamento de pacotes - balanceamento de carga
+		aumenta a largura de banda equilibrando o trafego
+		RFC2991
+Roteamento dinâmico OSPF
+	RFC2328
+	Roteamento interno
+	melhor uso de largura de banda e melhor balanceamento de carga e autenticação de roteamento
+	cabeçalho de 24 bytes
+Roteamento dinâmico BGP
+	border gateway protocol
+	roteamento sem loop
+	trocar informações de acessibilidade de rede (lista de sistemas autonomos)
+	
+	EBGP
+		usado e implementado no roteador de borda
+		interconexão de redes de diferentes organizações
+	IBGP
+		usado entre os roteadores no mesmo sistema autonomo
+		
+	Opera com protocolo TCP na camada de transporte porta 179
+	
+	tamanho max da mensagem 4096bytes
+	menor 19 bytes
+MPLS
+	plataformas multiserviços
+	compartilha multiplos serviços de rede, e tem origem nas redes orientadas a conexão como redes ATP
+	
+	Mecanismo para tratamento de fluxo de dados entre hardware ou aplicações distintas
+	Independencia em relação aos protocolos das camadas 2 e 3 OSI
+	Mapeamento entre os endereços IP
+	Interfaces com protocolo de roteamento
+	
+	utilizada em backbone
+	
+	Software Open SimMPLS
+	Aplicações suportadas pelo MPLS
+		VPN
+		Engenharia de trafego
+		Qualidade e serviço
+		any transport over mpls ATOM
+		
+	É formada por equipamentos do tipo CEE customer edge equipment
+	PEE - provide edge equipment  PE - provide equipment
+	
+	Os roteadores que compoem redes MPLS são chamados de LSR label switching router ou LER label edge routers
+	
+	LSP label switch path
+	
+	Tensão de rotulos
+	
+	camada 2,5 do OSI
+	
+	LFIB label forward information base
+	
+	
+
 
 ### Unidade 4 ###
 
