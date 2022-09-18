@@ -146,9 +146,197 @@ Para redes grandes o ideal é utilizar um protocolo de roteamento que realize a 
 		Caso exista alguma modificação no custo do caminho de menor custo, o nóinforma aos seus vizinhos o seu novo vetor de distância
 		Quando ocorrem mudanças no custo e/ou falhas no enlace o nó que detectou essa mudança atualiza seu vetor de distâncias
 
+*** Aula ***
+
+Prof Paulo Lacerda
+
+Protocolos de vetor a distancia 
+	utilizam como metricas os saltos(hops) para estabelecer a rota com o custo mais baixo
+	Protocolo RIP, cisco(IGRP EIGRP), BGP e IGP
+	
+		RIP
+			RFC1058
+			Protocolo de metrica por saltos - numero de roteadores
+			Limite maximo de 15 saltos
+			Não opera com VLSM
+			Converge mais lentamente que OSPF
+			Sem conceito de Retardo da rede
+			Redes planas
+			Atualização de roteamento é por envio de dados por broadcast ou multicast
+			Atualizações a cada 30 segundos
+			RIPv2
+				aborda problemas de VLSM
+				implementa autenticação
+				multicast routing e também atualizações periodicas
+				permanece com convergencia lenta e contagem de saltos
+				consome grande quantidade de largura de banda
+			Possui um pacore de requisição de mansagem - request message - e uma resposta de mensagem - response message
+			Faz uso de um temporizador para:
+				temporizar atualização do roteamento
+				temporizar o intervalo de distribuição
+				temporizar o nível de distribuição
+		IGRP interior gateway router protocol (cisco)
+			utiliza metrica composta (banda, atraso, carga e confiabilidade)
+			Atualizações periodicas a cada 90 segundos
+			Usado para redes grandes e complexas
+			Precede o EIGRP
+			Utiliza atualização por broadcast
+		EIGRP 
+			balanceamento de carga
+			atualização por broadcast
+			sem atualização periodica, apenas em mudança de topologia
+			
+	Os protocolos de roteamente de vetor a distancia utilizar a tecnica de split horizon
+		impede o envio das informações pela mesma interface que foram recebidas evitando o desvio de roteamento
+	Na detecção das redes os protocolos de vetor a distancia tem a  velicidade de obtenção de convergência baseada em:
+		velociade com a qual os roteadores propagam a mudança na topologia em uma atualização de roteamento para seus vizinhhos
+		velocidade do calculo das melhores rotas usando novas informações de roteamento coletadas
+		
+	Atualizalções periodicas
+		variaveis que fazem a atualização
+			falha de um link
+			introdução de um novo link
+			falha de um roteador
+			alteração de parametros de link
+		Quando ocorre uma das variaveis o protocolo de vetor a distancia faz a atualização das rotas
+	
+	O IOS do roteador implementa 3 temporizadores adicionais para o RIP
+		inválido - metrica 16
+			se uma atualização não for recebida para atualizar uma rota existente depois de 180 segundos - a rota será retirada da tabela de roteameto até que o temporizador de descarga expire
+		descarga
+			240 segundos - quando ele expira a rota é removida da tabela de roteamento
+		hold-on - 180 segundos
+			quando uma rota é marcada como inalcançada por um tempo suficiente para que todos os roteadores na topologia aprendam a rede inalcançavel
+	
+	Atualizações não periodicas
+		parciais e limitadas
+		atualizações são disparadas quando
+			uma inerface alterar seu estado, ativado ou desativado
+			uma rota entrar ou sair do estado inalcançada
+			uma rota instalada na tabela de roteamento
+			
+	Atualizações sincronizadas
+		sincronizaçao de atualizações - enviar atualizações ao mesmo tempo
+		problemas de colisão em ambientes de multiacesso
+	
+	Looping de roteamento
+		uma condição em que o pacote é transmitido continuamente em uma série de roteadores sem alcançar a rede desejada e é evitado com:
+			definição de metrica maxima
+			temporizador de hold-on split horizon route poisoning ou poison reverse atualizações disparadas
+		
+		BGP4
+			fragmentação
+			retransmissão
+			sequenciamento
+			confirmação de pacotes
+			mecanismo de autenticação
+			usa o TCP como protocolo de transporte
+			Dentro do mesmo SA utiliza o internal BGP
+			Entre sistemas diferentes faz uso do exterior BGP
+			
+	Opções de roteamento
+		O processo de roteamento nas redes de computadores é complexo por ter diversas redes interconectadas e cada uma com informações sendo trafegadas e diferentes serviços e prioridades
+		Roteamento adaptativo
+			tem base na mudança da topologia da rede e com o trafego da rede (Roteamento dinâmico)
+			redes grandes e complexas
+			cada roteador deve fazer a descrição das rotas ideiais sem levar em conta a topologia ou trafego da rede (Principio de otimização de rotas) - Forma uma arvore com raiz no destino chamada de arvore de escoamento - não contem loops e cada pacote será entregue dentro de um número limitado de hops
+			Os roteadores formam dentro de uma rede um GRAFO (conjunto de pontos sendo que qualquer um deles podem ser ligados por uma linha, sendo os pontos os roteadores e as linhas os links de conexão)
+			Um grafo é a representação gráfica de um cenário
+				Pode-se determinar através dele roteamento pelo caminho mais curto pois cada nó no grafico representa um roteador e cada arco indicando uma interface de comunicação ou enlace
+		Roteamento não adaptativo
+			não tem decisões de descoberta de rota baseado em estimativa de trafego ou em topologia atual da rede
+			a rota é calculada previamente em sistemas offline depois transferida para o roteador (Roteamento estático)
+			usado em redes de menor porte e configurada manualmente pelo administrador de rede
+			problemas de escalabilidade ou aumento da rede
+			não responde muito bem a falhas por causa da configuração manual
+	
+		Roteamento por vetor a distância
+			cada roteador possui uma tabela de atualizações de trocas relaizadas por roteadores vizinhos
+			cada roteador sabe o melhor enlace para alcançar o destino
+		Roteamento por estado de link
+			utiliza variaveis como estado de link, vazão e topologia para fazer as atualizações
+			
+		Algoritmos hierarquicos
+			diminuir o tamanho das tabelas de rotas
+			dividir a rede em regiões ou domínios onde cada roteador conhece tudo sobre sua região mas nada sobre a estrutura interna de outras regiões
+			em todas as regiões existe ao menos um nodulo responsável por fazer o roteamento para fora da regição
+			há um custo de aumento de caminhos
+		
+		Interfaces de rede
+			mensagens
+				enviadas para um endereço específico
+				para todos os nós presentes
+				para um determinado grupo de máquinas na rede
+		
+		Multicast
+			mensagens a um grupo de hosts
+				páginas da web
+				aplicações do tipo streaming
+				
+		Anycast
+			mensagens a um grupo de hosts porém o nó mais proximo que recebe a mensagem
+				maquinas zumbis para proteção de redes pois o DDOS ataca sempre o computador mais proximo
+			
+		ADHOC
+			cada nó consiste num roteador
+			facil instalação
+			tolerância a falhas
+			canal de comunicação entre as duas estações e mobilidade frete as redes fixas
+			
+	Roteamento Orientado por Tabela
+		A tabela de roteamento é um arquivo de dados na RAM do roteador usada para armazenar informações de rota sobre as redes conectadas diretamente e remotas
+		A tabela de roteamento contem associações de rede (proximo salto)
+		Também pode representar um endereço de rede
+		RFC4271 BGP trata armazenamento as informações de roteamento
+			ADJ RIBS IN
+				armazena as infomações de roteameno ainda não processadas e aprendida atraves de mensagens de updates vindas de seus pares BGP, de mecanismos de comunicação de rotas de outros protocolos como OSPF e RIP, de rotas estáticas vindas do roteador em questão
+			LOCK RIB
+				informação que está na tabela ADJ RIBS IN e que passou pelo chamado processo de decisão, parte do SO dos roteadores
+					o processo de decisão considera entre outras, as definições da política de roteamento definidas pelos administradores do equipamento, incluindo filtros de entrada em protocolos BGP por exemplo.
+			ADJ RIBS OUT
+				rotas que poderão ser anunciadas, no caso do BGP
+				avalia politica de roteamento
+				
+			A implementação das tabelas de roteamento são operadas sob a funcionalidade de dois elementos funcamentais
+				plano de controle
+					recupera os pacotes de dados que entram no roteador
+					as tabelas de roteamento ou mapas internos são consultados para determinar o endereço de destino e também indicam se os pacotes devem ser bloqueados ou descartados
+				plano de dados
+					 o roteador alterna dados em multiplas fases e entre várias interfaces
+					 o trafego de entrada é enviado primeiro para um banco de dados que ajudarão a definir o caminho mais curto para transferência de dados (comutaçao rápida)
+					 RIB routing information base é um BD de protocolo de roteamento de prefixo de roteamento que poderiam ser potencialmente ser instalado na tabela de roteamento, derivado do plano de controle não é usado para encaminhamento
+					 FIB forewarding information base, informações reais que um dispositivo de roteamento usa para escolher a interface que um determinado pacote usará para saída, as informações são derivadas da RIB
+				Gobal State Routing - baseado no protocolo de estado de enlace e cada módulo GSR possui 4 tabelas:
+					lista de vizinhos
+						relação de todos os nós que podem ser alcançados diretamente por ele
+					topologia
+						atualiza se o numero sequencial for mais novo
+					lista dos proximos saltos
+						proximos nós aos quais os pacotes deverão ser encaminhados para chegar ao destino
+					lista de distância
+						menor distância para cada nó de destino
+
+	Roteamento IP
+		não possui sergurança na entrega de pacotes, essa funcinalidade é realizada por outras camadas do protocolo osi
+		protocolo roteavel mas não é um protocolo de roteamento e de camada 3 (rede)
+		carrega a informação
+		trata os datagramas IPs independentemente definindo sua representação, seu encaminhamento e seu envio
+		determina o destinatário da mensagem em seu cabeçalho através do endereço de destino e também o endereço de origem
+		IPv4
+			32bit
+		IPV6
+			128bits
+		CIDR - introduzido pelo aumento exponencial da internet e limitação do IPv4 em termos de escalabilidade - roteamento sem classe interdomínio
+			mascara de subrede de comprimento variável VLSM
+			
+		ISP - oferece serviço de acesso a internet
+		
+		O dados é fragmentado na camada de transporte e o fragmento, na camada de rede ganha um cabeçalho (que é o IP) que permite que o segmento, agora chamado de pacote, seja enviado ao destino por meio de uma rota definida pelos roteadores porém a mensagem está fragmentada em diversos segmentos.	
+		
 ### Unidade 3 ###
 
 *** inspire-se ***
+
 Onde aplicar o protocolo OSPF
 	é um protocolo de roteamento dinâmico que tem como objetivo encontrar o melhor caminho baseado no estado e na velocidade do link
 	é um protocolo de interior gateway IGP - projetado para trabalhar dentro de um sistema autonomo e utiliza como parametro o estado do link
