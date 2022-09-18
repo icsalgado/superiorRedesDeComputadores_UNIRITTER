@@ -356,6 +356,7 @@ Onde aplicar o protocolo OSPF
 		Uma unica interação no status da interface (on-off ou off-on) força todo roteador a executar o SPF novamente 
 		
 *** video aula ***
+
 Prof Paulo Lacerda
 Roteamento estatico ECMP
 	Roteador estatico é usado em redes com poucos elementos de conexão e controlado pelo administrador de rede
@@ -447,3 +448,130 @@ O que é uma VPN PPTP?
 		Servidores AAA
 			Autenticação, autorização e auditoria
 			
+*** video aula ***
+
+Prof Paulo Lacerda
+
+Engenharia de tráfego
+	Redes TCP são redes orientadas a conexão
+	Em redes IPs se percebe a concentração do fluxo em algumas partes da rede, isso ocorre por causa da má distribuição do do trafego de rede feita pelos algoritmos de roteamento que buscam o menor caminho da origem ao destino, sem se preocupar com o trafego já existente nesse caminho mais curto
+		nesse sentido são criadas ferramentas de engenharia de trafego
+			politicas para controle de asmissão de requisições
+			controle e determinação de rotas fixas para os fluxos
+			reserva de recursos e controle de redes em diferentes escalas de tempo
+			
+	Ela mede, modela, caracteriza e controla o trafego
+	objetiva ajudar a prover operações eficientes e confiaveis em uma rede enquanto otimiza uso de seus recursos e sua performance
+	
+	MPLS só são usadas a medição e o controle do trafego e pode ser orientada tanto ao trafego como aos recursos da rede
+	Ela tenta mitigar os fatores que afetam o trafego diretamente
+		minimizando atraso e perda de pacotes
+		maximizar a vazão de pacotes
+		
+		uso eficiente de recursos de uma rede
+	Minimizar ou evitar congestionamento de trafego na rede
+		trafego continuo de rede é finalidade principal e evita-se o aumento significativo do uso durante um periodo muito pequeno de tempo chamado de flsh crowds
+	um tronco é uma linha de comunicação projetado para transportar vários sinais simultaneamente para fornecer acesso a rede entre dois pontos, normalmente conectam centros de computação em centro de comunicação. pode consistir de varios fios, cabos ou fibra optica agrupados, ou um link de alta capacidade
+	Reduçao de pontos de congestionamento
+	Reroteamento rápido de fluxo de dados em caso de falhas
+	Redução de custos pelo melhor aproveitamento dos enlaces
+	Pode ser classificado de acordo com as seguintes caractersticas
+		depentende do tempo
+			aqueles onde os procedimentos empregados levam em conta informações historicas
+		dependente de estado
+			somente informações atuais são levadas em conta
+		Online Offline
+			o calculo de rotas é executado offline quando se tem conhecimento prévio das informações
+			online são aqueles onde as requisições de admissão de fluxo de dados são tratadas uma a uma sem conhecimento previo das demandas anteriores
+		Centralizado e distribuido
+			centralizado ocorre quando uma autoridade central coleta as informações de estado da rede, calcula as rotas e informa os resultados periodicamente aos roteadores
+			distribuido, várias entidades recebem informações para processamento das tarefas
+		Prescritivo e descritivo
+			prescritivo analisa as alternativas e recomenda uma ação caminhos e configurações a serem implementadas
+			descritiva descreve o impactos de diferentes ações de configuração sem recomendar um
+		Open loop close loop
+			open, não utiliza informações do estado atual da rede e o close utiliza
+		Global e local
+			global, o claculo da rota é feito com informações de toda a rede, apropriada para utilização centralizada
+			local, relacionada a apenas uma porção da rede
+		Dinâmico e estático
+			dinamico, as requisições de serviço são continuamente submetidas a rede ao longo do tempo
+			estatico, empregado para um conjunto fixo de requisições de serviços que pode ocorrer em um intervalo de tempo ou, de forma sazonal
+
+Qualidade de serviços
+	conjunto de tecnologias que trabalham a rede para garantir sua capacidade de executar aplicativos e trafego de alta prioridade e capacidade limitada de rede
+	tecnologias QOS fornecem manuseio diferenciado e alocação de capacidade para fluxos específicos
+	tratam:
+		largura de banda
+		troughput
+		latencia
+		atraso
+		giter
+		variação de latencia
+		taxa de erro
+		
+	mecanismos de QOS
+		gerenciamento de filas
+		largura de banda
+		
+		modelagem de trafego - limitação de taxa para otimizar o desempenho
+		algoritmo de reagendamento
+
+VPN/PPP
+	é uma rede privada contruida sobre uma infraestrutura de uma rede pública
+	mais barata que uma rede dedicada
+	
+	pode ser criada em uma pequena infra como dois rosts conectados em uma rede
+	Sequencia de envio de dados
+		há criptografia e encapsulamento de dados
+		algumas informações como IP do remetente é usada para o destinatário identificar a origem da mensagem
+		o tunel da vpn é o canal por onde os dados são transmitidos até o destino
+		as informações anexadas ao pacote de dados são identificadores da maquina receptora
+		os dados são recebidos e desencapsulados
+		os dados são descriptografados e armazenados no destino
+	Elementos
+		Tunelamento
+			como os dados trafegam pela conexão vpn
+		autenticação das extremidades
+			garante para os válidos podem participar da transmissão
+		transporte subjacente vpn
+			utiliza a infra da rede tcp/ip para transmitir seus pacotes na internet adicionando alguns cabeçalhos
+	
+	topologias
+		host - host
+		host - gateway
+		gateway - gateway
+		
+	protocolos são responsáveis pela abertura e fechamento de tuneis
+		ppp - entre dois hosts conectados diretamente
+			3 camadas
+				encapsulamento, usado para transmitir datagramas sobre a camada física especificada
+				controle de link, estabelecer, configurar e testar os links para transmissão
+				controle de rede, negociar os parametros de instalações das redes
+			metodos de atenticação
+				pap -password autentication protocol
+				chap -chared handshake autentication protocol
+				eap -extensible autentication protocol
+			ppp over ethernet
+			ppp over atm
+			pptp
+PPPoE/PPPoA
+	Ethernet - IEEE 802.3
+		padrão de transmissão de dados para uma rede local
+		todas as maquinas estão conectadas a ua mesma linha de comunicação constituida por cabos cilindricos
+		principio de transmissão baseado no protocolo CMSA/CD carrier sense multiple access with collision detection
+		CS - carrier sense- identifica se o meio está libre ou ocupado
+		MA - multiple access
+		CD - colision detection
+	ATM - assyncronous transfer mode
+		baseada na transferencia de pacotes relativamente pequenos chamados de células de tamanho definido
+		
+	oE - conexão de dados utilizado serviço Ethernet e não usa a rede pública
+		largura de banda 10mb/s a 100Gb/s
+		fornecer serviços de dados confiaveis
+		encapsula quadros ppp em quadros ethernet
+		frequentimente usado em pacotes mais baixos
+	oA - encapsular quadros ppp em AAL5
+		AAL5 -atm adaptation layer 5 - camada de adaptação atm usada para enviar pacotes de comprimento variavel de até 65535bytes de tamanho em uma rede atm, coloca informações de controle em um trailer de 8bytes no final do pacote
+		pacotes corporativos
+		mais rápido um pouco que o PPPoE
