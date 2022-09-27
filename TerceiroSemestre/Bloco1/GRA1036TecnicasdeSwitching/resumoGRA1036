@@ -5,6 +5,139 @@ Resumo GRA1036 - Técnicas de Switching
 *** inspire-se ***
 Discorre sobre o crescimento do uso de internet, principalmente movel
 
+*** Aula ***
+Prof Douglas Pereira
+CIC + CCNT voice
+
+Modelos de camadas
+	OSI - open system interconection
+		Referência da ISO
+		7 camadas
+			1 Física
+				processos e mecanismos necessários para transmissão dos sinais elétricos, níveis de tensão, taxas de transmissão.
+				cabos e conectores e seus respectivos padrões
+			2 Enlace
+				garantir que um dado transmitido de um dispositivo de rede chegue a outro diretamente ligado a ele, com integridade e detectando e corrigindo erros, utilizando o endereço físico das NICs (network interfaces cards ou placa de rede)
+				utiliza switches ou access points para garantir a comunicação dentro de um mesmo enlace
+			3 Rede
+				endereçamento lógico dos pacotes fim a fim com controle de congestionamento e fluxo de dados
+				utiliza roteadores para garantir a comunicação entre as redes
+			4 Transporte
+				gerencia as conexões entre dois devices utilizando protocolos como TCP e UDP de acordo com as portas que cada uma das aplicações faz uso por exemplo: DNS na porta 53UDP e mailHTTP na porta 80TCP
+			5 Sessão
+				trata como será feita a transmissão de dados ou controle de fluxo, além de realizar a marcação dos dados que estão sendo transmitidos, um exemplo é a autenticação de um usuário na rede
+			6 Apresentação 
+				trabalha com a formatação dos dados como por exemplo, criptografia dos dados
+			7 Aplicação
+				Responsável pela comunicação da aplicação com a rede provendo serviços aos usuários por exemplo FTP, SMTP, HTTP
+	TCP/IP - transmission control protocol/internet protocol
+		Desenvolvido pela ARPANET é um conjunto de protocolos de comunicação entre dispositivos de rede
+		4 camadas
+			1 Enlace
+				fisica e enlace do OSI
+				tecnologias usadas para comunicação como Ethernet e Wi-fi
+			2 Internet
+				rede do OSI
+				O protocolo é IP-MPLS. Responsável pelas conexões entre as redes locais estabelecendo a interconexão
+			3 Transporte
+				transporte do OSI
+				Comunicação host a host com protocolos como OSPF
+			4 Aplicação
+				sessão, apresentação e aplicação do OSI
+				Todos protocolos para serviços específicos de comunicação de dados em niveis de processo a processos
+IEEE 802.3 - Padrão para redes cabeadas
+	Especifica a camada física do modelo OSI, as ligações físicas são estabelecidas entre os nós e/ou dispositivos de infraestrutura como switches, roteadores, access point .. por varios tipos de cabos de cobre ou fibra.
+	Dentro das redes Ethernet temos padrões com velocidades diferentes
+		10Mbits ethernet
+		100Mbits fast ethernet
+			100 base TX cat5 e cat5e
+				contem 4 pares, sendo dois usados para troca de dados (laranja, branco e laranja, verde, branco e verde)
+				pode ter até 100 metros
+				full duplex
+				100Mbits de througput(taxa de transferência) em cada par por direção
+			100 base FX
+				Fibra optica
+				Transmissão em duas vias RX e TX
+				Fibras multimodo podem ter até 2km
+				Para distancias mais longas é usada monomodo
+		1000Mbits gigabit ethernet
+			1000 base T cat5 e cat5e
+				tecnologia mais viavel para uma infraestrutura existente caso a rede possua menos de 100 metros
+				utiliza os 4 pares disponíveis no cabo
+			1000 base TX cat6
+				utiliza 2 dos 4 pares do cabo 
+		10000Mbits ten gigabit ethernet
+			10G base X
+				full duplex
+				fibra optica
+				cat6a
+				utilizada em backbones e conexões de servidores e storages
+	OBS: cat5 e cat5e que usam gigabit ethernet perdem a funcionalidade POE - power over ethernet pois este faria uso de 1 par do cabo por isso é recomendado o cat6
+IEEE 802.11 é o padrão para redes sem fio
+	WLAN - wireless local area network
+		utiliza ondas de rário
+	usa endereçamento de 48 bits
+	Concentra-se nas duas primeiras camadas do OSI
+		2 - Enlace
+			data
+				LLC 802.2 logical link control
+			link
+				MAC media access Point - power, secutity, etc
+		1 - Fisica
+			FH, DS, IF
+	Não é possível detectar colisões (problemas near far)
+		utiliza o CSMA/CA ou DCF
+		
+	trabalha em duas frequencias de rádio
+		2.4GHZ
+			canais de 1 a 11
+			utiliza apenas 3 canais sem soreposição 1, 6 e 11
+		5.0GHZ
+			baixa interferência de outros equipamentos
+			23 canais sem sobreposição
+			menor capacidade de transpor obstáculos
+			raio de alcance menor
+	802.11a ate 54 Mbits
+	802.11b até 11 Mbits
+	802.11g até 54 Mbits
+	802.11n até 150Mbits
+	802.11ac até 866Mbits
+LAN
+	Local area network
+	cobre uma area de 100m com cabo udp
+	formada por servidores, estações de trabalho clientes
+	
+		SO de redes
+			tem o lado servidor
+			lado cliente
+		Dispositivos de redes lan
+			switches
+			roteadores
+			repetidores
+			...
+		Protocolos de comunicação
+	Tecnologias de rede
+		Barramentos
+			802.3 com controle descentralizado
+			se os pacotes colidirem cada computador aguarda um tempo aleatorio
+		Estrela
+			tudo passa aleatoriamente por um central inteligente que deve conectar cada estação e distribuir o trafego
+		Anel
+			utiliza bits que se propagam de modo independente em token ring
+Equipamentos
+	Switches
+		L2 ou layer 2 - camada de enlace do OSI
+		compartilham a comunicação de dados entre os dispositivos de rede
+		cada porta possui um dominio de colisão diferentes eliminando a colisão de pacotes e gerenciamento por MAC addess
+		suportam configuração de vlans
+			divisão em menores segmentos
+		L3 - trabalham na camada de rede do OSI
+			roteamento entre as redes
+	Access point
+		semelhantes aos switches porém para cliente se fio
+		2.5 ou 5GHZ
+		internas ou externas
+
 ### Unidade 2 ###
 
 *** inspire-se ***
@@ -29,6 +162,49 @@ Quais desafios sob oponto de vista de conectividade, para manter um ISP funciona
 	Concorrencia com grandes operadoras
 	Capital por conta de pouco apoio governamental
 
+*** Aula ***
+Prof Douglas Pereira
+VTP, VLAN, TRUNKING e PROTOCOL
+	VTP - vlan trunking protocol 
+		facilita a configuração de uma vlan, utilizado para distribuir e sincronizar as informações de identificação de vlans.
+		as informações são propagadas atraves do entrocamento de todos os switches conectados
+		os anuncios vtp são transmitidos a cada 5 minutos ou sempre que ocorrer alteração nas configurações de vlan
+		3 modos de operação
+			servidor
+				é o switch que concentra as informações das vlans como IDs e nomes
+				as informações são armazenadas na nvram dos switches e inicializadas automaticamente quando ligado
+					por isso devemos apagar qualquer informação do aparelho antes de coloca-lona rede
+			cliente
+				é o switch que recebe asinformações de vlan existentes na rede e armazena em sua ram, essas informações vem de um switch em modo servidor e são armazenadas também na nvram para evitar perdas porém não é possível criar, excluir ou editar informações de vlan 
+			Transparente
+				é o switch que atua no meio termo entre o servidor e o cliente mas não participa do domínio vtp
+				pode criar, editar e apagar as informações localmente sem afetar outros switches
+				existe o encaminhamentos das atualizações de vtp pelos seus links
+		3 versões
+			vtpv1
+			vtpv2
+			vtpv3
+		Para configurar o vtp é necessário informar um nome chamado domínio vtp e um senha opcional
+		Com o vtp os adms não precisarão criar, editar ou excluir vlans em cada um dos switches que estiver na rede, que são armazenads no suwitch em modo servidor e repassadas automaticamente
+
+Configurando o VTP
+	estabelecer o switch servidor e os clientes
+
+Link Aggregation
+	combinação de multiplas conexões de rede em paralelo para aumentar o throughput
+	LAG - grupo de agregação de link
+		combina várias portas físicas para criar um único caminho de dados de alta largura de banda
+	pode ser também o entroncamento de portas
+	
+Etherchannel
+	tecnologia de agragação de links de portas principalmente em equipamentos cisco
+	permite agrupar vários links ethernet físicos para criar um link lógico 
+	objetivo de fornecer tolerância a falhas e links de alta velocidade entre switches, roteadores e servidores
+	pode ser criado entre 2 a 8 portas fast ethernet, gigabit ethernet ou 10gigabit ethernet ativas
+	utilizado principalmente em backbones mas também pode ser utilizado para conectar computadores
+
+Comandos
+	IOS cisco
 
 ### Unidade 4 ###
 
