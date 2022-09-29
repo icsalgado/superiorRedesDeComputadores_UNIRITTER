@@ -147,6 +147,48 @@ Comente sobre a descoberta e os testes que cientistas realizam para a obtenção
 Essa tecnologia substitui a fibra optica?
 	transmissão de dados por luz no espaço está em estudo e foi a base para desenvolvimento da fibra
 
+*** aula ***
+Prof Douglas Pereira
+Broadcast
+	broadcasting, em telecomunicações, quer dizer transmitir
+	é um método de transferencia de mansagens para todos os receptores simultâneamente
+	pode ser usado como uma operação de alto nível em um programa por exemplo broadcast message passing interface
+	pode ser ser um a operação de rede de baixo nível por exemplo broadcast over ethernet
+	transmitir um pacote que será recebido por todos na rede
+	é o contraste do endereçamento unicast
+	ocorre em comunicação de rede para receber a resposta de um destinatário
+	os switches não filtram quadros em broadcast
+	para que outros switches na LAN recebam quadros de broadcast os switches precisam enviar esses quadros para todas as portas inundando o ambiente
+	um conjunto de switches interconectados formam um único domínio de broadcast
+	somente um dispositivo de camada 3 ou L3 como um roteador, pode dividir um domínio de broadcast de camada 2
+	os roteadores são utilizados para segmentar tanto domínios de broadcast como domínios de colisão
+	uma forma de minimizar os problemas de broadcasting é segmentar a rede em vlans
+	
+Encaminhamento
+	roteamento de pacotes
+	ou reencaminhamento destes pacotes que se baseia no endereço IP e mascara de rede dos mesmos
+	é uma operação de terceira camada do OSI 
+	pressupôe uma tabela de encaminhamento chamada ROUTING
+	a mascara de rede especifica o range de IPS que podem ser abrangidos por um determinado endereço 
+	com simples cálculos pode-se gerir o espaço de endereçamento disponível
+	O roteamento é realizado por equipamentos L3 como roteadores, switches e firewalls e seu endereçamento de rede é denomidado DEFAULT-GATEWAY;ROTA PADRÃO;GATEWAY 
+	
+IEEE 802.1q VLAN
+	permite a criação de redes virtuais locais
+	adicionar rotulos de 32 bits denominados 802.1q tags nos quadros ethernet 
+	instruir os elementos comutadores dacamada de enlace (switches) a trocarem entre si apenas os quadros que contenham o mesmo identificdor
+	switches, roteadores, firewalls ealguns servidores são capazes de interpretar um pacote de vlan falando o protocolo 802.1q
+	estações de trabalho nãointerpretam o 802.1q
+	permite que várias redes virtuais sejam criadas sobre uma rede física
+	as estações de trabalho só se comunicam entre otras na mesma vlan
+	para comunicação entre vlans é preciso um device L3 
+	
+Criando VLANS
+	vlan 2
+	name nomevlan
+
+Trobleshoting
+	identificação e correção de problemas
 
 ### Unidade 3 ###
 
@@ -214,3 +256,39 @@ Qual a importancia na sua opinião de uma boa formação na area de redes de com
 	Estar sempre atualizado
 Quais os desafios, na sua opinião,tanto na atualidade quanto em um futuro proximo para o gerenciamento de trafego de redes na internet?
 	Se manter atualizado
+	
+*** Aula ***
+Prof Douglas Pereira
+VTP Anuncios
+	incrmentados a cada 5 minutos
+	informam sobre o atual nome de domínio VTP e o número de revisão da configuração
+	quando o switch recebe o anuncio ele compara o domain name vtp com o seu proprio, se o nome for diferente ele ignora o pacote
+	
+	anuncio de subconjunto
+		lista de configurações sobre as vlans
+STP spanning TREE protocol
+	protocolo para equipamentos de rede que permite resolver problemas de looping em redes comutáveis cuja topologia insira aneis nas ligações
+	o stp permite interligações entre os swiches provendo caminhos alternativos em caso de falha
+	BPDU bridge protocol data unit
+		quadro de troca entre os switches que posibilita a identificação do melhor caminho
+		3 tipos
+			configuration BPDU - cálculo do spanning tree
+			topologi change notification TCN
+			TCA acknowledgement
+		estados da porta
+			blocked recebe apenas os BPDUs
+			listening processando BPDUs
+			learning montando a tabela de endereço
+			fowarding enviando e recebendo dados
+			desable
+STP spanning tree protocol - Enlaces redundantes
+
+Roteamento intra-Vlan
+	entrega consistente de pacotes fim a fim
+	2 tipos
+		estaticas
+			criadas automaticamente pelo equipamento quando mais interfaces são configuradas
+		Dinamicas
+			rotas adicionads em suas tabelas automaticamente quando SPF ou BGP aprendem novas rotas
+	
+		

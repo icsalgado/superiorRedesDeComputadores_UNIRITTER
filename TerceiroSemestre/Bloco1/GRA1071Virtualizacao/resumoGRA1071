@@ -19,7 +19,115 @@ Hypervisor
 	Responsavel por comunicar uma VM com o hospedeiro 
 		Tipos:
 			Bare-metal - Roda diretamento com o hardware do sistema hospedeiro [Hardware hospedeiro] >> [hypervisor] >> [n Sistemas operacionais] - o Hypervisor escalona as maquinas virtuais no hardware
-			Hospedado - SO hospedeiro onde o hypervisor é executado como um processo [hardware] >> [so] >> [Hypervisor] >> [VMs] - mais simples de implementar			
+			Hospedado - SO hospedeiro onde o hypervisor é executado como um processo [hardware] >> [so] >> [Hypervisor] >> [VMs] - mais simples de implementar
+			
+*** Aula ***
+Prof Alexandra Soares - Administração e gestão de sistemas
+Visão Geral 
+	Transformação de um servidor físico em vários virtuais
+	Otimiza o uso dos recursos tornando as aplicações independentes do hardware
+	Redução de custo de hardware, melhoria das condições de recuperação de desastres e economia de espaço para datacenter
+	Técnica de separar a aplicação e SO de recursos físicos
+	Multiprocessamento em tempo compartilhado
+	
+	Workload
+		carca de trabalho - dados a serem processados e instruções a serem executadas e define a qualidade de serviço percebida pelo usuário e varia de acordo com a aplicação a ser processada
+	Throughput
+		Define a capacidade de hardware e software para procesar os dados
+		composto por velocidade IO, velocidade de CPU, capacidade de paralelismo e eficiência do SO
+	
+	Desafios da virtualização
+		1 - abdicação do físico
+			o hardware não pode ser tratado como secundário
+		2 - performance de aplicativos abaixo da média
+			muitos aplicativos ainda não foram adaptados para ambiente virtual
+		3 - segurança falha
+			tende perder a visão do que roda por trás da aplicação
+		4 - aprisionamento
+			dificuldade no desprendimento de alguns fornecedores do serviço
+		5 - acumulo de maquinas virtuais
+			o numero de sistemas virtuais aumentou muito - sem ciclo de vida
+		6 - custo e licenciamento
+			taxas de licença baseadas no uso de cpu em grandes servidores virtualizados
+		7 - paixão por armazenamento
+			acesso a SAM storage area network, problemas de acesso simultâneos
+		8 - barreiras virtuais
+			nem toda maquina virtual pode ser movida entre hardwares por exemplo Intel e AMD		 
+	
+Soluções de virtualização
+	Virtualizaçãod e servidor
+		técnica de virtualização de um ou mais servidores virtuais sobre um servidor fisico
+		permite maior densidade de utilização de recursos mantendo isolamento e segurança
+	Virtualização de aplicação
+		permite executar aplicações num ambiente virtualizado na maquina do usuário, isolando a aplicação do SO, ou seja, encapsulamento da aplicação no ambiente virtual. Só é possível ver o conteudo do seu container
+	Virtualização de Desktop
+		consiste na execução de multiplos SOs em uma única estação de trabalho
+	Virtualização de apresentação
+		permite executar e manter as aplicações em servidores centralizados
+	Virtualização de dados
+		dados de várias fontes em uma única camanda de acesso sem precisar de detalhes de origem 
+	Virtualização de programa
+		virtualização de aplicativos e espaços de trabalho - conceito de aplicações portateis
+	Virtualização de serviços
+		emulando o comportamento de serviços específicos orientados a apis e serviços de nuvem
+	Virtualização de memoria
+		agregando recursos de memoria ram de sistemas em rede em um único conjunto de memoria (Memoria virtual)
+	Virtualização de armazenamento
+		abstração do armazenamento lógico do armazenamento físico
+	Sistemas de arquivos distribuidos
+		acesso a arquivos de vários hosts que compartilham atraves de uma rede
+	Sistema de arquivos virtual
+		camada de abstração sobre um sistema de arquivos mais concreto
+	Hypervisor de armazenamento
+		software que gerencia a virtualização de armazenamento e com binarecursos de armazenamento fisico
+	Disco Virtual
+		emula uma unidade de disco
+	Virtualização de perfil
+		documentos de usuario em uma maquina especifica
+	Virtualização de rede
+		rede endereçando espaço dentro de uma subrede
+	VPN
+		camada abstrata de uma rede criada na internet
+		
+Virtualização de Hardware
+	Maquina virtual com sistema operacional
+	
+	VDI
+		virtualização de um desktop par acesso independente do hardware
+		move cargas de trabalho de pcs para ambientes de servidor
+		ambiente mais centralizado
+	Virtualização de sessão 
+		são acessos a um computador mais robusto com pastas de usuário
+		
+Vantagens e desvantagens
+	Gerenciamento centralizado
+	Instalações simplificadas
+	facilidade em backup
+	suporte e manutenção simplificados
+	acesso controlado a dados sensiveis
+	independencia de hardware
+	disponibilização de novos servidores
+	migração de servidores para um novo hardware
+	disponibilidade e recuperação em casos de desastres
+	compatibilidade 
+	economia de espaço físico
+	economia de energia elétrica
+	segurança
+	confiança e disponibilidade
+	custo
+	adaptação em diferentes carcas de trabalho
+	balanceamento de carga
+	suporte a aplicações legadas
+	Simulações
+	redução de downtime
+	
+	Grande uso de espaço em disco
+	Dificuldade no acesso direto ao hardware
+	Grande consumo de memoria RAM
+	Segurança vinda do host
+	Gerenciamento
+	Desempenho
+	
 
 ### Unidade 2 ###
 
@@ -39,6 +147,48 @@ Qual o impacto de virtualizar várias máquinas no hardware instalado?
 Qual fator econômico motivou a adoção da virtualização da infraestrutura?
 	Redução de custo pela quantidade de servidores
 	Economia de energia
+	
+*** Aula ***
+Modelos de Maquinas virtuais, tipos e discussão
+	uma diplicata eficiente e isolada de uma maquina real
+	VMCMS - virtual machine conversational monitor system - varios utilizadores tabalham ao mesmo tempo - IBM 360 - 1964
+	IMB 704 - usado em mainframes 
+	
+	podem ser dividas em 3 tipos
+		tipo1- monitor implementado entre o hardware e os sistemas convidados, o monitor tem controle sobre o hardware e abre sessões para criação de VMs semelhantes ao SO
+		tipo2 - monitor implementado como um porcesso de SO real ou sistema anfitrião onde o monitor é executado como um processo do SO host
+		tipo3 - capacidade de a VM acessar diretamente o hardware
+		
+	VMs para sistemas ficticios permitem portabilidade e testes compilados
+		exemplo JVM
+
+Containers
+	os meios são diferentes da virtualização mas os fins são os mesmos
+	conhecida como virtualização baseada em containers - implantação e execução de aplicativos distribuidos, sem necessidade de uma instalação completa de uma VM
+	compartilham o mesmo kernel do SO, se tornando mais eficientes que uma VM
+	CAS - containers as a service - utilização de APIs para acesso
+	
+	economiza mão de obra
+	disponibilidade aumentada
+	otimização de processos com foco em aplicações
+	estimulo de DEVOPS
+	infraestruturas mais enxutas
+
+Containers VS VM
+	v- servidor configurado para funcionar como uma maquina física
+	c- blocos independentes dedicados para a aplicação
+	
+	v- computador inteiro simulado de forma virtual
+	c- em nivel de SO nem necessidade de inicializar uma VM inteira para rodar uma aplicação em ambiente dedicado
+	
+Segurança na virtualização
+	Gerenciamento com segurança de TI
+	Armazenamento centralizado que se torna um ponto critico
+	Autenticação e autorização
+	VMs falsas - causadas normalmente por falta de gerenciamento
+	VMs sem atualização
+	
+	Hypervisor - gerencia as VMs no SO ou Hardware - cuidados com transbordamento por ataques
 	
 ### Unidade 3 ###
 
@@ -74,4 +224,108 @@ Quais as principais tendências desse mercado de trabalho nos ultimos anos?
 	Segurança  
 Na suaopinião,quais tendências tecnologicas devem se formar nos proximos anos?
 	Computação na nuvem
+	
+*** Aula ***
+Prof Alexandra Soares
+Redes Virtuais
+	quando redes físicas não sendo satisfatórias
+		congestionmento da rede em horário de pico
+		nessecidade de segmentação de redes físicas
+		alta demanda de banda
+		backbones com tecnologia diferente da rede local
+	sub-redes são criads de forma lógica
+	podem ser implementads em 3 níveis de tecnologia
+		Switch hub LAN
+		Roteadores
+		Plataformas de hardware e software
+	vantagens
+		melhor uso da malha disponível
+		grande flexibilidade na estrutura da rede
+		maior segurança
+		melhor desempenho
+	protocolos VPN
+		L2TP
+		L2F
+		PPTP
+		IPSec
+	Conexões remotas
+		RAS - windows
+		SSH - unix
+	Classificadas por
+		protocolo de tunelamento usado
+		local de término do túnel
+		tipo de topologia de conexões
+		niveis de segurança
+		Camada OSI
+		numero de conexões simultâneas
+	Funcionamento
+		encapsulamento do quadro com cabeçalho IP e da Rede
+	Segurança
+		aumenta a privacidade e segurança
+		confidencialidade
+		autenticação
+		integridade
+	VLAN
+		camada 2
+		estaticas
+			baseadas em portas
+		dinâmicas
+			alteraçãovia software baseada em MAC
+			
+		openvlans
+			BD e MAC unico
+		closevlans
+			BD e MAC separado
+		Mixedvlans
+Alta disponibilidade
+	resistente a falahas
+	baseado em redundância
+	usa clusters como se fossem maquinas de grande porte evitando SPOF single point of failure
+		cluster de alta disponibilidade
+		cliuter de alto desempenho
+		clister de balancemaneto de carga
+Grência de rede
+	Objeto gerenciado
+	agente
+	gerente
+	
+	evita
+		gasto de tempo
+		aumento de custos
+		redução de competitividade
+	
+	modelos
+		são diretrizes e não padrões
+		Modelo ISO
+		ITIL
+		FCAPS
+		TMN
+Computação em Nuvem AWS
+	disponibilidade sob demanda
+		IAAS infra
+		PAAS plataforma
+		DAAS desktop
+		SAAS software
+		CAAS comunicative
+		XAAS everything
+		DBAAS data base
+		SECAAS security
+		FAAS function
+		MBAAS mobile backend
+	caracteristicas
+		alto atendimento sob demanda
+		amplo acesso a rede
+		pool de recursos
+		elasticidade rápida
+		serviço medido
+	implantação
+		privadas
+			infra pertence a um usuário
+		publica
+			aberta
+		hibridas
+		
+		
+		
+			
 	
