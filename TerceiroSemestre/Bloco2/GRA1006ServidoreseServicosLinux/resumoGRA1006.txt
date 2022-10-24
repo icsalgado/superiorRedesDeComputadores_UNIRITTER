@@ -1,0 +1,97 @@
+###### UNIDADE 1 GRA1006 ######
+
+*** INPIRE-SE 1 ***
+Adelino Soldivar - Especialista em computação
+Requisitos para trabalhar com infra
+	topologias de redes
+	protocolos
+	sistemas operacionais
+	ativos de rede (equipamentos)
+	segurança da informação
+	conhecimento aprofundado em Linux
+Procura de empresas por profissionais
+	67% das empresas precisam de profissionais com conhecimentos em Linux
+	80% delas tem dificuldade em encontrar esses profissionais
+	Interessante ter certificações Linux
+Windows e Linux no trabalho
+	É mais comum do que se pensa
+	Sistemas diferentes executando funções diferentes
+Motivação para o Linux
+	custo x beneficio
+	
+*** AULA 1 ***
+Prof Luiz Rodrigo
+Surgimento do GNU Linux MeECP
+
+	Criado por Linus Torvalds em 1991 com base no MINIX
+	MINIX criado por Tanenbaum Baseado no UNIX
+	UNIX - BellLabs que posteriormete foi reescrito em C
+	
+Distro GNU/Linux
+	
+	Emulação em VM
+	Download de distros
+		será usado o Debian e o pfsense
+		
+Cenario de implantação de uma Distro Linux
+	Cenário Rsidencial
+	
+	Fibra, telefonia ou coaxial > modem > roteador ponto de acesso
+	
+	Cenário Corporativo
+	
+	internet > roteador >> pontos de acesso
+				>> servidores
+			
+Instalação do debian no virtualbox
+	
+*** Leitura ***
+Autor: Me Haroldo da Silva Ferreira e Me. Ramiro Cordova
+Revisor: Alexandre Denicol 
+
+	Linux é um SO de código aberto sob licença GPL baseado em Sistemas Unix, criado por Linus Torvalds em 1991, mas com kernel próprio apenas em 1994
+	
+	No Linux a junção do kernel com o conjunto de ferramentas GNU formam o Sistema Operacional Linux
+	
+	O conjunto de ferramentas GNU foram desenvolvidas através do projeto GNU (GNU's Not Unix), projeto criado em 1983 por Richard Stallman e atualmente é mantido pela Free Software Foundation (FSF). A distribuição Linux oficial do projeto GNU é a Debian, pois foi desenvolvida e é atualizada através de esforços de voluntários espalhados pelo mundo todo, seguindo o mesmo estilo de desenvolvimento do projeto GNU/Linux. 
+	O Linux é uma forma reelaborada do Unix, que difere basicamente do Unix por ser gratuito, com código aberto e desenvolvido de maneira cooperativa entre pessoas e organizações. 
+	A licença GPL tem como objetivo preservar as condições legais relacionadas a liberdade de softwares, garantindo que as implementações futuras realizadas no software também sejam livres.
+	[[  Desenvolvedores que trabalham em projetos de software livre usam a licença GPL para reivindicar direitos autorais e manter características de software livre ao seu projeto e suas futuras versões. Pensando em características de software livre, qual das alternativas abaixo está de acordo com a licença GPL V3 ? 
+	 Permite a cobrança pela distribuição de um software livre.
+Feedback: alternativa correta , pois segundo a GPL é permitido realizar a cobranças. ]]
+	Certificações RHCA (Red Hat Certified System Administrator) e RHCE (Red Hat Certified Engineer). 
+	[[  Por que é correto afirmar que o Slackware é indicado para usuário doméstico mais experiente ? 
+	 Por que mantém o que é tradicional no Linux.
+Feedback: alternativa correta , pois essa é a principal característica desta distribuição Linux.  ]]  	
+	 Os Sistemas GNU/Linux, segundo a FHS (Filesystem Hierarchy Standard), possui a seguinte estrutura básica de diretórios:
+
+    / - Diretório raiz.
+    /bin/ - Local dos programas essenciais do sistema.
+    /boot/ - Arquivos do boot.
+    /dev/ - Local dos arquivos de acesso aos dispositivos.
+    /etc/ - Local de arquivos de configuração.
+    /home/ -  Diretório do usuário
+    /lib/ - Local das bibliotecas essenciais.
+    /mnt/ - Local para ponto de montagem temporária.
+    /media/ - Local de montagem para mídia removível.
+    /opt/ - Local para programas que não são essenciais.
+    /proc/ - Sistema de arquivos do kernel, é utilizado apenas por ele.
+    /root/ - Diretório home do super usuário, conhecido como root.
+    /sbin/ - Diretório de programas root para administração e controle do sistema.
+    /tmp/ - Local de arquivos temporários.
+    /srv/ - Local para dados específicos, de serviços e servidores.
+    /usr/ - Local de programas ou arquivos compartilhados, acesso apenas leitura normalmente.
+    /var/ - Local de arquivos que são gravados com frequência, como logs por exemplo.
+	[[  Dentre as opções abaixo, qual representa o diretório padrão do Linux utilizado para armazenar os arquivos de configuração dos softwares? 
+	 /etc/
+Feedback: alternativa correta , pois este é um diretório padrão para arquivos de configuração.  ]]
+	[[  Dentre os comando apresentados abaixo, qual deles é utilizado para encerrar um processo no sistema operacional Linux? 
+	kill.
+Feedback: alternativa correta , pois o comando kill é utilizado para encerrar processos no linux via linha de comando. Este comando possui muitas opções de execução.. É um comando para encerrar um processo.   ]]
+
+
+
+
+
+
+

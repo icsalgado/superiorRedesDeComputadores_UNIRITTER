@@ -1,0 +1,4 @@
+ Olá estudante,
+Seja bem-vindo (a)!
+Esta disciplina foi concebida para de forma objetiva e clara apresentar a base de estudos do Sistema Linux, para ser um compêndio sobre temas iniciais e relevantes que servirão como base de estudos desta disciplina. O conteúdo disposto gira em torno do surgimento do Linux e dos cenários indicados para sua aplicação, além de identificar os princípios teóricos e apresentar os principais comandos para utilização do sistema.
+Bons estudos! 

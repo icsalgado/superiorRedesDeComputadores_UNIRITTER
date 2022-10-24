@@ -1,0 +1,30 @@
+
+Principais distribuições Linux
+
+Necessidades e limitações são informações necessárias para a implantação de uma estrutura computacional em qualquer organização empresarial. Assim, o responsável pela atividade evita falsas expectativas e frustrações por parte do cliente, seja ele interno ou externo.
+
+Segundo Hein et al . (2007), o sistema operacional Linux é utilizado há décadas em ambientes de produção, sendo, assim, hábil para atender aos resultados esperados pelos clientes, desde que seja escolhida a distribuição Linux correta e suas devidas configurações, que estejam alinhadas com a expectativa estabelecida.
+
+Vamos pensar no que já é estabelecido por várias empresas em seus processos seletivos, o teste de conhecimento técnico, que pode ser de maneira prática ou teórica. Portanto, vamos simular a realidade com o seguinte cenário.
+
+Você, caro estudante, é um dos participantes do processo seletivo de uma grande empresa. Na primeira etapa do processo, uma prova teórica é aplicada e, nela, está descrita uma parte da estrutura computacional da empresa e a necessidade que justifica a implantação de um novo sistema operacional. A seguir, temos o cenário apresentado:
+
+“Nós, da empresa XPTO, temos centenas de funcionários que utilizam os computadores da empresa que utilizam sistema operacional Linux, pois acreditamos ser mais barato, o que gera menor custo para a empresa.
+
+Nosso servidor de arquivos possui hardware muito poderoso, mas decidimos economizar com seu sistema operacional; por isso, colocamos anos atrás uma distribuição Linux brasileira que não existe mais, que vem tendo muitos problemas e, como não temos profissionais especializados, existe a necessidade de trocar o sistema operacional.
+
+Nossa empresa atua 24 horas por dia, todos os dias da semana; cada parada de serviço gera prejuízo para a empresa. Seria ótimo ter um atendimento especializado, rápido e sempre disponível”.
+Vamos Praticar
+
+Observe o cenário fictício apresentado e cite uma distribuição Linux que seja mais indicada para atender às necessidades da empresa. Justifique sua resposta. Ao final, disponibilize seu trabalho no fórum da seção.
+Referências
+
+HEIN, T. et al . Manual completo de Linux : guia do administrador. Estados Unidos: Pearson, 2007.
+
+Resposta
+Caro estudante, 
+
+Muitas distribuições Linux podem atender às necessidades da empresa de uma maneira básica. Porém, alguns aspectos apresentados nos cenários nos fazem chegar à resposta ideal, que é a distribuição Red Hat Enterprise Linux.  
+
+É uma distribuição Linux estável, a mais usada nas organizações entre todas que usam servidores com Linux instalado. Possui suporte de atendimento 24 horas por dia, com profissionais especializados. 
+
