@@ -1,0 +1,5 @@
+Sobre a disciplina GRA0986
+
+Redes de computadores são importantes recursos que permitem a comunicação e transmissão de dados entre computadores e demais equipamentos eletrônicos. As redes sem fio, apesar de aparentemente recente, têm seu primeiro registro datado de 1901. Redes sem fio representam um importante avanço, permitindo ultrapassar diversos limites físicos impostos aos mecanismos convencionais de transmissão de dados.
+Nesta disciplina veremos os principais conceitos envolvidos na transmissão de dados através de meios de transmissão não guiados; os tipos de redes sem fio: PAN, WLAN, WMAN e WWAN; modo de operação, infraestrutura; conceitos sobre a potência de sinal na transmissão em um enlace sem fio e os problemas que podem ocorrer; a forma como o sinal pode propagar por múltiplos caminhos; e o problema do terminal oculto. Conheceremos os padrões para WLAN: IEEE 802.11, a arquitetura proposta pelo padrão, formato do quadro, conceitos de varredura ativa e passiva e os protocolos CSMA/CA e CSMA/CD.
+Bons estudos! 

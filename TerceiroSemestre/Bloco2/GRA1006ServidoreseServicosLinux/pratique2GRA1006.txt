@@ -1,0 +1,25 @@
+
+Política de Segurança da Informação
+
+Em um ambiente organizacional o comportamento errôneo de seus colaboradores pode gerar problemas de relacionamento interpessoal, prejuízos financeiros ou perca de informações relevantes a organização.
+
+Esses comportamentos errôneos no âmbito computacional é de certa forma comum e muito prejudicial à segurança da informação da empresa, que podem afetar um setor específico ou até mesmo um grupo empresarial inteiro.
+
+Segundo Baars et al. (2018), esses comportamentos considerados errôneos por parte dos colaboradores, são aqueles que geram riscos associados a qualidade no uso da segurança das informações da empresa.
+
+Até mesmo a falta de conduta de um colaborador em um ambiente externo a empresa, pode ser ligada de maneira negativa a imagem da empresa. Uma foto postada em rede social do colaborador de uma empresa, que vá no sentido inverso dos valores que a marca dessa empresa deseja transmitir, pode gerar repercussão midiática negativa e consequentemente prejuízo.
+
+Imagine um diretor de uma empresa de alimentos para veganos postar uma foto comendo picanha, linguiça e frango, vestindo o uniforme da empresa. Não seria algo ilegal, mas com certeza geraria no mínimo comentarios negativos.
+
+Pensando em comportamentos errôneos no âmbito computacional, o cenário fictício a seguir simula um comportamento comum em empresas:
+
+“Nós da empresa XPTO, temos centenas de funcionários que utilizam os computadores da empresa, é comum o compartilhamento de senhas entre eles. Outro problema que ocorre é o envio de informações sigilosas para concorrentes.
+
+Fora esses problemas que já existem dentro da empresa, muitos funcionários têm postado fotos em redes sociais utilizando o uniforme da empresa em atividades que não estão de acordo com os valores organizacionais. ”
+Vamos Praticar
+
+Observando o cenário fictício apresentado, cite duas regras que podem ser inseridas na Política de Segurança da Informação da empresa para mitigar os problemas com os comportamentos errôneos apresentados . Ao final disponibilize seu trabalho no fórum da seção.
+Referências
+
+BAARS, hans et al . Fundamentos de Segurança da Informação . Com Base na ISO 27001 e na ISO 27002. Brasil, Brasport, 2018.
+

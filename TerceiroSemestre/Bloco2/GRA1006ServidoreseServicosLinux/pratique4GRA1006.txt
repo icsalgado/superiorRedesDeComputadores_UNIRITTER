@@ -1,0 +1,21 @@
+
+O protocolo HTTP
+
+Caro Estudante, o protocolo HTTP, amplamente utilizado nos sites pela Internet afora, possui alguns gargalos em sua concepção. Quando se planeja um servidor de páginas, que atenderá diversas requisições, há de se considerar que esse hardware e software, que estarão envolvidos, necessitem de um ajuste fino, em sua implementação e configuração.
+
+Diante desse cenário, você foi contratado para realizar essa instalação e configuração de um servidor Linux, rodando um servidor Web (apache), que atenderá a Internet. Pesquise, planeje e implemente um servidor Web, que seja adequado a esse cenário.
+
+Leve, em consideração as limitações técnicas. Descrevendo, sucintamente sobre elas, e quais os seus impactos na implementação desse cenário.
+
+Uma sugestão de leitura, para uma compreensão desse cenário e sua implementação, seria o livro do Andrew Tanenbaum, Redes de Computadores, em particular os capítulos 7 e 8, em sua plenitude com relação a rede e segurança. E o livro do (BRITO, S.H.B., 2017), que te dará uma compreensão de como realizar a instalação e configuração do Apache(httpd) em seu servidor Linux.
+Vamos Praticar
+
+Em um ambiente virtual, instale um servidor Linux, e o servidor Apache. Trabalhe na implementação e ajustes na configuração do servidor Apache, para atender  a demanda do cenário do mini-case. Uma boa leitura, no arquivo de configuração do Apache, te dará uma compreensão de como lidar com as limitações. Tutoriais de instalação e implementação, estão espalhados pela Internet.
+
+Ao final disponibilize seu trabalho no fórum da seção.
+Referências
+
+BRITO, S.H.B., Serviços de Redes em Servidores Linux , 1a edição, São Paulo, Novatec, 2017.
+
+TANENBAUM, A.S., Redes de Computadores , 4a edição, São Paulo, Pearson, 2003
+

@@ -1,6 +1,6 @@
 ###### UNIDADE 1 GRA1006 ######
 
-*** INPIRE-SE 1 ***
+*** INSPIRE-SE 1 ***
 Adelino Soldivar - Especialista em computação
 Requisitos para trabalhar com infra
 	topologias de redes
@@ -45,7 +45,7 @@ Cenario de implantação de uma Distro Linux
 			
 Instalação do debian no virtualbox
 	
-*** Leitura ***
+*** LEITURA 1 ***
 Autor: Me Haroldo da Silva Ferreira e Me. Ramiro Cordova
 Revisor: Alexandre Denicol 
 
@@ -89,9 +89,256 @@ Feedback: alternativa correta , pois este é um diretório padrão para arquivos
 	kill.
 Feedback: alternativa correta , pois o comando kill é utilizado para encerrar processos no linux via linha de comando. Este comando possui muitas opções de execução.. É um comando para encerrar um processo.   ]]
 
+###### UNIDADE 2 GRA1006 ######
+
+*** INPIRE-SE 2 ***
+Adelino Soldivar - Especialista em computação
+	O que é a restição de acesso ao usuário no ambiente empresarial?
+		qualquer mecanismo que permite fazer o controle e gestão de acesso dentro de um ambiente
+		importante para proteção das pessoas e dados
+	É importante preocupar-se com a permissão na fase de desenvolvimento do software?
+		sim para prevenir falhas de segurança e mitigação de ataques
+	Qual a utilidade da política de segurança da informação PSI na instrução do uduário?
+		Cerca de 70% dos ataques são por meio dos acessos dos usuários
+		
+	
+*** AULA 2 ***
+Prof Luiz Rodrigo
+
+Conhecendo o terminal gnu linux e primeiros comandos
+	
+	tab no terminal tira pontuação na LPI
+	
+	6 terminais de linha de comando no debian
+	clear
+	pwd
+	cd . | cd .. | cd
+	ls
+	mkdir
+	nano | vim
+	rm | rmdir
+	halt | shutdown -h now | init 0
+	
+Comandos avançados
+	vim /etc/apt/sources.list
+	apt e apt-get
+	apt-get install aptitude -y
+		parecido com apt-get
+	aptitude install vim
+	aptitude install splitvt
+		para dividir o terminal
+		splitvt - para dividir
+		ctrl w - troca entre os terminais
+	aptitude intall net-tools
+		ifconfig | grep inet
+	
+Servidor Samba
+	Andrew Tridgell - 1992
+	SAMBA saiu da busca no dicionario por uma palavra com as letras SMB
+	
+	Deamons - processo em plano de fundo e termina com a letra D
+	SMB D - arquivos e impressoras
+	NMB D - nomes de navegação
+	
+	apt-get install samba -y
+
+Configuração do samba
+	gerenciador de arquivos como windows
+	
+	ps aux | grep smbd
+	cd /etc/samba
+	cp smb.conf smb.confBKP
+	
+	/etc/init.d/smbd restart
+
+*** LEITURA 2 ***
+Autor: Me. Ramiro Sebastião Córdova Junior
+Revisor: Alexandre Denicol 
+
+Servidor DHCP - Dynamic Host Configuration Protocol
+	O serviço DHCP é importante porque tira a necessidade de um administrador de sistema ou rede configurar manualmente os endereços IP para novos computadores adicionados à rede ou computadores movidos de uma sub-rede para outra. O endereço IP atribuído por um servidor DHCP a um cliente DHCP fica sob uma "concessão"
+		
+	Instalando
+		apt-get install isc-dhcp-server 
+		/etc/init.d/isc-dhcp-server stop
+	Configuração do Serviço DHCP
+		vim /etc/dhcp/dhcpd.conf
+	Startar o DHCP
+		/et/init.d/isc-dhcp-server start
+Servidor Samba
+	Um servidor de arquivos Samba permite o compartilhamento de arquivos em diferentes sistemas operacionais em uma rede. Com a implementação desse serviço é possível o compartilhamento de arquivos independente do sistema operacional utilizado nas estações clientes, através do protocolo de compartilhamento de arquivos conhecido como SMB. 
+	
+	Deamons principais
+		smbd - portas 139 e 445 - compartilha arquivos e impressoas, problemas de autenticação do usuário e bloqueio de recursos
+		nmbd - porta 137 - é antigo e obsoleto, responsavel por manipular solicitações de serviço de nome NetBios - Agora se usa DNS
+		winbindd - pode ser usado para consultar servidores Windows nativos para obter informações de usuários e grupos. 
+	instalação do servidor
+		apt-get install samba
+	instalação do client
+		apt-get install samba-client
+Configuração do Samba
+	vim /etc/samba/smb.conf
+Definições de acesso ao Samba
+	adicionar no linux sem deixar ativo nem criar home
+		adduser -disabled-login -no-create user1
+	adicionar no samba
+		smbpasswd -a user1
 
 
+###### UNIDADE 3 GRA1006 ######
 
+*** INSPIRE-SE 3 ***
+Ataques DNS
+	Domais hijacking
+		fomra de sequestro do domínio - replica de páginas com pagamentos principalmente
+	Flood Attack
+		inundação - ataque de negação de serviço distribuida, sobrecarrega de requisições o servidor - utiliza computadores zumbi
+	DNS tunneling
+		dados encapsulados inseridos em um sistema vulneravel, geram uma comunicação para o servidor malicioso do invasor - cavalo de troia
+		
+	só existem invasores por que existem vítimas vulneráveis
 
+*** AULA 3 ***
+Prof Luiz Rodrigo Gomes
 
+Implantação do samba no cenário corporativo
+	webmin
+		GUI para gerenciamento do Samba
+		
+	swat - samba web administration tool
+		GUI
+		
+	ferramenta para windows para acesso de servidor de arquivos remoto
+	
+DHCP
+	Automático
+		atribui um ip livre
+	Dinamico
+		Tempo pré determinado de conexão
+	Manual
+		cada MAC pode ter um IP reservado
+	
+	cliente dhcp discovery na porta 67, porta de origem 68
+	servidor dhcp offer com numero de IP
+	cliente dhcp request confirmando o ip
+	servidor dhcp ack confirmando
+	
+Instalação do pf sense no virtual box
+	laboratório com pfsense e windows 10, não testei no qemu
+
+	https://www.youtube.com/watch?v=-sP0ZlpuSgw
+	
+	https://www.youtube.com/watch?v=9cmrbi_MV4Y&list=PLAZ9U7MSl5m_SuvPQZh6mSar0iTwAHnmH&index=7
+	
+Controlando ingresso de host com o DHCP no PFSENSE
+	
+	restrição usando MAC e IP estático
+	
+Controlando ingresso de host com o dhcp no pfsense
+	
+	
+*** LEITURA 3 ***
+DNS
+	13 servidores de nomes raízes espalhados pela Internet, e diversos continentes. Servidores topo de domínio, ou servidores raízes
+	SRI-NIC stanford research institute-network information center criou o sistema que armazena os nomes e IPs do grupo de computadores HOSTS.TXT que era atualizada pelos administradores dos servidores até os anos 80 com a transferencia sendo realizada por FTP
+	Primeira versão, foi criada dentro dos laboratórios da Universidade de Berkeley, tendo sido batizada de BIND ( Berkeley Internet Name Domain ), até hoje o servidor de nomes chama-se BIND.
+	O DNS, utiliza-se do protocolo UDP na porta 53
+	O serviço de DNS, pode ser usado para balanceamento de carga de servidor web ou servidor de e-mail, quando os site possuem diversos servidores com IP diferentes, que respondem por um mesmo domínio
+	Os servidores DNS, dividem-se em três segmentos:
+	    Servidores de nome raiz (Root Servers) : são 13 espalhados geograficamente pelo mundo.
+	    Servidores de alto nível TLD (Top Level Domain) : responsáveis pelos domínios do tipo .com, .org, .net, .edu, .mil, .br, .uk, .us entre outros.
+	    Servidores autoritativos : exercem a autoridade sobre um determinado domínio.
+	    Servidor DNS local : responsável, pela resolução local de nomes de uma determinada organização, mas ele não é integrado a hierarquia de resolvedores de nomes, ele apenas repassa a informação, até chegar no servidor raiz.
+	A partir da versão 8.2 do BIND, os pesquisadores da Universidade de Berkeley, introduziram uma camada de segurança ao sistema de resolução de nomes, a camada TSIG, segundo (LIU, C., ALBITZ, P., 2006), essa camada cria o DNSsec(DNS Security ), que protege o sistema de possíveis ataques . 
+	NSLOOKUP, é um programa de pesquisa da base de dados do serviço de DNS, realiza a consulta de um determinado nome, e traz informações como nome, ip, apelidos, responsáveis pelo domínio, ele é amplamente utilizado, mas possui algumas deficiências e “furos’ de segurança, e está gradativamente sendo substituído pelo DIG.
+
+DHCP
+	foi criado na década de 90, para suprir uma demanda de configuração dinâmica e automática de computadores. 
+	O DHCP, é um, faz parte da pilha de protocolos do TCP/IP, especificamente na camada de aplicação, sendo um serviço oferecido aos computadores.
+	Ele é responsável por conceder IP, nome do host, máscara de rede e sub-rede, gateway default, e servidores de DNS, este serviço é ativado pelo administrador da rede nos computadores, e o serviço DHCP é implementado em um servidor. 
+	Funcionamento
+		Discover
+		Offer
+		Request
+		ACK
+	
+    DHCPDISCOVERY (descoberta): o cliente transmite uma mensagem para todos os computadores na rede local, na tentativa de descobrir quem é o servidor de DCHCP, este pacote é encaminhado via protocolo UDP.
+    DHCPOFFER (oferta): o servidor recebe a requisição do cliente e  concede o IP, bem como o tempo que esse cliente poderá usar esse endereço, até a sua renovação.
+    DHCPREQUEST (pedido): o cliente recebe a oferta do servidor e analisa e aceita as configurações e começa o processo de configuração do equipamento na rede local.
+    DHCPACK (confirmação): O servidor DHCP recebe o aceita do cliente, o servidor repassa todos os dados necessários para o cliente poder acessar a rede e finaliza o processo de concessão. O cliente nesse passo configura a rede do computador local, com as informações repassadas pelo servidor DHCP, e o computador está pronto para ser utilizado. Todo esse processo é realizado em milissegundos, de forma imperceptível ao usuário.
+	Um estudo, sobre DHCP Relay, traz um panorama favorável para inclusão de segurança no serviço de DHCP. 
+	Para garantir, confiabilidade e segurança, o ideal é sempre possuirmos servidores redundantes em caso de falha do servidor principal. 
+
+###### UNIDADE 4 GRA1006 ######
+
+*** INPIRE-SE 4 ***
+Protocolo HTTP
+	espera-se menor latência
+	RFC7540 http/2
+
+*** AULA 4 ***
+Prof: Luiz Rodrigo Gomes
+FTP
+	file transfer protocol
+	portas 20 transferência de dados 21 controle de conexão e 22 ssl
+	utiliza TCP
+Instalando um servidor FTP
+	apt-get install proftpd-basic
+	configurar /etc/proftpd/proftp.conf
+DNS e HTTP
+	bind9 para DNS 
+	apache e nginx para http
+Instalando interface grafica no debian
+	apt show gnome
+		para verificar versões e outros dados
+	apt install gnome
+	
+
+*** LEITURA 4 ***
+HTTP
+	 A sigla HTTP ( Hypertext Transfer Protocol ) nasceu em 1965, dentro do projeto Xanadu, capitaneado pelo Ted Nelson, filósofo e sociólogo, apaixonado por tecnologia, em um ensaio de coleta de informações em microfilmes datados de 1945.
+	 Sua localização na pilha TCP/IP e na camada de aplicação, o http trabalha no modelo requisição-resposta, onde o cliente (navegador), solicita informações ao servidor, e mesmo retorna com alguma informação.
+	 Todo protocolo da pilha TCP/IP, possui uma porta de comunicação associada, por onde os pacotes são encaminhados, no http é a porta 80, que seria a porta de serviço padrão, mas que nada impede que você re-configure o servidor Web, para enviar-responder em outra porta.
+	 
+    RFC7230 – HTTP/1.1: Message Syntax and Routing
+    RFC7231 – HTTP/1.1: Semantics and Content
+    RFC7232 – HTTP/1.1: Conditional Requests
+    RFC7233 – HTTP/1.1: Range Requests
+    RFC7234 – HTTP/1.1: Caching
+    RFC7235 – HTTP/1.1: Authentication
+    
+Cookies
+	 Existe dois tipos de cookies: cookies de sessão e cookies persistentes.
+
+	    Cookie de Sessão: mantém as configurações e preferências utilizadas em um site, por um determinado usuário, quando o navegador é encerrado o cookie é apagado.
+	    Cookie Persistente: pode permanecer por muito tempo no computador, é armazenado em disco e não é apagado quando o navegador é encerrado.
+
+FTP
+	O protocolo FTP é responsável pela transferência de arquivos de um servidor para um cliente, esse cliente pode fazer upload e download de arquivos. Tal protocolo trabalha na camada de aplicação da pilha TCP/IP.
+	utiliza duas portas de comunicação, a porta 21, que estabelece a conexão entre o cliente e o servidor, e a porta 20, por onde os arquivos são transferidos. 
+    
+   servidor vsftpd, que possui as características do protocolo FTP, com uma camada extra de segurança e funcionalidades, tais como:
+
+    Configuração do IP Virtual para acesso ao servidor;
+    Usuários virtuais, para um uso mais seguro;
+    Operação de configuração padrão ou no formato inetd;
+    Altamente configurável pelo usuário, configuração amigável;
+    Controle e Balanceamento de Carga;
+    IPv6;
+    Criptografia usando o SSL.
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 

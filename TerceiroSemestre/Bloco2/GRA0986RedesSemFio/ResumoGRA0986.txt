@@ -1,0 +1,81 @@
+#####     UNIDADE 1 GRA0986 REDES SEM FIO     #####
+***   inspire-se 1   ***
+Adelino Soldivar - Especialista em computação
+
+Como funcionam as redes Sem fio?
+	Infravermelho
+	Microondas
+	Wi-Fi
+	Bluetooth
+O que pode afetar no sinal?
+	Poeira no ar
+	Fumaça
+	Mata densa
+	Construções
+Tipos mais comuns de redes sem fio
+	Infravermelho
+	Bluetooth
+	5G
+Futuro das redes sem fio
+	5G	
+
+***   Video Aula 1   ***
+
+***   Leitura 1      ***
+
+___________________________________________________
+#####     UNIDADE 2 GRA0986 REDES SEM FIO     #####
+***   inspire-se 2   ***
+
+Taxas adaptaveis aos dispositivos móveis
+	802.11 frequencia e taxa de transmissão
+Importancia das taxas
+	Padrão de comunicação
+Implicação da adaptação de taxas
+	Taxa alta = tempo menor de recepção
+	Quanto maior a taxa, maior a necessidade de processamento e mais custo
+Fatores para a adaptação de taxas
+	Real necessidade
+
+***   Video Aula 2   ***
+
+***   Leitura 2      ***
+
+___________________________________________________
+#####     UNIDADE 3 GRA0986 REDES SEM FIO     #####
+***   inspire-se 3   ***
+
+Redes WiMax
+	longas distâncias
+Diferença de arquitetura entre WiMax e WiFi
+	IEE 802.16 Rede fixa ou Parecido com 4G
+	Trabalha em redes de longa distância, cerca de 50 KM
+Requisitos minimos para WiMax
+	Infraestrutura, Torres
+	Antenas em edifícios
+Politicas de Segurança
+	Encriptação de dados
+	Proteção de roubo de dados
+Futuro do WiMax
+	Baixo custo de implemenação
+	
+***   Video Aula 3   ***
+
+***   Leitura 3      ***
+
+___________________________________________________
+#####     UNIDADE 4 GRA0986 REDES SEM FIO     #####
+***   inspire-se 4   ***
+
+Configuração da mobilidade
+	Conexão em qualquer lugar
+Depenencia da mobilidade a arquietura dos dispositivos e software
+	Importante ter uma interface de comunicação (Aplicações)
+Troca de informações e segurança
+	Access Point / Hot Spot - responsáveis pela conexão que possuem funções de controle de acesso e firewall, autenticação etc
+Futuro da mobilidade
+	Acesso instantâneo a internet de alta velocidade
+
+***   Video Aula 4   ***
+
+***   Leitura 4      ***

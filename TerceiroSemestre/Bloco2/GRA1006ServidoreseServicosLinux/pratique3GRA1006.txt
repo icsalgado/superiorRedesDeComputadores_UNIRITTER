@@ -1,0 +1,29 @@
+
+"Ataques DNS"
+
+Caro estudante, desde a criação do serviço de DNS, existem relatos de ataque de negação de serviço ou envenenamento dos mapas de endereços. A Universidade de Berkeley, em suas pesquisas, agregou uma camada de segurança ao serviço de DNS,
+
+Com isso, busca-se, mitigar as tentativas de acesso ao serviço de DNS, de forma criminosa, levando ao redirecionamento do usuário para sites duvidosos. Você estudante, a partir desse momento terá a oportunidade de estudar os ataques de DNS, mas especificamente para essa atividade o cache poisoning . Bons estudos!!!
+Vamos Praticar
+
+Para a prática, é necessário instalar um serviço de DNS, implementado e devidamente configurado. Sugestão, instale o BIND, em um Sistema Operacional GNU/Linux, dentro de uma máquina virtual,  realize os testes de ataque de envenenamento de cache do DNS. Note, que essa tarefa, é para efeitos didáticos. Nunca realize, em um ambiente de produção, pois  é crime cibernético. Tutoriais de instalação e implementação, estão espalhados pela Internet, um excelente tutorial encontra-se no link https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04-pt .
+
+Uma boa prática, seria utilizar a documentação e distribuição  Kali Linux ( https://www.kali.org/ ), que te proporciona ferramentas para realização dessa atividade, pesquise e compartilhe de forma discursiva os resultados.
+
+Uma fonte de entendimento sobre o ataque de cache poisoning , está descrita no artigo de (SAYTSON,T., PETERSON, A., BORZINO, T., 2019), do grupo GTA - UFRJ. Outro artigo (DIAS, P.R.V), descreve em detalhes o ataque ao serviço de cache do servidor DNS, sugiro uma leitura aprofundada, para que possa ter êxito no desenvolvimento da atividade.
+
+Uma fonte de entendimento sobre ataques e de DNS, seria o trabalho de TCC de LACERDA, T.C. 2017.
+
+Com base nessas informações, realize uma pesquisa sobre ataques de envenenamento de cache (DNS cache poisoning ), e responda qual a melhor forma de mitigação desse ataque. Descreva, sucintamente o ataque, e uma possível solução.
+
+Ao final disponibilize seu trabalho no fórum da seção.
+Referências
+
+BRITO, S.H.B., Serviços de Redes em Servidores Linux , 1a edição, São Paulo, Novatec, 2017
+
+DIAS, P.R.V., Trabalho Final da Disciplina de Segurança de Dados: Ataques de envenenamento de cache DNS(DNS cache poisoning) , UNB, https://cic.unb.br/~pedro/trabs/PedroRogerio.pdf , acessado em 18/02/2020.
+
+LACERDA, T.C., Análise de características que possibilitam a identificação de ataques DNS Spoofing através de técnicas de Reconhecimento de Padrões em uma LAN com sobrecargas de rede , http://decom.ufvjm.edu.br/site/index.php/mn-tcc/category/16-tcc-2017?download=53:tcc-tamaralacerda , 2017, acesso em 28/01/2020
+
+SAYTSON,T., PETERSON, A., BORZINO, T., Ataques DNS , https://www.gta.ufrj.br/ensino/eel878/redes1-2019-1/vf/dns/conclusion.html , GTA-UFRJ, 2019, acessado em 18/02/2020.
+
