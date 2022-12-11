@@ -23,3 +23,5 @@ Referências
 
 BAARS, hans et al . Fundamentos de Segurança da Informação . Com Base na ISO 27001 e na ISO 27002. Brasil, Brasport, 2018.
 
+Resposta:
+Caro estudante, Foram apresentados problemas com compartilhamento de senha, quebra de sigilo de informação confidencial e uso indevido da imagem da empresa. Não existe um único modelo para criar regras que deixem claro a proibição por parte da empresa ao funcionário, portando qualquer regra criada que vise proibir esses tipos de comportamentos errôneos estão corretos. Desde que o funcionário esteja ciente dessas regras e a empresa possa provar a ciência dele.

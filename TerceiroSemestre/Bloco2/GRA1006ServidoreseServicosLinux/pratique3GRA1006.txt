@@ -27,3 +27,6 @@ LACERDA, T.C., Análise de características que possibilitam a identificação d
 
 SAYTSON,T., PETERSON, A., BORZINO, T., Ataques DNS , https://www.gta.ufrj.br/ensino/eel878/redes1-2019-1/vf/dns/conclusion.html , GTA-UFRJ, 2019, acessado em 18/02/2020.
 
+
+Resposta:
+Caro estudante, O envenenamento de cache, é um comprometimento na segurança dos dados e a integridade do sistema, em um servidor de resolução de nomes (DNS). Ele acontece quando são introduzidos dados no armazenamento de cache, que não foram autenticados por outros servidores de DNS que possuem autoridade sobre o domínio, ou seja, algum servidor malicioso, está tentando reescrever seu mapa de endereços, e re-apontar as requisições para outros servidores fora do seu domínio. O cache em um servidor de resolução de nomes, serve para otimizar o desempenho do mesmo. Para prevenção e mitigação desse tipo de ataque, os servidores de DNS, tem que utilizar-se de um artifício em sua configuração, chamada DNSSec, que criptografa a troca de informações entre os servidores de DNS local e os servidores de topo (TLD).

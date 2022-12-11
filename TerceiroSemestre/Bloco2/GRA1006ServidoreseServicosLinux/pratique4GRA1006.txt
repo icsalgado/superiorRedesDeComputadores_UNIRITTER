@@ -19,3 +19,6 @@ BRITO, S.H.B., Serviços de Redes em Servidores Linux , 1a edição, São Paulo,
 
 TANENBAUM, A.S., Redes de Computadores , 4a edição, São Paulo, Pearson, 2003
 
+
+Resposta:
+Caro estudante, Para a resolução desse mini-case, o estudante precisará se atentar aos fatores limitantes em todo o processo, que seria a questão de segurança, com o uso do SSL, na configuração do Apache, largura de banda de sua rede local, Número de requisições que o servidor Web terá que atender simultaneamente, isso está liga a questão de limitação de hardware, como processamento e memória do servidor, para não impactar o desempenho e performance do site como um todo
