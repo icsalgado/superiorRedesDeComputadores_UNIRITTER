@@ -1,0 +1,24 @@
+Olá estudante!
+
+ 
+
+Seja bem vindo(a) á nossa disciplina!
+
+ 
+
+Serviços de Internet 
+
+É um serviço baseado em hipertextos que permite ao usuário buscar e recuperar informações distribuídas por diversos computadores da rede. Os textos e imagens são interligados através de palavras-chave, tornando a navegação simples e agradável.
+
+Toda navegação na web é um serviço distribuido,  email, sites, e-commerce, pesquisas, redes sociais, plataformas de bancos entre outros e fornecimento de conexão pelas operadoras de Banda Larga ou telefonia móvel.
+
+Nessa disciplina você verá as competências para:
+
+    desenvolver,
+    gerir e manter sites, portais, aplicativos, plataformas, entre outras soluções digitais.
+
+ 
+
+Bons estudos!
+
+Tutoria Ânima.
