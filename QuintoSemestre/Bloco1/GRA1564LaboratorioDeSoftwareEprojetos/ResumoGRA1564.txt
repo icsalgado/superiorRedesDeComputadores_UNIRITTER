@@ -1,0 +1,109 @@
+GRA 1564 Laboratório de software e projetos
+
+### UNIDADE 1 ###
+
+*** INSPIRE-SE ***
+Kássia Oshiro - analista de migração de dados
+
+Desenvolvimento Ágil
+	Substituição de metodologias em cascata que eram mais demoradas
+	Scrum - Kanban - XP
+	
+*** AULA ***
+Priscila Bariani - Adminstradora
+
+Escolha de problemas reais
+	Análise de requisitos envolvendo engenheiros de requisitos e clientes
+	Entender primeiro o problema a ser solucionado antes de desenvolver uma solução - envolve a discussão da do problema entre as partes - inclui o definição do problema, ambiente, origem e de quem é a responsabilidade.
+	Extração de requisitos
+		-entendimento
+		-especialização
+		-dominio do conhecimento
+		
+			-o que é o problema
+			-definiçao do problema
+			-essência do roblema
+Construção dos principais documentos do projeto
+	Controle de projetos
+		-falhas e desvios identificados para reduzi-los
+		
+		-delimitação das atividades
+	Documentos
+		-Termo de abertura
+			esclarede os primeiros aspectos do projeto
+		-Plano de gerenciamento do projeto
+			indice de referencia, armazena todos os dados
+		-Plano de gerenciamento de escopo
+			expõe os objetivos do projeto, roteiro das atividades necessárias
+			deve conter obrigatoriamente frases e escritas de fácil entendimento
+		-Gerenciamento de cronograma
+			contem todas as fases de um projeto e as respectivas tarefas em destaque e status de cada atividade
+		-Plano de gerenciamento de equipe
+			visualização rápida dos profissionais que estão trabalhando no projero
+		-Plano de gerenciamento do trabalho
+			controle das atividades
+			rotinas de trabalho
+			recursos
+			custos
+			caminhos críticos
+		-Plano de garantia de qualidade
+			qualidade das entrgas
+		-Plano de gerenciamento de riscos
+			relato dos riscos e possíveis soluções
+			oportunidades e planos a serem explorados ao máximo
+Construção do software
+	Framework é uma junção de códigos comuns entre vários projetos que prove uma funcionalidade genérica - dita o fluxo e controle da aplicação
+		Zend - 2005
+		Laravel - 2011
+		Symfony - 2005
+		Phalcon - 2012
+		CackePHP - 2005 
+		
+*** LEITURA ***
+Entrevista
+	-compreender o que será desenvolvido, conversa com stakeholder que é a pessoa que domina o negocio sob o qual será desenvolvido o sistema
+	 Segundo Sommervile (2011, p. 86), as entrevistas podem ser de dois tipos:
+		Entrevistas fechadas, em que o stakeholder responde a um conjunto predefinido de perguntas.
+		Entrevistas abertas, em que não existe uma agenda predefinida. A equipe de engenharia de requisitos explora uma série de questões com os stakeholders do sistema e, assim, desenvolve uma melhor compreensão de suas necessidades.
+	-A entrevista é realizada pelo PO product owner no scrum - primeiro elemento do ciclo de vida de um projeto de software
+	-Então a entrevista se transforma em um Product Backlog  -lista de ferramentas desejadas que fará com que o fluco desta metodologia ágil funcione
+	-O briefing é a documentação feita durante uma entrevista que reune informações gerais do que p cliente deseja ter no sistema
+	- O documento Requisitos de software é a formalização da entrevista - ou seja, uma descrissão do que o sitema deve fazer, serviços que oferece e restrções a seu funcionamento
+	-O processo de descobrir, analisar, documentar e verificar os serviços e restrições de um sóftware é chamado de Engenharia de Requisitos
+	-Requisitos funcionais
+		funcionalidade que um sistema deve ter 
+			 características: unidade, completude, consistência, atomicidade, não ambiguidade, ser verificável, rastreável e ter prioridade.
+	-Requisitos não funcionais
+		envolvem fatores externos como interface web, execução em mobile	
+
+Casos de uso - modelagem de negócios
+	UML - 1990 Grady Booch, James Rumbaugh e Ivar Jacobson
+		fornece um conjunto de diagramas que permite realizar a modelagem de um sistema de informação, desde a perspectiva do usuário, passando por detalhes da implementação, bem como diagramas que refletem as classes que serão implementadas. 
+	Os casos de uso fazem parte da modelagem de negócios, uma etapa do ciclo de vida do software para compreender melhor as regras e como funciona o negócio - Os diagramas de caso de uso nada mais são que as representações gráficas de uma visão geral de como o sistema irá funcionar de acordo com a visão de um stakeholder.
+	Ferramenta indicada https://staruml.io/
+	Os elementos principais dentro de um diagrama de caso de uso são os atores e os casos de uso. Os atores são todos os elementos do sistema, podem ser usuários, impressora, banco de dados e demais componentes. Os casos de uso são as ações executadas pelos atores
+	A relação de obrigatoriedade acontece a partir do emprego do <include> e <extend>, compreenda melhor como cada um se comporta. 
+		O <Include> acontece quando o caso de uso A “inclui” o caso de uso B, significa que sempre que o caso de uso A for executado o caso de uso B também será executado. A direção do relacionamento é do caso de uso que está incluindo para o caso de uso incluído.
+		O <Extend> quando o caso de uso B estende o caso de uso A, significa que quando o caso de uso A for executado o caso de uso B poderá (poderá – talvez não seja) ser executado também. A direção do relacionamento é do caso de uso extensor (aqui o caso de uso B) para o caso de uso estendido (aqui o caso de uso A). (VENTURA, 2014, p. 3). 
+	Com o desenvolvimento dos casos de uso se encerra um ciclo, de certo modo ele dará vida aos requisitos levantados. Com o diagrama de casos de uso já será possível ter uma visão geral do funcionamento do sistema. ok, 
+	Descrição do Casos de Uso:
+	    O modo resumido: descreve em um parágrafo corrido as ações de um caso de uso.
+	    O modo completo: descreve de maneira mais completa, identificando pré-condições, ações posteriores, deixando o projeto documentado em um maior nível de detalhamento. (atores envolvidos, pré condições, pós condições, Cenário principal, fluxo alternativo)
+
+Utilizando Scrum com Engenharia de Software
+	Scrum
+		Product Owner: da tradução, o dono do produto, é a pessoa na equipe responsável por compreender toda a necessidade do cliente.
+    		Product Backlog: é uma lista ordenada de tudo o que é necessário para chegar ao produto final. Em outras palavras, são as “coisas” que devem ser desenvolvidas para chegar àquilo que foi acordado entre todos os envolvidos no projeto (DUARTE, 2019).
+    		Sprint Backlog: É um conjunto de itens do Product Backlog reunidos que serão inseridos em um Sprint. Pode-se compreender que será uma ou várias funcionalidades que se tornarão tarefas de um membro da equipe.
+    		Scrum Master: É o líder da equipe, deve ter conhecimentos técnicos e de gestão de projeto que permitam auxiliar os demais membros, bem como garantir a finalização do projeto.
+    		Scrum Team: São os membros de uma equipe scrum.
+    		Daily Meeting: é a reunião diária realizada por um time scrum, a reunião é conduzida pelo Scrum Master que sempre faz as seguintes perguntas sobre os sprints de cada membro:
+		    ○ O que você fez ontem?	
+		    ○ O que está fazendo hoje?
+		    ○ O que fará amanhã?
+		    ○ Está tendo algum problema? 
+		    Product: O produto é aquilo que se espera quando o projeto for concluído. Em termos de software, pode-se compreender que o produto é o sistema que atenda todas as funcionalidades acordadas com o cliente.
+
+		
+		
+
