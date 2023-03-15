@@ -1,0 +1,106 @@
+GRA1005 Serviços Internet
+
+### UNIDADE1 ###
+
+*** INSPIRE-SE ***
+
+Mediador: Roberto Almeida - Convidados: Cássia Alves e André Sobreiro
+
+Sobre os rumos, benefícios e perigos da IOT
+
+*** Aula ***
+
+Prof Vinicius Viude - Eng Elétrica
+A Internet e os modelos de comunicação
+	Modelo peet to peer
+		objetivo de transmissão de arquivos
+		todos os pontos de conexão tem a mesma responsabilidade como servidor
+		uma falha só ocorre quando todos os pontos falham
+		poucas pessoas podem ter o arquivo solicitado
+		
+	Modelo cliente servidor
+		Um servidor central recebe, processa e devolve a informação requisitada pelo cliente
+		Protocolos são métodos padronizados
+		Caso o servidor caia todos os requerentes ficam sem acesso as informações
+Modelos de camada
+	Modelo OSI
+		7 camadas
+		conceitual
+Exemplo de requisição TCP/IP
+	Modelo TCP/IP
+		4/5 camadas
+		
+*** Leitura ***
+
+Autora: Fernanda Rosa da Silva
+Revisor: Rafael de Jesus Rehm
+Conceitos do modelo OSI
+	 OSI representa um modelo teórico, dividido em camadas e protocolos que implementam funções específicas para cada parte de sua estrutura
+Camadas do modelo OSI
+	Física
+		 Responsável pela construção do hardware , ou seja, transmissão de bits no canal de comunicação. Esta camada inclui um dispositivo de transmissão de dados, que garante que as informações sejam recepcionadas no destino, sem qualquer modificação. 
+	Enlace
+		 Responsável por estabelecer a comunicação entre as máquinas e converter os canais de transmissão em linhas sem erros. Os quadros (também chamados de frames ) são instalados nesta camada e transmitidos à camada física. As subcamadas LLC ( Logical Link Control) e MAC ( Media Access Control ) separam as funções estabelecidas neste processo (FOROUZAN, 2013). 
+	 	Identificação na rede
+	 		 O cabeçalho é adicionado ao quadro de forma que, ao ser encapsulado e distribuído na rede, vários sistemas diferentes sejam capazes de interpretar a informação, e o remetente possa lê-la corretamente. 
+	 	Formação de frames
+	 		Nesta fase, o fluxo de bits é segmentado para que possa ser recebido corretamente ao ser enviado à camada de rede. 
+	 	Controle de Acesso
+	 		Quando os dispositivos estão conectados ao mesmo link, certos protocolos devem ser usados ​​para determinar quais dispositivos estão autorizados a utilizar o meio de comunicação em determinado momento
+	 	Controle de fluxo
+	 		Mecanismos e técnicas de controle são adotados para evitar a sobrecarga da mídia
+	 	Controle de Erros
+	 		A camada adiciona confiabilidade extra à camada física por meio de um mecanismo de detecção e retransmissão de quadros.
+	    	Essa camada evita situações em que o transmissor envia um pacote em uma velocidade de trabalho alta, porém o receptor não consegue operar de forma tão rápida quanto o remetente;
+    		Evita atrasos no envio do quadro, que poderiam acarretar em sobrecarrega do ponto de destino;
+    		Finalmente, sempre que alguma informação for perdida ou danificada, ela poderá ser corrigida;
+    		A identificação de quadros duplicados e descarte de informações desnecessárias durante a transmissão de dados, até que ela seja finalizada corretamente, também é uma função da camada de enlace.
+		Subcamada LLC
+			controle de fluxos como o controle de erros
+			intermediar a comunicação entre a camada superior e a camada inferior
+	 	Subcamada MAC
+	 		comanda o acesso ao meio para comunicação entre a placa adaptadora de rede e a camada física
+	 		O controle de acesso à mídia é realizado por meio de um endereço de controle rede (endereço MAC) atribuído de forma individual para cada interface de rede, também chamada de NIC (Network Interface Controller).
+	Rede
+		O objetivo principal desta camada é enviar mensagens ponta a ponta e lidar com o endereçamento de rede, o roteamento de dados e o encaminhamento de pacotes. 
+		Nesse nível do Modelo OSI, os dispositivos que compõem a rede são endereçados. Além disso, a camada é responsável por determinar a rota entre as redes, a origem e destino de cada informação. Tudo isso ocorre através do IP ( internet protocol – protocolo de internet) e outros protocolos de roteamento, que atuam em diversas topologias da rede. 
+	Transporte
+		O foco principal desta camada é controlar o fluxo no caso de o receptor da mensagem não a receber corretamente – ou seja, com o uso dos recursos e mecanismos dispostos nessa camada, a atenção é voltada para qualquer falha que prejudique o recebimento das informações, resultando na retransmissão, afim de corrigir qualquer pacote que tenha corrompido durante o processo.
+		Para este processo, a conexão pode ser baseada em dois protocolos: TCP ( Transmission Control Protocol ou Protocolo de controle de transmissão), orientado à conexão, que estabelece uma conexão confiável e segura, ou UDP ( User Datagram Protocol ou Protocolo Simples), não orientado à conexão, o que o torna mais ágil, porém, menos confiável.
+	Sessão
+		 Nesta camada, é estabelecida uma sessão que permite a comunicação entre diferentes usuários. Através desta camada, vários serviços são estabelecidos, tais como:
+    			Controle de sessão, para determinar quem deve transmitir os dados e quando isso será possível entre os dispositivos da rede;
+    			O gerenciamento de tokens pode evitar que os dispositivos envolvidos na comunicação tentem enviar dados ao mesmo tempo. Os tokens controlam a comunicação entre as pontas e a sincronização necessária para que as informações sejam enviadas;
+    			Sincronização: processo que verifica regularmente as transmissões longas para garantir que elas possam continuar de onde foram interrompidas quando qualquer falha ocorrer. Sendo assim, o ambiente é restaurado, sem que a integridade das informações seja afetada;
+    			Além disso, a camada de sessão estabelece sessões, as gerencia e finaliza, controlando as sessões fim a fim. Todo o diálogo é monitorado, garantindo que o processo esteja em conformidade.
+    	Apresentação
+    		 É a camada de padronização da mensagem, ou seja, a camada de apresentação está relacionada à sintaxe e à semântica das informações transmitidas. 
+    	Aplicação
+    		A camada de aplicação fornece a interface do usuário através do uso de protocolos que permitem essa interação, como HTTP (a base para a navegação do site), FTP (protocolo para transferência de arquivos) e DHCP (usado para realizar configuração dinâmica no terminal Protocolo, que concede, automaticamente, endereços IPS a dispositivos de rede). 	
+    	
+    	Arquitetura TCP/IP
+    		Baseado no paradigma do chaveamento de pacotes
+    		Diferente do Modelo OSI, a arquitetura TCP/IP consiste em cinco camadas: física, enlace, rede (inter-rede), transporte e aplicação. 
+    		Alguns autores apresentam o modelo segmentado em apenas quatro camadas: acesso à rede, internet, transporte e aplicação. 	
+    		Acesso à rede
+    			Esta camada é projetada para especificar as características do meio de transmissão. Normalmente, ela usa o sinal através da parte física ( hardware), além de possuir mecanismos de verificação para garantir a integridade do sinal enviado. 
+		 Camada Internet
+			Também conhecida como camada inter-redes, essa camada permite o roteamento entre várias redes. É nessa camada que estão presentes protocolos como ICMP ( Internet Control Message Protocol) e IP ( Internet Protocol).
+		Camada de transporte
+			Essa camada garante que todos os dados cheguem na mesma ordem em que foram enviados. TCP ( Transmission Control Protocol) e UDP ( User Datagram Protocol ) são os protocolos utilizados ​​nesta camada.
+		Camada de aplicação
+			É a camada mais próxima do usuário na pilha de protocolos TCP/IP. Alguns dos protocolos utilizados por ela são: HTTP, HTTPS, FTP, SMTP, IMAP, POP etc. Além disso, ela também representa as funções da camada denominada apresentação e sessão, no modelo OSI, e integra todas as funções na mesma camada.	
+    			
+    	Segurança na internet 		
+    		para cada camada e protocolo estabelecido na rede, técnicas e soluções específicas são constantemente desenvolvidas para proteger os dados e trazer maior flexibilidade para os sistemas na internet e as informações compartilhadas entre os usuários e organizações. 	
+    			
+    	Modelo Cliente-Servidor 		
+    		Um exemplo de serviço que utiliza a estrutura cliente-Servidor são os servidores web (HTTP) , servidores de armazenamento e transferência de arquivos (FTP) e os bancos de dados, essenciais para garantir acesso às informações utilizadas pelas aplicações
+    		Uma desvantagem desse modelo é que toda a demanda é atendida por um único servidor, que se concentra em atender todas as solicitações. Por isso, ele deve conter um grande poder computacional. Mesmo assim, qualquer falha resultante da sobrecarga pode ser totalmente prejudicial e causar interrupção total da operação do ambiente. 	
+    	Modelo Peer-to-Peer
+    		O conceito de modelo ponto a ponto (abreviado como P2P) é mais amplo do que o modelo Cliente-Servidor. Em uma rede que usa esse modelo, os usuários podem se comunicar entre si, em vez de considerar apenas o servidor como ponto de acesso. 
+    			
+    	 Sockets e portas de comunicação
+    		Sockets fornecem comunicação entre duas extremidades (origem e destino), também chamada de comunicação bidirecional, localizadas entre dois processos (soquetes TCP / IP), no mesmo computador (soquete Unix) ou rede, enquanto as portas representam um software dedicado ou um processo específico usado como ponto de terminação de comunicação em um sistema operacional host de computador. A porta está associada ao endereço IP do host, e ao tipo de protocolo usado para comunicação. 
+    			
+
