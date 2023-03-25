@@ -1,0 +1,37 @@
+Atividade 1
+
+Contextualização 
+
+Caro(a) estudante, 
+
+No decorrer da unidade, analisamos diversos conceitos relacionados ao Modelo OSI, à comunicação entre os dispositivos na rede e ao uso de recursos que permitem a transmissão de dados como protocolos, serviços e sockets. Os conceitos abordados possibilitaram o entendimento sobre a influência do modelo ISO, importante para a padronização dos sistemas computacionais, aplicações e até mesmo para a internet.  
+
+De acordo com Gaidargi (2018), por volta de 1983, com a formalização do modelo OSI, o TCP/IP se adaptou ao modelo e foi definido como um padrão de comunicação em redes de computadores locais. Em seguida, expandiu-se sua utilização para garantir a interconexão externa dessas redes, constituindo o padrão de comunicação mais importante que conhecemos hoje, a internet. 
+
+É muito importante conhecer o Modelo OSI, para entender de que forma é possível interpretar situações específicas em uma rede de computadores, como a perda de pacotes, a comunicação entre os dispositivos, as características dos protocolos e como todos esses fatores são sincronizados com a finalidade de garantir a conformidade em um ambiente, por mais simples que ele seja. 
+
+  
+
+Proposta de Atividade 
+
+Com base nisso: 
+
+    Pesquise sobre a importância do modelo OSI na adaptação da Arquitetura TCP/IP para padronizar e garantir a interoperabilidade entre as aplicações; 
+
+    Colete informações sobre o desenvolvimento dos protocolos para interconexão de rede em todos os níveis do modelo; 
+
+    Descreva os protocolos de: 
+
+         IP - camada de rede; 
+
+        TCP ou UDP - camada de transporte; e, 
+
+        SMTP, HTTP, DNS e FTP - camada de aplicação (nesse caso, escolher apenas um e explicar o protocolo utilizado por ele na camada de transporte). 
+
+    Escreva uma dissertação sobre o assunto com aproximadamente 30 linhas; 
+
+    Submeta o arquivo da sua dissertação para avaliação do docente. 
+
+  
+
+Bons estudos! 
