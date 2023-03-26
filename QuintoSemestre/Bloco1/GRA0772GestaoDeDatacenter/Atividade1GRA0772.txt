@@ -1,0 +1,8 @@
+Ao longo da unidade, verificamos algumas aplicações em data center que servem como norteadores para o funcionamento efetivo dessa tecnologia. Três modelos de aplicação podem ser utilizados por cloud computing: nuvem privada, pública ou híbrida.
+
+Considerando essas informações e os conteúdos estudados, escolha uma das aplicações envolvidas em data center e pesquise prós e contras de sua utilização. Os exemplos, caro estudante, podem ser retirados de notícias de jornais e revistas.
+
+Olá IURI.
+Para responder a questão, envie um arquivo ou escreva sua resposta na caixa de texto abaixo.
+Formato de arquivos aceitos: doc, docx, odt, pdf, rtf ou txt. Tamanho máximo: 5mb.
+Importante: será aceito apenas uma submissão para essa atividade.
