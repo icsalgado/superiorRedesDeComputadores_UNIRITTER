@@ -1,0 +1,23 @@
+####  Unidade 1 ####
+*** Inspire-se ***
+	Carla Fabiana de A. Iori - Desenvolvimento Regional e Agronegocio
+    Orçamento de capital
+	
+*** Aula ***
+	Giovanni Santos - ADM
+    Fluxo de caixa
+    	prognoticar excendente ou escasses de caixa para tomada de medidas
+    Juros Simples
+        FV = PV(1+in)
+        	FV - valor futuro
+        	PV - valor presente
+        	i - taxa
+        	n - periodo
+    Juros Compostos
+    	FV = PV(1+i)n
+    	
+    Estimar o orçamento
+    	Elaboração do orçamento de capital
+    
+    Metodos de viabilidade econômica
+    	Payback simples

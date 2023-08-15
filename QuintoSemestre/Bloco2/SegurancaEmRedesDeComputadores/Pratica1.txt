@@ -1,0 +1,32 @@
+
+Habilidades de um profissional de Segurança
+
+O uso dos sistemas computacionais, smartphone, tablets, notebook e o universo digital proporcionado pela tecnologia mudaram a nossa maneira de ver e aprender sobre o mundo a nossa volta e passaram a impactar nossa vida pessoal e profissional. Devido a isso, muitos denominam essa como a era da informação ou era digital.
+
+Você já parou para pensar no modo como usamos a internet em nosso cotidiano e no quanto estamos conectados? Como nossa rotina foi afetada pela informática, a ponto das novas gerações questionarem como era a vida antes dos computadores e do universo on-line ?
+
+Nas empresas, instituições ou órgãos governamentais não é diferente. Atualmente, é impossível conceber seu funcionamento sem o auxílio da informática, afinal, é por meio dela que tudo é resolvido; o armazenamento e transmissão de dados, a comunicação sem preocupação de distâncias, o desenvolvimento de novos produtos também apoiados na informática.
+
+Existe informática em quase tudo que fazemos. Essa conectividade que nos leva a crescer e desenvolver também é fonte de muita preocupação e está cada vez mais perturbando o sono dos gestores das organizações, que também precisam estar conectadas. Esses gestores estão buscando respostas a diversos questionamentos provocados por esse mundo digital:
+
+1- Como podemos saber quem é a pessoa que está conectando nossos sistemas?
+
+2- Suas intenções?
+
+3- Tenho dados sigilosos que devem ser preservados ao mesmo tempo em que disponíveis para acessos autorizados, como preservar minhas informações?
+
+4- Preciso manter constantemente funcionando meus serviços de comunicação e transferência de dados, pois é a forma que me comunico com meus clientes e parceiros de negócios, como garantir isso?
+
+5- Quem será o responsável por isso?
+
+6- Quais seriam suas características desejáveis?
+
+Vamos Praticar
+
+É certo que as preocupações apresentadas pelos gestores das organizações conectadas ao mundo digital são legítimas. Devemos esclarecer as dúvidas desses gestores, respondendo às questões feitas no final do texto, com apoio dos princípios básicas da segurança da informação. Além disso, é conveniente justificar essa resposta para trazer maior conforto a esses gestores.
+
+Ao final disponibilize seu trabalho no fórum da seção.
+Referências
+
+HINTZBERGEN, J. et al . Fundamentos de Segurança da Informação : com base na ISO 27001 e na ISO 27002. 3. ed. São Paulo: Brasport, 2018.
+

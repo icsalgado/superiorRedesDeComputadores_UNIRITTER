@@ -1,0 +1,10 @@
+
+Segurança das nuvens computacionais
+
+Hoje em dia é muito comum as empresas discutirem sobre os serviços e modelos de computação em nuvem ou cloud computing. Quase todo a empresa que está inserida neste mundo conectado tem um serviço em nuvem contratado, está discutindo sua adoção ou utiliza o serviço de forma indireta através de seus  fornecedores de tecnologia.
+
+Muitas dessas organizações mal sabem as tecnologias que envolvem estes serviços mas certamente adotarão uma das 3 modalidades do serviço: SAAS software como serviço (Software as a Service); PaaS plataforma como serviço (Platform as a service) e IaaS infraestrutura como serviço (Infrastructure as a Service). A escolha do serviço a ser contratado dependerá basicamente do grau de maturidade que a tecnologia da informação em encontra nesta organização.
+Vamos Praticar
+
+Cada modalidade de serviço contratado exige do fornecedor de computação em nuvem uma responsabilidade e mão de obra diferentes. Levante as considerações que essas características de serviços que possa indicar quais seriam os cuidados de segurança exigidos ao fornecedor e quais seriam as necessidade de administração local em cada uma das modalidade de serviço, bem como as contramedidas de segurança na nuvem aplicadas a cada modalidade de serviço. Ao final disponibilize seu trabalho no fórum da seção.
+

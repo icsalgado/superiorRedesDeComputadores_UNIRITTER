@@ -1,0 +1,110 @@
+Segurança em redes de computadores
+
+#### Unidade1 ####
+
+*** Inspire-se ***
+	João Messias
+	ISO 27000
+	
+*** Aula ***
+	Luiz Rodrigo
+    Fundamentos de segurança da informação
+    
+    	Proteção de um conjunto de infomações para preservar o seu valor
+    	    atributos de disponibilidade, confidencialidade, autenticidade e integridade
+    	
+    	Padronizado pela ISO 17799-2005 PS77999
+    	    27000 complementação
+    	    SGSI - parametros para segurança dos dados digitais
+    	    Conjunto de normas para formar a estrutura de segurança
+    	    	27001
+   	    	    Define os requisitos para o SGSI
+    	    	27002
+    	    	    Código de práticas com conjunto completo de controles para o SGSI
+    	    	27003
+    	    	    Aspectos criticos para a implantação do SGSI
+    	    	27004
+    	    	    Metricas e relatórios para SGSI
+    	    	27005
+    	    	    Avalia e trata os riscos de TI, levantamento e aceitação dos riscos
+    Pilares da segurança da informação
+    	
+    	Confidencialidades, integridade e disponibilidade
+    	Prevenção, detecção e resposta
+    	Tecnologia, processos e pessoas
+    	
+    	Mecanismos de segurança
+    	    Físicos - Portas, paredes etc
+    	    Lógicos - Credenciais, criptografia e assinatura digital
+    	
+    Instalando um sistema de controle de borda corporativo - PFSENSE
+    
+    Configurando PFSENSE 
+    	
+    	
+#### Unidade3 ####
+
+*** Inspire-se ***
+	João Messias
+	Criptografia - proteção durante o trafego
+            Troca frequente
+	    Chave simetrica - a mesma que cifra, decifra
+	    Chave assimetrica - são chaves diferentes
+    	    Chaves WPA, WPA2 podem ser configuradas no roteador
+    	
+*** Aula ***
+	Luiz Rodrigo
+    Introdução ao Firewall
+        Solução baseada em hardware ou software
+        Conjunto de regras que analisa o trafego de rede para determinar quais operações podem ser executadas
+        Filtragem de pacotes de dados
+            
+    Filtragem Estática e Dinâmica
+    	Estática:
+    	    Baseada em regras independente da ligação entre pacotes
+    	Dinâmica:
+    	    Considera o contexto do pacote, adaptando a cração de regras conforme o cenário
+    	    
+    	Proxy service:
+    	    Intermediário entre computador ou rede interna e uma rede externa
+    	
+    	Firewall de inspeção de estado
+    	    Comparação entre o que está acontencedo o que era esperado
+    	    
+    	Firewall pessoal
+    	    Nomalmente já vem no SO
+    	    no Windows - ZoneAlarm
+    	    
+    	Hardware Firewall
+    	    Equipamento com firewall intalado
+    	
+    Confiração de Firewall
+    
+    Implantação de Firewall Proxy
+    	pacote squid - Proxy server
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
