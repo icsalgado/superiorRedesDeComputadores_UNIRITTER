@@ -1,0 +1,83 @@
+#####     UNIDADE 1  GRA0779  #####
+***   inspire-se 1   ***
+Adriano Aguiar/Gerente de Infra foco em cloud e segurança - Douglas Pereira/Integração de redes e segurança e cloud
+
+Beneficios do gerenciamento de redes:
+	Manter a governança saudavel
+	Visibilidade, automação, detecção de ameaças
+Requisitos
+	Saber o que será monitorado
+	O que é esperado do monitoramento
+	Conhecer os elementos da rede
+	Integração com desenvolvedores
+	Compatibilidade de software
+	Investimento
+
+***   Video Aula 1   ***
+	Cap1 Gerenciamento de redes - Prof Eliny Gomes	Eng Elétrica/pós Automação
+	É o controle de qualquer objeto possível de ser monitorado numa estrutura de recursos físicos e lógicos de uma tede e que podem ser distribuidos em diversos ambientes geograficamente próximos ou não
+	Serve para satisfazer às exigências operacionais de desempenho e de qualidade de serviços em tempo real
+	
+	Ambiente:
+		MIB > Management information base
+		SMI > Structure of management information
+		SNMP > Simple network management protocol
+	Gerente de rede/administrador
+		planejamento
+		instalação
+		operação
+		monitoramento
+		controle
+		
+		Dificuldades:
+			A maioria das intranets são heterogenias
+			Mudança da tecnologia
+			Redes grandes
+			
+	Evolução
+		1970 - computadores centralizados
+		1980 - surgimento de redes locais
+		1990 - internet
+		2000 - cloud
+		
+	Cap2 - métricas de gerenciamento
+	Áreas funcionais do gerenciamento  Modelo OSI
+		Fault > Isola, resolve as situações de anormalidades na rede
+		Comfiguration > Descrição baseada na localização dos seus recursos, processos de configuração de dispositivos, inventário de hardware e software, Construção de bases de dados de configuração
+		Account > Registro de controle de acesso de usuários e dispositivos aos recursos da rede, controle de utilização, alocação de acesso privilegiado a recursos
+		Performance > Quantificar, medir, analisar e controlar o desempenho dos diferentes componentes da rede e Gerenciamento de qualidade de Serviços(QoS)
+		Security > Gestão da segurança da rede, monitoramento de acesso e dos recursos da rede
+	
+	Cap3 - Protocolo SNMP
+		criado em 80' como alternativa ao modelo de gerenciamento OSI
+		protocolo de gerência de rede, da camada de aplicação que facilita o intercâmbio de informaçã entre os dispositivos de rede, como placas e switchs
+		
+		Estação de gerenciamento (gerente) - Faz a interface de gerenciamento, fazendo requisições de informações de monitoramento e controle aos elementos de rede, e traduzindo essas informações de maneira clara aos operadores
+		Agente de gerenciamento (agente) - É um processo associado ao elemento de rede gerenciável. Possui duas funções básicas: responder a requisições do gerente e notifica-lo sobre ocorrências pré-definidas 
+	
+***   Leitura 1      ***
+
+___________________________________________________
+#####     UNIDADE 2  GRA0779  #####
+***   inspire-se 2   ***
+
+***   Video Aula 2   ***
+
+***   Leitura 2      ***
+
+___________________________________________________
+#####     UNIDADE 3  GRA0779  #####
+***   inspire-se 3   ***
+
+***   Video Aula 3   ***
+
+***   Leitura 3      ***
+
+___________________________________________________
+#####     UNIDADE 4  GRA0779  #####
+***   inspire-se 4   ***
+
+***   Video Aula 4   ***
+
+***   Leitura 4      ***
+
