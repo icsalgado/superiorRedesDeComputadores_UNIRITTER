@@ -1,0 +1,138 @@
+#####     UNIDADE 1  GRA1007      #####
+***   inspire-se 1   ***
+Michel Souza - Eng. Computação - Head de arquitetura e governança de TI no BK
+	Arquitetura Cliente-Servidor - Maquinas com maior recurso concentram funções na rede e outras maquinas consomem esse recurso
+		Vantagens: Recursos centraizados, segurança, gerenciamento
+		Desvantagens: elo fraco e custo elevado
+		
+	Active directory
+	DNS
+	DHCP
+	
+	Formação acadêmica > Certificações > Cursos online > Eventos
+	
+	 Michel Andrade de Souza
+Gerente e Head de Arquitetura de TI
+
+Formado em engenharia de computação e pós-graduando em "Estratégias Empresariais" e "Gestão e Liderança", além de possuir diversas certificações na área de tecnologia. Com uma carreira extensa na área de TI, desenvolveu trabalhos voltados para gestão e projetos com times ágeis, arquitetura de soluções, desenvolvimento de software, infraestrutura e nuvem. Tem como foco em gestão tornar os times com alta performance e que também tenham uma visão técnica clara, com entregas rápidas e de qualidade, sempre alinhadas com a visão de negócio. Tem passagem por diversas grandes empresas como Alstom, Accenture, TOTVS, Bematech, Trend Operadora, JSL, Riachuelo, Claro, SND e atualmente é Head de Arquitetura e Governança de TI do Burger King." 
+
+***   Video Aula 1   ***
+Cap1 - Licenciamento, cenários e implantação - Prof Cláudio Aguirre - Adm - pós em Redes
+	O que é um servidor
+		Computador especializado que suporta multiplas conexões e centraliza serviços e arquivos
+	Windows Server
+		2019 - conectividade com Azure - conecta ambientes licais com a nuvem, ou serja, um sistema hibrido
+		Essentials - 25 useres e 50 dispositivos (compartilhamento de pastas, arquivos e impressoras, VPN)
+		Standard - 2 VM's com 1 host Hyper-V, 256 hosts a milhares de máquinas, acesso ilimitado de users e dispositivos - Replicação de Storage, volume unico de 2TB 
+		Datacenter - VM ilimitados, grande numeros de licenciamento
+
+Cap2 Active directory, domain services AD DS
+	AD - Serviço de diretório - Armazenar, organizar e fornecer acesso a informações em um diretório de sistema operacional de computador, mapa entre nomes e valores que permite a consulta de valores nomeados, semelhante a um dicionário
+		LDAP lightweight Directory Access Protocol - Protocolo de aplicação aberto, segue modelo X.500 que é uma árvore de nós. A sua utilização mais comum é fornecer um login único com uma única senha podendo ter acesso a vários serviços. O user loga uma vez na rede e pode utilizar vários serviços.
+		Usiários
+		Grupos
+		Membros dos grupos
+		Senhas
+		Contas de computadores
+		Relações de confiança entre domínios e informações
+		Unidades organizacionais
+			Tudo armazenado em banco de dados disponibilizando os serviços:
+				Autenticação dos usuários na rede
+				Replicação do proprio BD
+				Pesquisa dos objetos dispoíveis na rede de computadores
+				Administração centralizada
+				GPO - Diretiva de grupo ou Group Policy
+		Controlador de domínio DC
+		Servidores Membro MS
+			assim que instala o servidor deve-se transforma-lo em DC para usar o AD
+			é necessário um serviço de DNS para o uso do AD
+	Arvore
+		organização hierarquica de um ou mais domínios
+		é preciso um Domínio Raiz
+			Os hosts vão estar debaixo dessa raiz
+	Floresta
+		Conjunto de árvores dando assim a possibilidade de um grupo de empresas pertencerem a mesma floresta porém com seus respectivos domínios
+	FSMO
+		1 Domain Namin Master (floresta) responsável por estar fazendo toda a nomeação de dominio em toda a floresta
+		2 Schema Master (floresta) - unico na floresta - responsavel por toda a criação e adaptação de qualquer atributo ou registro no schema do AD
+		3 Infrastructure Master (domain) - não é unico na floresta - Cada dominio que você venha a criar terá um IM criado no primero DC deste dominio
+		4 RID Master (domain) - não é unico na floresta - responsavel por repassar aos DCs o pool de RID (relative indentifier), em cada domínio haverá um RID Master, responsável pelo seu domínio
+		5 PDC Emulator (Domain) função diferente das demais pois se identifica na rede como um Domain Controller Primário
+
+Cap 3 Instalação do Windows Server
+	Requisitos básicos
+		64 bits - 1024MB RAM/2048MB para GUI
+	
+	Servidores de rack e torre HPE ProLiant - base para realidade de nuvem hibrida
+***   Leitura 1      ***
+
+___________________________________________________
+#####     UNIDADE 2  GRA1007      #####
+***   inspire-se 2   ***
+
+***   Video Aula 2   ***
+Cap1 instalação do AD DS
+	Modelo de floresta de dominio organizacional, podendo ter varios grupoes autonomos tem um dominio em uma floresta
+	cada grupo pode ter controle de permissao e gerenciar de forma autonoma seus respectivos aspectos particulares
+	
+	Ferramentas que serão instaladas
+		Admin do servidor remoto
+		Admin de funções
+		AD DS e do AD LDSV
+		Modulo active directory do windows powershell
+		Centro administrativo do AD
+		Snap-in e de linha de comando
+		Gerenciamento de politica de grupo
+Cap2 Gerenciamento de contas
+	Tipos de contas locais padrão do AD
+		Administrador 
+		Convidado - vem desativada
+		HelpAssistant - instalada com uma sessão de assistência remota
+		KRBTGT - conta de serviço para o serviço do centro de distribuições de chaves (KDC)
+	Minimo - criar estações de trabalho administrativas dedicadas e aplicar bloqueio de acesso a internet nessas ET incluindo navegação e e-mai
+		Considerar esses itens de administração:
+			configure os serviços de proxy
+			configure o firewall
+			bloqueie o acesso de saída aos servidores proxy
+	Escopos de grupo 
+		Dominio local - gerenciar permissões de acesso a diferentes recursos do dominio, não pode ser usado em outros dominios mas pode incluir usuários de outros dominios, um grupo local pode estar contido em outro grupo local mas não pode ser adicionado ao grupo global
+		Global - pode ser usado para fornecer acesso a recursos em outro dominio, pode adicionar apenas contas do mesmo dominio em que o grupo foi criado, pode ser adicionado em outros gupos globais e locais
+		Universal - é recomendavel usa-lo em grandes florestas do AD. pode definir funções e derenciar recursos distribuidos por varios dominios
+	
+	Estados de permissão
+		implicito - o sistema já coloca negado
+		explicito - configurado manualmente
+
+Cap3 - Administração
+	Delegação - parte essencial da segurança e conformidade, conceder aos usuarios ou grupos as permissões necessárias
+	Funções e atribuir responsabilidades
+		criarum conjunto de funções de adminitrador e atribuir-lhes responsabilidades apropriadas
+		Administradores de serviços 
+			Administradores da empresa- serviços de nivel superior em toda a empresa - Não deve conter membros permanentes
+			Adminsitradores de dominio - serviços de nivel superior em todo o dominio - Conter apenas numero pequeno e gerenciavel de adms confiáveis
+			Administradores de camada 4 - administração do serviço em todo o dominio - Direitos necessarios para gerenciar os serviços - Ponto de escalação para o Adm de dados
+		Administradores de dados
+			Administradores de camada 1 - gerenciamento geral dos objetos de diretorio, redefinição de senha, modificações das propriedades da conta
+			Adminstradores de nivel 2 - responsaveis pela criação e exclusão seletiva de contas de usuário e computador para seu local ou organização
+			Administradores regionais - responsavel pelo gerenciamento de sua estrutura de Unidade Orgaizacional local, permissoes concedidas para criar a maioria dos objetosem sua UO
+			Administradores nivel 3 - responsaveis pelo gerenciamento de todos os administradores de dados. Servir como suporte técnico de ponsta e ponto de escalação para todos os administradores regionais
+		Estabelecer um modelo de delegação
+			impor o principio do menor privilégio, os administradores devem fazer login como usuários comuns e usar seus direitos de privilegio somente quando precisar deles
+		
+***   Leitura 2      ***
+
+___________________________________________________
+#####     UNIDADE 3  GRA1007      #####
+***   inspire-se 3   ***
+
+***   Video Aula 3   ***
+
+***   Leitura 3      ***
+
+___________________________________________________
+#####     UNIDADE 4   GRA1007     #####
+***   inspire-se 4   ***
+
+***   Video Aula 4   ***
+
+***   Leitura 4      ***
