@@ -1,5 +1,7 @@
 #####     UNIDADE 1  GRA1007      #####
+
 ***   inspire-se 1   ***
+
 Michel Souza - Eng. Computação - Head de arquitetura e governança de TI no BK
 	Arquitetura Cliente-Servidor - Maquinas com maior recurso concentram funções na rede e outras maquinas consomem esse recurso
 		Vantagens: Recursos centraizados, segurança, gerenciamento
@@ -17,6 +19,7 @@ Gerente e Head de Arquitetura de TI
 Formado em engenharia de computação e pós-graduando em "Estratégias Empresariais" e "Gestão e Liderança", além de possuir diversas certificações na área de tecnologia. Com uma carreira extensa na área de TI, desenvolveu trabalhos voltados para gestão e projetos com times ágeis, arquitetura de soluções, desenvolvimento de software, infraestrutura e nuvem. Tem como foco em gestão tornar os times com alta performance e que também tenham uma visão técnica clara, com entregas rápidas e de qualidade, sempre alinhadas com a visão de negócio. Tem passagem por diversas grandes empresas como Alstom, Accenture, TOTVS, Bematech, Trend Operadora, JSL, Riachuelo, Claro, SND e atualmente é Head de Arquitetura e Governança de TI do Burger King." 
 
 ***   Video Aula 1   ***
+
 Cap1 - Licenciamento, cenários e implantação - Prof Cláudio Aguirre - Adm - pós em Redes
 	O que é um servidor
 		Computador especializado que suporta multiplas conexões e centraliza serviços e arquivos
@@ -64,8 +67,32 @@ Cap 3 Instalação do Windows Server
 		64 bits - 1024MB RAM/2048MB para GUI
 	
 	Servidores de rack e torre HPE ProLiant - base para realidade de nuvem hibrida
+	
 ***   Leitura 1      ***
 
+Método de grupo de trabalho ( workgroup ): as operações de administração da rede não estão centralizadas e devem ser realizadas individualmente, máquina por máquina.Para evitar tamanho trabalho, é necessário centralizar essa operação em um servidor. Servidores utilizam sistemas operacionais que apresentam recursos de gerenciamento das tarefas pertinentes a equipamentos conectados a uma rede. Esse modelo de utilização é conhecido como arquitetura cliente-servidor.
+Uma rede baseada em grupo de trabalho possui as seguintes características:
+	• Cada computador da rede possui seu conjunto de contas de usuários e grupos;
+	• Administração descentralizada;
+	• O log-in do usuário é realizado localmente (log-in local);
+	• Ideal para ambientes pequenos com até dez computadores.
+As redes centralizadas em um servidor, por sua vez, têm as seguintes características:
+	• Informações armazenadas de maneira centralizada;
+	• Os computadores ingressados na rede confiam no servidor e no domínio;
+	• Os servidores que controlam o domínio armazenam as informações dos usuários em um banco de dados;
+	• Os computadores da rede confiam nas informações armazenadas no referido banco de dados;
+	• Como a administração da rede é centralizada, políticas de segurança, compartilhamento e outras operações podem ser aplicadas a todos os computadores ou em computadores específicos de uma
+maneira mais rápida.
+
+FSMO Domain
+	PDC Emulator - A operação mestre PDC Emulator age no controlador de domínio principal. A sigla PDC ( Primary Domain Controller ) significa, em português, controlador de domínio principal. O PDC Emulator é o responsável por responder a solicitações de autenticação, alteração de senhas e gerência dos objetos de diretiva de grupo. 
+	RID Master - Cada objeto pertencente ao Active Directory possui um identificador de segurança, chamado de SID ( Security Identifier ). Para impedir que objetos tenham o mesmo SID, o RID Master concede a cada controlador de domínio o privilégio de atribuir determinados SIDs. 
+	Infrastructure Master - A principal função do Infrastructure Master é a de organizar os elementos do Active Directory entre os domínios da floresta, “corrigindo” referências antigas, conhecidas como fantasmas. Isso ocorre, por exemplo, quando se adiciona o usuário de um domínio a um grupo dentro de outro domínio na mesma floresta. 
+FSMO Floresta
+	Schema Master - Aqui, a função mestre é gerenciar a leitura e gravação do esquema do Active Directory, em que estão definidos todos os atributos dos usuários e objetos da floresta, como o ID do funcionário, número de telefone, endereço de e-mail e log-in. Em objetos como computadores fica armazenada a versão do sistema operação, bem como outras informações. 
+	DNS -  O mestre de nomeação de domínio garante que não sejam criados, na mesma floresta, dois domínios com o mesmo nome. 
+
+Video sobre Azure: https://youtu.be/-Gc1G_te08k
 ___________________________________________________
 #####     UNIDADE 2  GRA1007      #####
 ***   inspire-se 2   ***
