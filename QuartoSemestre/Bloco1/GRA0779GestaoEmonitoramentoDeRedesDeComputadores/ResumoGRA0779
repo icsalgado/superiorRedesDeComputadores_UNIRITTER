@@ -81,3 +81,59 @@ ___________________________________________________
 
 ***   Leitura 4      ***
 
+Feedback praticas
+1 - Caro(a) estudante, A sua resposta deve contemplar a importância do monitoramento e controle das redes de computação, principalmente em empresas cujos serviços oferecidos estritamente através da Internet, como é caso da empresa JTW Cobranças. Destaque também que, nos dias atuais, a infraestrutura é parte estratégica do negócio para diversos fins, como melhoria da comunicação com o cliente, otimização nos processos de transação, captura de informações para tomada de decisão, na ecologia ( por não usar papéis) etc. Aponte para um elemento estratégico crítico, pois a empresa é dependente da infra. Espera-se que você descreva a importância de entendimento dos elementos-chave da rede, como servidores, roteadores, aplicações e os links. Descreva, com base nesse cenário crítico, algumas métricas que são usadas no gerenciamento de redes e que precisam ser planejadas e estudadas. Mas algumas métricas são comuns para esse cenário, como: Servidores: disponibilidade do servidor. Como todos os serviços são efetuados pela Internet, a indisponibilidade impacta diretamente no negócio da empresa. Link: o consumo de banda (ex.: excesso de download desnecessário), pois o consumo excessivo de banda pode impactar em outros serviços, como teleconferência. Roteadores: contagem de saltos, porque o roteador, como elemento intermediário de rede, pode criar delays impactantes no processo de comunicação, principalmente na perda de dados, pois a base de dados de clientes pode ser corrompida. Aplicações: jitter (diferença entre os tempos de envio dos pacotes). Essa métrica está associada diretamente a aplicações de videoconferência (sensível ao jitter), como skype, pois a JTW Cobranças faz suas reuniões on-line por tais aplicações.
+2 - Caro estudante,  
+
+A sua resposta deve contemplar que a empresa HYZ.br faz uso de aplicações sensíveis à interferência, como atraso, jitter, ou seja, qualquer tipo de ruído na rede, pois são aplicações de uso em tempo real e não podem ter retransmissões. 
+
+Como o universo de redes de computadores é vasto, entende-se que a dica de comparação entre as duas ferramentas fosse as indicadas no e-book da unidade. Então, acredita-se que você vá utilizar em modo comparativo entre as ferramentas mencionadas no e-book, como no exemplo a seguir: 
+
+  
+
+PRTG Paessler 
+	
+
+Zabbix 
+
+Mapas personalizados. 
+
+Sensor para monitoramento de banda. 
+
+Análise de capacidade de dispositivos. 
+
+Instalação fácil, somente a necessidade do sistema operacional Windows. 
+
+Ferramenta de monitoramento é agentless. 
+	
+
+Open source. 
+
+Customização de relatórios. 
+
+Mapeamento de dispositivos na rede. 
+
+Uso de alarmes. 
+
+Criação de usuário e grupos. 
+
+Criação de templates. 
+
+Ponto não favorável. 
+	
+
+Ponto não favorável. 
+
+Uma ferramenta paga. 
+
+  
+	
+
+Usado em dispositivos, uma vez que um agente é instalado sobre eles. Tempo para criação de monitoramento. 
+
+  
+
+Como resultado da pesquisa, espera-se que compreenda que monitorar e gerenciar a rede, além de suportar o negócio, também propicia entendimento de planejar o crescimento do negócio, pois a aplicações são requisitos críticos associados ao negócio da HYZ.br. 
+3 - Caro estudante, A sua resposta deve contemplar que o novo cenário, o digital, além de ofertar mudanças de olhar dos usuários aos serviços, traz mudanças de comportamento das empresas com relação aos serviços ofertados. Para um empresa fazer uso ou ofertar serviços de telecomunicação para produtos como streaming de vídeo, VoIP e jogos on-line, esta precisa ter um qualidade no meio de comunicação, ou seja, na rede de computadores. Essa qualidade vem a partir de implantação de QoS, prioridade de serviços, tanto na rede física por meio de monitoramento e gerenciamento quanto na ofertas de serviços por intermédio de contratos diferenciados, com pacotes do básico ao específico, considerando o QoS da rede. Destaque que negócio via internet, seja cursos on-line ou remotos, reuniões com fornecedores, jogo corporativos on-line ou mesmo serviços de streaming de vídeo não podem sofrer com interferência do sinal como atrasado, vazão e jitter, pois podem impactar, negativamente, a visibilidade perante os usuários, e financeiramente no negócio.
+4 - Caro estudante, a sua resposta deve contemplar uma análise sobre o novo ambiente de tecnologia que a PTY soluções deseja implantar no seu negócio. Lembre-se de que os serviços serão oferecidos como IaaS, ou seja, totalmente via Internet. Por essa razão, sua resenha deve ser baseada nos conceitos aprendidos. Assim, um ponto a considerar em sua análise é a questão da indisponibilidade dos serviços. Para tal, deve-se pensar, como exemplo, em balanceamento de carga e redundância dos elementos essenciais, como roteadores, fontes de alimentação e links. Essas medidas garantem, em caso de falhas ou sobrecarga, que o sistema continue funcionando em plenitude. Outro significante é a gerência e o monitoramento da rede. Equipamentos devem suportar o protocolo SNMP para que o gerenciamento seja implantado. Essas medidas garantem medidas preventivas com relação ao funcionamento da rede. Isso pode ser realizado pensando nas subdivisões do gerenciamento determinado pelo modelo OSI: falhas, configuração, contabilização, desempenho, segurança associadas a softwares de gerenciamento, como, por exemplo, o Zabbix. O uso de ferramentas de monitoração e gerenciamento de redes de computadores, como Zabbix, permite um maior controle e informações para a tomada de decisões de correção de problemas, prevenção de problemas, além de expansão da própria rede. Por fim, é preciso pensar no QoS tanto para a rede em si quanto para os contratos de SLA, pois especificam a qualidade da rede e dos serviços prestados pela empresa. Essas medidas garantem, em redes internas, a priorização dos dados que trafegam pela rede, principalmente os dados de sistema mais críticos, como videoconferência. Já nos contratos com terceiros, permitem receber uma garantia da melhor qualidade de serviços contratados.
+

@@ -147,7 +147,18 @@ Cap3 - Administração
 			impor o principio do menor privilégio, os administradores devem fazer login como usuários comuns e usar seus direitos de privilegio somente quando precisar deles
 		
 ***   Leitura 2      ***
-
+Ao instalar o Windows Server em um computador, você pode optar por configurar uma função de servidor específica para esse computador, como um servidor de arquivos, um servidor web, servidor DHCP ou outra função. Quando você deseja criar uma nova floresta de domínios ou um controlador de domínio adicional em um domínio existente, é necessário instalar e configurar o servidor com a função de controlador de domínio, instalando o Active Directory. 
+O controlador de domínio é o servidor no qual o Active Directory será instalado.
+	Requisitos para instalação do AD
+		Definição de um IP fixo para o servidor 
+		Nomear o servidor 
+	O Active Directory Administrative Center apresenta todas as ferramentas inerentes ao Active Directory. São apresentadas ferramentas para a criação de usuários, computadores, grupos de usuários, unidades organizacionais, computadores, resetar senhas de usuários, gerenciar complexidade de senhas, entre outras atividades. 
+	Users and computers: Versão simplificada do Active Directory Administrative Center. São apresentadas as principais ferramentas para a administração de usuários e computadores pertencentes à floresta. 
+	Policy management: Apresenta as ferramentas para a criação e edição das políticas de segurança que podem ser aplicadas ao usuário. Pelas políticas de grupos é possível realizar operações em lote como padronizar papel de parede, instalar programas, proibir acesso às ferramentas administrativas para determinados usuários e muitas outras atividades. 
+	
+	Duas configurações são importantes para um computador-cliente seja ingressado ao domínio: 
+		Endereçamento IP
+		Endereçamento IP do servidor DNS
 ___________________________________________________
 #####     UNIDADE 3  GRA1007      #####
 ***   inspire-se 3   ***
@@ -155,6 +166,29 @@ ___________________________________________________
 ***   Video Aula 3   ***
 
 ***   Leitura 3      ***
+ Replicação intra-sites: A replicação intra-site abrange a replicação, em um mesmo site, entre os controladores de domínio. Por padrão, qualquer controlador de domínio estará ciente de qualquer atualização de diretório em quinze segundos; 
+ Replicação entre sites: Se a infraestrutura tiver mais de um site e uma alteração ocorrer em um dos sites, será necessário replicá-la para os outros sites. Isso é chamado de replicação entre sites. Neste caso, a largura da banda utilizada na conexão, latência e confiabilidade devem ser consideradas. Pode-se configurar dias e horários em que a replicação pode ser feita, para evitar congestionamentos na rede. 
+ 
+Gerenciamento de cotas
+Este recurso permite limitar o volume de dados em um disco específico ou em uma pasta. A gerência de cota pode ser aplicada a um usuário específico ou a um grupo de usuários. O gerenciamento permite utilizar modelos pré-definidos para sua utilização;
+
+Infraestrutura de classificação
+Permite ao administrador criar políticas de acesso a arquivos com base em processos de classificação. As políticas incluem, além da restrição de acesso, criptografia e monitoramento de alteração de arquivos;
+
+Tarefas de gerenciamento
+Permite ao administrador gerenciar a criação e a alteração de arquivos. É possível criar relatórios por data, por exemplo, indicando a alteração e qual usuário realizou a alteração em pastas ou arquivos específicos;
+
+Gerenciamento de triagens
+Com este recurso é possível controlar quais tipos de arquivos o usuário poderá salvar em determinadas pastas. Por exemplo, o administrador pode criar uma triagem em que arquivos com extensão MP3 não sejam armazenados em pastas pessoais.
+
+Zona primária
+É o container inicial e principal de requisições DNS. Esse tipo de zona DNS permite a escrita e a leitura de informações e novos ponteiros. As zonas primárias são criadas automaticamente quando promovemos um servidor a controlador de domínio. Todo serviço de DNS precisa, ao menos, possuir uma zona primária para a edição de novos ponteiros;
+
+Zona secundária
+Servidores com esse tipo de zona de DNS precisam realizar consultas a um servidor com uma zona de pesquisa primária. Todas as informações referentes ao DNS neste servidor estarão vinculadas às diretivas do servidor primário;
+
+Zona stub
+As zonas de stub são como uma zona secundária, mas apenas armazenam dados de zona parciais. Essas zonas são úteis para ajudar a reduzir as transferências, passando as solicitações para servidores autoritativos. Essas zonas contêm apenas os registros SOA, NS e A.
 
 ___________________________________________________
 #####     UNIDADE 4   GRA1007     #####
@@ -163,3 +197,262 @@ ___________________________________________________
 ***   Video Aula 4   ***
 
 ***   Leitura 4      ***
+
+Feedback pratique:
+1 - Devido ao ambiente gráfico, a maioria das pessoas pode aprender e usar o sistema operacional de maneira mais rápida e fácil do que em modo texto, o que exige um maior grau de memorização e familiaridade, por exemplo, o ambiente gráfico fornece ao usuário um feedback visual imediato na maioria dos casos, entretanto, o modo texto fornece maior flexibilidade de uso, que pode ser usado para fazer facilmente coisas difíceis ou impossíveis de fazer com um ambiente gráfico. 
+
+O ambiente gráfico precisa usar recursos adicionais do sistema para carregar a parte gráfica, portanto, é mais lenta que a linha de comando. 
+
+  
+
+Quando se deve utilizar o sistema operacional em modo CORE (linha de comando): 
+
+    Para fazer coisas em escala;
+    Quando é necessário maior controle sobre as funções do sistema operacional;
+    Quando se utiliza servidores com pouca memória;
+    Para realizar instalações específicas de software que somente funcionam em modo texto.
+
+  
+
+Quando se deve utilizar o ambiente gráfico: 
+
+    Para reduzir o tempo de estudo sobre a utilização do sistema operacional;
+    Para simplificar a sua utilização;
+    Menos linhas de código digitadas levam a menos erros de digitação, portanto, menos tempo gasto com os erros frustrantes;
+    Para tornar os resultados visíveis;
+    Devido à sua simplicidade e facilidade de uso, o modo gráfico é aconselhável para a maioria dos usuários de computador, especialmente usuários novos e iniciantes.
+2 - Projeto para organização lógica no Active Directory na empresa TELETEK. 
+
+  
+
+  
+
+Nome de domínio: teletek.local 
+
+O departamento administração possuirá uma unidade organizacional com o seu nome e possuirá dois containers: computadores e usuários. O container "computadores" terá um grupo para organizar os computadores com o sistema operacional Windows 8.1, chamado de GRP_ADM_Windows 8.1, e outro com o nome de GRP_ADM_Windows 10, para organizar os computadores com o sistema operacional Windows 10. Os computadores do departamento serão nomeados como ADM1, ADM2 e assim por diante, totalizando em 11 computadores, seis para um grupo e cinco para os demais. 
+
+No container Usuários, o usuário com direitos administrativos será o usuário carlos.silva, tendo como padrão para o nome de usuários sempre o nome, seguido de ponto final e sobrenome. Esse container também possuirá dois grupos: um para os usuários classificados como júnior, com o nome de GRP_ADM_Junior, e outro para os usuários classificados como sênior, como o nome de GRP_ADM_Senior. 
+
+  
+
+O esquema de representação das unidades organizacionais, usuários e grupos do departamento administração pode ficar da seguinte maneira: 
+
+  
+
+Administração 
+
+            Computadores 
+
+                        GRP_ADM_Windows 8.1 
+
+                        ADM1 
+
+                        ADM2 
+
+                        ADM3 
+
+                        ADM4 
+
+                        ADM5 
+
+                        ADM6 
+
+                        GRP_ADM_Windows 10 
+
+                        ADM7 
+
+                        ADM8 
+
+                        ADM9 
+
+                        ADM10 
+
+                        ADM11 
+
+            Usuários 
+
+                        GRP_ADM_Senior 
+
+                                    carlos.silva 
+
+                                    elder.carvalho 
+
+                                    roger.braz 
+
+                                    samuel.cardoso 
+
+                                    laís.marcondes 
+
+                                    mariana.medeiros 
+
+                        GRP_ADM_Junior 
+
+                                    marcello.lopez 
+
+                                    verônica.saz 
+
+                                    antonio.oliveira 
+
+                                    maria.cristina 
+
+                                    cristina.maria 
+
+                                     
+
+O departamento atendimento possuirá uma unidade organizacional com o seu nome e possuirá dois containers: computadores e usuários. O container "computadores" terá um grupo para organizar os computadores com o sistema operacional Windows 8.1, chamado de GRP_ATE_Windows 8.1, e outro com o nome de GRP_ATE_Windows 10 para organizar os computadores com o sistema operacional Windows 10. Os computadores serão nomeados com as iniciais ATE e a sua numeração correspondente, por exemplo: ATE1, ATE2, totalizando 11 computadores, seis para um grupo e cinco para os demais. 
+
+No container "usuários", o usuário com direitos administrativos será o usuário ana.pereira. O padrão utilizado para os nomes de usuário sempre será nome, seguido de ponto final e sobrenome. Por exemplo: jose.silva. Esse container também possuirá dois grupos: um para os usuários classificados como júnior, com o nome de GRP_ATE_Junior, e outro para usuários classificados como sênior, com o nome de GRP_ATE_Senior. 
+
+             
+
+Atendimento 
+
+            Computadores 
+
+                        GRP_ATE_Windows 8.1 
+
+                        ATE1 
+
+                        ATE2 
+
+                        ATE3 
+
+                        ATE4 
+
+                        ATE5 
+
+                        ATE6 
+
+            GRP_ATE_Windows 10 
+
+                        ATE7 
+
+                        ATE8 
+
+                        ATE9 
+
+                        ATE10 
+
+                        ATE11 
+
+            Usuários 
+
+                        GRP_ATE_Senior 
+
+                        ana.pereira 
+
+                        daniel.silva 
+
+                        débora.soares 
+
+                        roberta.pereira 
+
+                        mariana.carla 
+
+                        roberto.carlos 
+
+GRP_ATE_Junior 
+
+                        paulo.roberto 
+
+                        rogério.mendes 
+
+                        rodrigo.silva 
+
+                        josé.carlos 
+
+                        pedro.paulo               
+
+  
+
+O departamento de vendas possuirá uma unidade organizacional com o seu nome e possuirá dois containers: computadores e usuários. O container "computadores" terá um grupo para organizar os computadores com o sistema operacional Windows 8.1, chamado de GRP_VEN_Windows 8.1, e outro com o nome de GRP_VEN_Windows 10, para organizar os computadores com o sistema operacional Windows 10. Os computadores serão nomeados com as iniciais VEN e a sua numeração correspondente será VEN1, VEN2, 11 computadores, seis para um grupo e cinco para os demais. 
+
+  
+
+No container "usuários", o usuário com direitos administrativos será o usuário joao.mendes. Os nomes dos usuários terão o seguinte padrão: nome, seguido de ponto final e sobrenome. Esse container também possuirá dois grupos: um para os usuários classificados como júnior, com o nome de GRP_VEN_Junior, e outro para usuários classificados como sênior, com o nome de GRP_VEN_Senior. 
+
+             
+
+Atendimento 
+
+            Computadores 
+
+                        GRP_VEN_Windows 8.1 
+
+                                    VEN1 
+
+                                    VEN2 
+
+                                    VEN3 
+
+                                    VEN4 
+
+                                    VEN5 
+
+                                    VEN6 
+
+                        GRP_VEN_Windows 10 
+
+                                    VEN7 
+
+                                    VEN8 
+
+                                    VEN9 
+
+                                    VEN10 
+
+                                    VEN11 
+
+            Usuários 
+
+                        GRP_VEN_Senior 
+
+                        joao.mendes 
+
+                        gilberto.barros 
+
+                        fausto.silva 
+
+                        gustavo.liberato 
+
+                        mara.carla 
+
+                        andré.mendes 
+
+            GRP_VEN_Junior 
+
+                                    roberta.carlos 
+
+                                    maria.bethânia 
+
+                                    pedro.vaz 
+
+                                    silvio.santos 
+
+                                    carla.perez 
+                                    
+3 -      Como vimos nas aulas deste capítulo, as políticas de grupo (GPO) são recursos que podem ser utilizados pelos administradores para aplicar restrições em redes corporativas, evitando problemas como a instalação de softwares indevidos, por exemplo. Cabe ao administrador organizar e saber aplicar as GPOs, adequando-os aos cenários encontrados em diferentes situações. 
+
+A diretiva de grupo é um recurso do Active Directory que adiciona controles adicionais às contas de usuário e computador. As políticas de grupo fornecem configurações centralizadas de sistemas operacionais e de gerenciamento dos ambientes de computação do usuário. As políticas de grupo são outro método para proteger os computadores dos usuários contra infiltrações e violações de dados. 
+
+Neste cenário apresentado pela empresa é possível criar políticas de grupos para todos os sites, respeitando as particularidades de cada unidade, mas impossibilitando a execução de determinados aplicativos, como BitTorrent. Também é possível definir quais operações administrativas serão executadas em cada site, inclusive indicando ao site dos EUA a aplicação de GPO específica para proibir instalação e execução de softwares do tipo bittorrent. Um dos riscos mais comuns que os usuários de torrents tendem a enfrentar é o malware. Não é possível ao usuário saber se o arquivo torrent que ele acabou de baixar pode conter um vírus. Esse ato de baixar arquivos torrent afetados por vírus pode facilmente prejudicar o sistema do computador e, consequentemente, de toda a empresa. A criação de uma GPO específica para proibir o acesso a programas de torrents e, consequentemente, a realização de downloads indesejados pode ser uma solução para o problema apresentado pela empresa. As políticas de grupos também poderão ser utilizadas nos demais sites da empresa para proibir acesso a determinados tipos de softwares, permitindo que os programas importantes para o funcionamento da empresa sejam executados.
+
+4 - Devido aos relatos dos usuários da biblioteca, o problema está na entrega dos endereçamentos IPs via serviço DHCP. DHCP é um protocolo que fornece um endereçamento IP em uma rede de computadores. O endereço IP é fornecido pelo protocolo DHCP para computadores e outros dispositivos como celulares, televisores, videogames etc. 
+
+Sem um servidor DHCP a configuração de IPs da biblioteca deve ser feita manualmente, ou seja, o administrador da rede deve adicionar o endereçamento IP manualmente em todos os hosts da rede, incluindo computadores, celulares e outros dispositivos. 
+
+O endereçamento IP é de extrema importância para a identificação do dispositivo na rede e para que o mesmo possa utilizar os recursos da rede, como acesso à internet. 
+
+Sabendo disso, o serviço DHCP que será aplicado na biblioteca será de extrema importância para que todos os celulares, computadores e outros dispositivos conectados à rede recebam o endereçamento IP automaticamente e ao mesmo tempo sejam identificados por meio dos relatórios disponíveis pelo serviço DHCP e, também, pelo serviço IPAM disponíveis no Windows Server. 
+
+Sem um servidor DHCP a configuração de IPs da biblioteca deve ser feita manualmente, ou seja, o administrador da rede e os demais usuários devem adicionar o endereçamento IP manualmente em todos os hosts da rede, incluindo computadores, celulares e outros dispositivos. A configuração manual seria de extrema complexidade para usuários leigos sem a instrução técnica necessário para isso. 
+
+ 
+
+ 
+
+Figura 1 - Configuração de IP fixo em um celular Android. Fonte: Elaborada pelo autor, 2020. 
+
+  
+
+Para evitar eventuais problemas da configuração manual do endereçamento IP, um servidor DHCP deve ser utilizado, esse servidor pode ser um simples roteador com o serviço DHCP, ou caso seja possível, a utilização de um computador com o sistema operacional Windows Server, em que é possível realizar a instalação do serviço DHCP e o servidor será responsável pela entrega dos endereçamentos IPs na rede da biblioteca. Utilizando um servidor, uma ferramenta IPAM também poderá ser instalada juntamente com o serviço DHCP. Com a ferramenta IPAM do Windows Server ou ferramentas de terceiros, é possível visualizar relatórios do uso dos endereçamentos IPs da rede. 
