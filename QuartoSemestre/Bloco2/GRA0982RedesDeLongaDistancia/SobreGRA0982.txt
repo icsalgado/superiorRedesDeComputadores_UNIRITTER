@@ -1,0 +1,10 @@
+Olá, estudante!
+
+Seja bem-vindo(a) a nossa disciplina !!
+
+A disciplina apresenta os temas relativos a conceituação, interpretação e estudo dos protocolos, estrutura e funcionamento de uma rede do padrão WAN,
+a qual atinge interconexões e nós entre estruturas mundiais, bem como seus requisitos e normas internacionais de funcionamento
+
+
+Abraço,
+Corpo Docente Tutorial. 
