@@ -1,15 +1,18 @@
-# <img src="https://play-lh.googleusercontent.com/nA1b2cMO3j3IIFdAYK8zxV7bvbcWpGUS1PUFCrp2ZQwIqi3XL_fnry7HXDfrzUhmxHM6=w240-h480" align="center" width="50px" style="border-radius: 60px"> Redes de Computadores
+# Superior de Tecnologia em Redes de Computadores - UNIRITTER
+## Associate degree in Computer Networks
 <a href="https://www.uniritter.edu.br/graduacao/redes-de-computadores/">Página do curso</a>
 
-## <a href="https://www.uniritter.edu.br/graduacao/redes-de-computadores/"> <img src="https://play-lh.googleusercontent.com/nA1b2cMO3j3IIFdAYK8zxV7bvbcWpGUS1PUFCrp2ZQwIqi3XL_fnry7HXDfrzUhmxHM6=w240-h480" width="15px"> UNIRITTER </a>
+> O curso está organizado em 5 semestres, tendo em média 5 disciplinas em cada. O material didatico está disponibilizado, bem como algumas anotações e atividades realizadas durante o curso. Todos os materiais estão em PT-BR sem tradução para outros idiomas.
+>> The course is organized into 5 semesters, taking on average 5 disciplines in each. The teaching material is available, as well as some notes and activities performed during the course. All materials are in PT-BR without translation into other languages.
+
 
 <table border="1px">
     <tr>
-        <th>1 Sem</th>
-        <th>2 Sem</th>
-        <th>3 Sem</th>
-        <th>4 Sem</th>
-        <th>5 Sem</th>
+        <th>1º Sem</th>
+        <th>2º Sem</th>
+        <th>3º Sem</th>
+        <th>4º Sem</th>
+        <th>5º Sem</th>
     </tr>
     <tr>
         <td><a href="https://github.com/icsalgado/superiorRedesDeComputadores_UNIRITTER/tree/master/PrimeiroSemestre/Bloco1/GRA0244BancoDeDados">Banco de Dados</a></td>
